@@ -10,11 +10,10 @@ import UIKit
 
 class Router {
     public private(set) weak var viewController: UIViewController?
-    
+
     required init(viewController: UIViewController) {
         self.viewController = viewController
     }
-    
+
     func prepare(for segue: UIStoryboardSegue, sender: Any?) { }
 }
-

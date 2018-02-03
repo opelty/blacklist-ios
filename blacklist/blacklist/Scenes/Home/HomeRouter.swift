@@ -10,13 +10,16 @@ import UIKit
 
 class HomeRouter: Router {
     // Add transition methods here...
-    
+
     func goSettings() {
-        viewController?.performSegue(withIdentifier: "TEST_SEGUE", sender: nil)
+        viewController?.performSegue(
+            withIdentifier: SegueIndentifier.SegueTest.rawValue,
+            sender: nil
+        )
     }
-    
+
     // MARK: - Overrides
-    
+
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Prepare segue here if it's neccesary....
     }

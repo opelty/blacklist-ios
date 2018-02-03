@@ -13,5 +13,4 @@ protocol HomeView: View {
 }
 
 class HomePresenter: Presenter {
-    
 }

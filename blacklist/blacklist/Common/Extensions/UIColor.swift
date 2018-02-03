@@ -13,7 +13,7 @@ extension UIColor {
         let r = (value >> 16) & 0xFF
         let g = (value >> 8) & 0xFF
         let b = value & 0xFF
-        
+
         self.init(
             red: CGFloat(r) / 255.0,
             green: CGFloat(g) / 255.0,

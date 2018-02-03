@@ -7,6 +7,7 @@ target 'blacklist' do
 
   # Pods for blacklist
   pod 'RealmSwift'
+  pod 'SwiftLint'
 
   target 'blacklistTests' do
     inherit! :search_paths

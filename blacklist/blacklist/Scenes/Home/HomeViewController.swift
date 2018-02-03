@@ -10,7 +10,7 @@ import UIKit
 
 class HomeViewController: UIViewController {
     fileprivate let presenter = HomePresenter()
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -18,7 +18,7 @@ class HomeViewController: UIViewController {
         presenter.attach(view: self)
         presenter.register(router: HomeRouter(viewController: self))
     }
-    
+
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         presenter.router?.prepare(for: segue, sender: sender)
     }
