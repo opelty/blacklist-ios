@@ -1,5 +1,5 @@
 # About this PR 
-> Remove all templates marks before send a PR or it will rejected
+> Remove all templates marks before sending a PR or it will be rejected
 
 ```Add here a complete description of the code and features included in this Pull Request.```
 
