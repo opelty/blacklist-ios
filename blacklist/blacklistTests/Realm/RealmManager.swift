@@ -68,14 +68,14 @@ class RealmManager: XCTestCase {
 
     func testUpdate() {
         // Let's modify the testObject
-        blacklist.RealmManager.shared.update(object: object!) { () -> [String: Any] in
-            return [
-                "r_name": "MODIFIED_VALUE"
-            ]
+        let uuid = UUID().uuidString
+
+        blacklist.RealmManager.shared.update(object: object!) { (model) in
+            model.r_name = uuid
         }
 
         if let modified = blacklist.RealmManager.shared.find(for: TestObject.self, id: object!.r_id) {
-            XCTAssertEqual(modified.r_name, "MODIFIED_VALUE")
+            XCTAssertEqual(modified.r_name, uuid)
         } else {
             XCTFail()
         }
