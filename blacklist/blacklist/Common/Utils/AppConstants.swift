@@ -10,4 +10,9 @@ import Foundation
 
 struct Constants {
     // Let's define your constantes here grouped in structs
+
+    struct Realm {
+        static let databaseName = "database.realm"
+        static let rootDirectory = "opelty"
+    }
 }

@@ -26,6 +26,9 @@
 		44D0B0EE20264C5200E7C5D5 /* EntitiesStructs in Resources */ = {isa = PBXBuildFile; fileRef = 44D0B0ED20264C5200E7C5D5 /* EntitiesStructs */; };
 		44D0B0F020264C6F00E7C5D5 /* ServiceGatewayImplementation in Resources */ = {isa = PBXBuildFile; fileRef = 44D0B0EF20264C6F00E7C5D5 /* ServiceGatewayImplementation */; };
 		44D0B0F220264C7C00E7C5D5 /* RealmGatewayImplementation in Resources */ = {isa = PBXBuildFile; fileRef = 44D0B0F120264C7C00E7C5D5 /* RealmGatewayImplementation */; };
+		44EE24D620264EF800C2C586 /* RealmManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44EE24D520264EF800C2C586 /* RealmManager.swift */; };
+		44EE24D9202660AB00C2C586 /* RealmManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44EE24D8202660AB00C2C586 /* RealmManager.swift */; };
+		44EE24DB2026719300C2C586 /* FileManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44EE24DA2026719300C2C586 /* FileManager.swift */; };
 		D2C28C8DB3FE523480FE3ACC /* Pods_blacklistTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 76CC509BEFC64FF91398CCB5 /* Pods_blacklistTests.framework */; };
 		F1F6E52EDFC9945464867067 /* Pods_blacklist.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 53208D8CF1CFAA4BD8163FEB /* Pods_blacklist.framework */; };
 /* End PBXBuildFile section */
@@ -65,6 +68,9 @@
 		44D0B0ED20264C5200E7C5D5 /* EntitiesStructs */ = {isa = PBXFileReference; lastKnownFileType = text; path = EntitiesStructs; sourceTree = "<group>"; };
 		44D0B0EF20264C6F00E7C5D5 /* ServiceGatewayImplementation */ = {isa = PBXFileReference; lastKnownFileType = text; path = ServiceGatewayImplementation; sourceTree = "<group>"; };
 		44D0B0F120264C7C00E7C5D5 /* RealmGatewayImplementation */ = {isa = PBXFileReference; lastKnownFileType = text; path = RealmGatewayImplementation; sourceTree = "<group>"; };
+		44EE24D520264EF800C2C586 /* RealmManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmManager.swift; sourceTree = "<group>"; };
+		44EE24D8202660AB00C2C586 /* RealmManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmManager.swift; sourceTree = "<group>"; };
+		44EE24DA2026719300C2C586 /* FileManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileManager.swift; sourceTree = "<group>"; };
 		53208D8CF1CFAA4BD8163FEB /* Pods_blacklist.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_blacklist.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		72B14658C6E06E5C809D3FFB /* Pods-blacklist.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-blacklist.release.xcconfig"; path = "Pods/Target Support Files/Pods-blacklist/Pods-blacklist.release.xcconfig"; sourceTree = "<group>"; };
 		76CC509BEFC64FF91398CCB5 /* Pods_blacklistTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_blacklistTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -138,6 +144,7 @@
 		449D62EF20254BA80031BA92 /* blacklistTests */ = {
 			isa = PBXGroup;
 			children = (
+				44EE24D72026609200C2C586 /* Realm */,
 				449D62F020254BA80031BA92 /* blacklistTests.swift */,
 				449D62F220254BA80031BA92 /* Info.plist */,
 			);
@@ -256,6 +263,7 @@
 			isa = PBXGroup;
 			children = (
 				44D0B0E02025C21B00E7C5D5 /* UIColor.swift */,
+				44EE24DA2026719300C2C586 /* FileManager.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -266,6 +274,7 @@
 				44D0B0DE2025C1CC00E7C5D5 /* AppConstants.swift */,
 				44D0B0E22025C42D00E7C5D5 /* StyleSheet.swift */,
 				44D0B0E520264A5B00E7C5D5 /* SegueIndentifier.swift */,
+				44EE24D520264EF800C2C586 /* RealmManager.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -292,6 +301,14 @@
 				449D62DB20254BA80031BA92 /* AppDelegate.swift */,
 			);
 			path = AppDelegates;
+			sourceTree = "<group>";
+		};
+		44EE24D72026609200C2C586 /* Realm */ = {
+			isa = PBXGroup;
+			children = (
+				44EE24D8202660AB00C2C586 /* RealmManager.swift */,
+			);
+			path = Realm;
 			sourceTree = "<group>";
 		};
 		4BAD82D406E02A0713A98E9D /* Frameworks */ = {
@@ -537,6 +554,8 @@
 			files = (
 				449D631220255AED0031BA92 /* Router.swift in Sources */,
 				449D6310202558BE0031BA92 /* Presenter.swift in Sources */,
+				44EE24D620264EF800C2C586 /* RealmManager.swift in Sources */,
+				44EE24DB2026719300C2C586 /* FileManager.swift in Sources */,
 				44D0B0E32025C42D00E7C5D5 /* StyleSheet.swift in Sources */,
 				449D631D20255FCE0031BA92 /* HomeViewController.swift in Sources */,
 				449D631620255F2E0031BA92 /* HomePresenter.swift in Sources */,
@@ -553,6 +572,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				449D62F120254BA80031BA92 /* blacklistTests.swift in Sources */,
+				44EE24D9202660AB00C2C586 /* RealmManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
