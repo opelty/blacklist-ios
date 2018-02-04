@@ -131,7 +131,7 @@ final class RealmManager {
      *   Set of Realm's objects that satisfy the predicate or all stored items for
      *   the defined type if the predicate is defined as nil.
      */
-    public func all<M: Object>(for type: M.Type, predicate: String? = nil) -> [M] {
+    public func all<Model: Object>(for type: Model.Type, predicate: String? = nil) -> [Model] {
         let objects = context.objects(type)
 
         if let predicate = predicate {
@@ -150,7 +150,7 @@ final class RealmManager {
      * - returns:
      *   A Realm's object that has the id field as primaryKey or nil if none satisfy the predicate
      */
-    public func find<M: Object>(for type: M.Type, id: String) -> M? {
+    public func find<Model: Object>(for type: Model.Type, id: String) -> Model? {
         return context.object(ofType: type, forPrimaryKey: id)
     }
 
@@ -160,11 +160,11 @@ final class RealmManager {
      * - parameters:
      *   - object: Realm's object that should be updated
      *   - closure: Closure to make changes, all changes in the M (model) will be stored.
-     *     - M: The reference to the provided Realm's object that will be changed.
+     *     - Model: The reference to the provided Realm's object that will be changed.
      * - returns:
      *   Void
      */
-    public func update<M: Object>(object: M, closure: (M) -> Void) {
+    public func update<Model: Object>(object: Model, closure: (Model) -> Void) {
         try! context.write {
            closure(object)
         }
