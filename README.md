@@ -22,15 +22,13 @@ It is the connector between the model and the view. It handles all the user inte
 
 # About us
 
-We are fascinated iOS and software developers, enjoy converting a cup of coffe in hundred lines of code. We met in our actual job at Globant and decided to start developing open source applications wishing someday the community can contribute in our projects and help us making a "common" application into a big one with the best coding practices and using a clean architecture.
+We are fascinated iOS and software developers, enjoy converting a cup of ☕️ in hundred lines of code. We met in our actual job at Globant and decided to start developing open source applications wishing someday the community can contribute in our projects and help us making a "common" application into a big one with the best coding practices and using a clean architecture.
 
 - Jose Lopez
 
 - Santiago Carmona
 
 - Mateo Olaya.
-
- About us (Jose Lopez, Santiago Carmona, Mateo Olaya)
  
 # Dependencies
 
