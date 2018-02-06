@@ -11,11 +11,10 @@ import UIKit
 class HomeRouter: Router {
     // Add transition methods here...
 
-    func goSettings() {
-        viewController?.performSegue(
-            withIdentifier: SegueIndentifier.SegueTest.rawValue,
-            sender: nil
-        )
+    func loanDetails(with loan: Any) { // TODO: Finish this
+        print("Going to loan details...")
+
+        // viewController?.performSegue(withIdentifier: <#T##String#>, sender: <#T##Any?#>)
     }
 
     // MARK: - Overrides
