@@ -27,6 +27,7 @@
 		44D0B0EE20264C5200E7C5D5 /* EntitiesStructs in Resources */ = {isa = PBXBuildFile; fileRef = 44D0B0ED20264C5200E7C5D5 /* EntitiesStructs */; };
 		44D0B0F020264C6F00E7C5D5 /* ServiceGatewayImplementation in Resources */ = {isa = PBXBuildFile; fileRef = 44D0B0EF20264C6F00E7C5D5 /* ServiceGatewayImplementation */; };
 		44D0B0F220264C7C00E7C5D5 /* RealmGatewayImplementation in Resources */ = {isa = PBXBuildFile; fileRef = 44D0B0F120264C7C00E7C5D5 /* RealmGatewayImplementation */; };
+		44D16964202B6EC200824633 /* Animation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44D16963202B6EC200824633 /* Animation.swift */; };
 		44DD66A620293EF700934457 /* Application.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44DD66A520293EF700934457 /* Application.swift */; };
 		44EE24D620264EF800C2C586 /* RealmManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44EE24D520264EF800C2C586 /* RealmManager.swift */; };
 		44EE24D9202660AB00C2C586 /* RealmManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44EE24D8202660AB00C2C586 /* RealmManager.swift */; };
@@ -89,6 +90,7 @@
 		44D0B0ED20264C5200E7C5D5 /* EntitiesStructs */ = {isa = PBXFileReference; lastKnownFileType = text; path = EntitiesStructs; sourceTree = "<group>"; };
 		44D0B0EF20264C6F00E7C5D5 /* ServiceGatewayImplementation */ = {isa = PBXFileReference; lastKnownFileType = text; path = ServiceGatewayImplementation; sourceTree = "<group>"; };
 		44D0B0F120264C7C00E7C5D5 /* RealmGatewayImplementation */ = {isa = PBXFileReference; lastKnownFileType = text; path = RealmGatewayImplementation; sourceTree = "<group>"; };
+		44D16963202B6EC200824633 /* Animation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Animation.swift; sourceTree = "<group>"; };
 		44DD66A520293EF700934457 /* Application.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Application.swift; sourceTree = "<group>"; };
 		44EE24D520264EF800C2C586 /* RealmManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmManager.swift; sourceTree = "<group>"; };
 		44EE24D8202660AB00C2C586 /* RealmManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmManager.swift; sourceTree = "<group>"; };
@@ -319,6 +321,7 @@
 				44D0B0E520264A5B00E7C5D5 /* SegueIndentifier.swift */,
 				44EE24D520264EF800C2C586 /* RealmManager.swift */,
 				44DD66A520293EF700934457 /* Application.swift */,
+				44D16963202B6EC200824633 /* Animation.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -639,6 +642,7 @@
 				44DD66A620293EF700934457 /* Application.swift in Sources */,
 				441EADBE20284E6A007E1D9A /* ViewController.swift in Sources */,
 				44EE24FD2027A0C500C2C586 /* UpcomingTableViewCell.swift in Sources */,
+				44D16964202B6EC200824633 /* Animation.swift in Sources */,
 				449D631220255AED0031BA92 /* Router.swift in Sources */,
 				449D6310202558BE0031BA92 /* Presenter.swift in Sources */,
 				44EE24D620264EF800C2C586 /* RealmManager.swift in Sources */,

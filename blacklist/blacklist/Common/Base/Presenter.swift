@@ -8,14 +8,14 @@
 
 import Foundation
 
-protocol View: class { }
+protocol View: class {
+    func go(to: String, sender: Any?)
+}
 
 protocol Presenter: class {
     associatedtype V
-    associatedtype R
 
     var view: V? { get set }
-    var router: R? { get set }
 
     func attach(view: V?)
     func deattach()

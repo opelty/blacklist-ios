@@ -79,19 +79,15 @@ class UpcomingTableViewCell: UITableViewCell {
     }
 
     public func bounce() {
-        let fadeIn = { [unowned self] in
-            self.containerView.frame.origin.x -= UpcomingTableViewCell.leadingPadding
-        }
+        let bounceLeft = Animation.bounce(
+            bounceOffset: containerView.frame.origin.x - UpcomingTableViewCell.leadingPadding
+        )
 
-        let fadeOut = { [unowned self] in
-            self.containerView.frame.origin.x = self.actionsView.frame.origin.x
-        }
+        let bounceRigth = Animation.bounce(
+            bounceOffset: actionsView.frame.origin.x
+        )
 
-        UIView.animate(withDuration: Constants.Animations.duration, animations: fadeIn) { (completed) in
-            if completed {
-                UIView.animate(withDuration: Constants.Animations.duration, animations: fadeOut)
-            }
-        }
+        containerView.animate(bounceLeft, bounceRigth)
     }
 
     public func colapse(animated: Bool = true) {
@@ -100,7 +96,7 @@ class UpcomingTableViewCell: UITableViewCell {
         }
 
         if animated {
-            UIView.animate(withDuration: Constants.Animations.duration, animations: execution)
+            //UIView.animate(withDuration: Constants.Animations.duration, animations: execution)
         } else {
             execution()
         }
@@ -141,7 +137,7 @@ class UpcomingTableViewCell: UITableViewCell {
         // Check the last state and animate movement difference.
         let halfActionsViewWidth = actionsViewMaximumWidth / 2
 
-        UIView.animate(withDuration: Constants.Animations.duration) { [unowned self] in
+        UIView.animate(withDuration: Animation.defaultDuration) { [unowned self] in
             if fabs(actionViewContainerViewDistance) > halfActionsViewWidth {
                 // Finish showing
                 self.containerView.frame.origin.x = -actionsViewMaximumWidth

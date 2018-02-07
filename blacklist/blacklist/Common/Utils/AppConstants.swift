@@ -15,8 +15,4 @@ struct Constants {
         static let databaseName = "database.realm"
         static let rootDirectory = "opelty"
     }
-
-    struct Animations {
-        static let duration: TimeInterval = 1/3 // seconds
-    }
 }

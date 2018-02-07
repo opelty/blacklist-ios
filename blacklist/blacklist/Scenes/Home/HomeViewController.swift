@@ -13,6 +13,7 @@ class HomeViewController: UIViewController, ViewControllerProtocol {
     typealias R = HomeRouter
 
     var presenter: HomePresenter!
+    var router: HomeRouter?
 
     struct Constants {
         static let upcomingTableViewCell = "UpcomingTableViewCell"
@@ -31,11 +32,11 @@ class HomeViewController: UIViewController, ViewControllerProtocol {
         // Let's configure the presenter
         super.viewDidLoad()
 
-        configure { (context) -> P! in
+        configure { (context) -> (presenter: HomePresenter, router: HomeRouter?) in
             let presenter = HomePresenter()
-            presenter.router = HomeRouter(viewController: context)
+            let router = HomeRouter(viewController: context)
 
-            return presenter
+            return (presenter: presenter, router: router)
         }
 
         configure()
@@ -55,7 +56,7 @@ class HomeViewController: UIViewController, ViewControllerProtocol {
     }
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        presenter.router?.prepare(for: segue, sender: sender)
+        router?.prepare(for: segue, sender: sender)
     }
 
     override func viewDidLayoutSubviews() {
@@ -121,7 +122,7 @@ extension HomeViewController: UITableViewDataSource, UITableViewDelegate {
             cell.colapse()
 
             // TODO: Go to the detail view, sending the cell context
-            presenter.router?.loanDetails(with: 2)
+            router?.loanDetails(with: 2)
         }
     }
 
@@ -151,6 +152,7 @@ extension HomeViewController {
             presenter.call(to: "+573206532663")
             break
         case .check:
+            router?.loanDetails(with: 2)
             break
         }
     }
@@ -173,6 +175,10 @@ extension HomeViewController {
 // MARK: - View interface
 
 extension HomeViewController: HomeView {
+    func go(to: String, sender: Any?) {
+
+    }
+
     func doSomethingUI() {
         print("Hello World says presenter to the UI")
     }

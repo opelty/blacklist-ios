@@ -14,7 +14,7 @@ class HomeRouter: Router {
     func loanDetails(with loan: Any) { // TODO: Finish this
         print("Going to loan details...")
 
-        // viewController?.performSegue(withIdentifier: <#T##String#>, sender: <#T##Any?#>)
+        go(to: "Test", sender: nil)
     }
 
     // MARK: - Overrides
