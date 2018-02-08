@@ -26,7 +26,8 @@ class BlackListTabBar: UITabBar {
         return self.frame.midX - plusButtonHeight / 2
     }
 
-    private var plusButton: UIView = UIView()
+    private let plusButton: UIView = UIView()
+    private let plusButtonImageView: UIImageView = UIImageView(image: UIImage(named:"plus"))
     weak var blackListTabBardelegate: BlackListTabBarDelegate?
 
     // MARK: - Life cycle
@@ -42,7 +43,7 @@ class BlackListTabBar: UITabBar {
 
     override func draw(_ rect: CGRect) {
         super.draw(rect)
-        createPlusButton()
+        customizeButton()
     }
 
     override func layoutSubviews() {
@@ -64,19 +65,18 @@ class BlackListTabBar: UITabBar {
     private func setup() {
         backgroundColor = StyleSheet.Color.TabBar.background
         tintColor = StyleSheet.Color.TabBar.tintColor
+        addSubview(plusButton)
+        plusButton.addSubview(plusButtonImageView)
     }
 
-    private func createPlusButton() {
+    private func customizeButton() {
         plusButton.frame = CGRect(x: plusButtonXPosition, y: plusButtonYPosition, width: plusButtonHeight, height: plusButtonHeight)
         plusButton.layer.cornerRadius = plusButtonHeight / 2
+
+        plusButtonImageView.frame.origin.x = plusButtonHeight / 2 - 15
+        plusButtonImageView.frame.origin.y = plusButtonHeight / 2 - 15
         plusButton.backgroundColor = StyleSheet.Color.TabBar.plusButtonBackground
         plusButton.clipsToBounds = false
-
-        let imageView = UIImageView(image: UIImage(named: "plus"))
-        imageView.frame.origin.x = plusButtonHeight / 2 - 15
-        imageView.frame.origin.y = plusButtonHeight / 2 - 15
-        plusButton.addSubview(imageView)
-        self.addSubview(plusButton)
     }
 
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
