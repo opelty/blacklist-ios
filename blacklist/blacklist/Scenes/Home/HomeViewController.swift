@@ -8,8 +8,6 @@
 
 import UIKit
 
-
-
 class HomeViewController: UIViewController, ViewControllerProtocol {
     typealias P = HomePresenter
     typealias R = HomeRouter
@@ -143,7 +141,6 @@ extension HomeViewController: UITableViewDataSource, UITableViewDelegate {
         }
     }
 
-    
 }
 
 // MARK: - Actions Handler

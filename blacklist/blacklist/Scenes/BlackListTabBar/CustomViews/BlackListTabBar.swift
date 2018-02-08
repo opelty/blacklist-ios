@@ -26,13 +26,15 @@ class BlackListTabBar: UITabBar {
         return self.frame.midX - plusButtonHeight / 2
     }
 
+    private var plusButton: UIButton
     weak var blackListTabBardelegate: BlackListTabBarDelegate?
 
     // MARK: - Life cycle
 
     required init?(coder aDecoder: NSCoder) {
+        plusButton = UIButton()
         super.init(coder: aDecoder)
-        self.setup()
+        setup()
     }
 
     override func awakeFromNib() {
@@ -40,7 +42,8 @@ class BlackListTabBar: UITabBar {
     }
 
     override func draw(_ rect: CGRect) {
-        self.addSubview(createPlusButton())
+        super.draw(rect)
+        createPlusButton()
     }
 
     // MARK: - Private Methods
@@ -50,19 +53,21 @@ class BlackListTabBar: UITabBar {
         tintColor = StyleSheet.Color.TabBar.tintColor
     }
 
-    private func createPlusButton() -> UIButton {
-        let plustButton = UIButton(frame: CGRect(x: plusButtonXPosition, y: plusButtonYPosition, width: plusButtonHeight, height: plusButtonHeight))
-        plustButton.backgroundColor = .clear
-        plustButton.addCircleLayer(backgroundColor: StyleSheet.Color.TabBar.plusButtonBackground)
-        plustButton.setImage(UIImage(named: "plus"), for: .normal)
-        plustButton.imageView?.layer.zPosition = 1
-        plustButton.addTarget(self, action: #selector(plustButtonAction), for: .touchUpInside)
-        plustButton.clipsToBounds = false
-        return plustButton
+    private func createPlusButton() {
+        plusButton.frame = CGRect(x: plusButtonXPosition, y: plusButtonYPosition, width: plusButtonHeight, height: plusButtonHeight)
+        plusButton.layer.cornerRadius = plusButtonHeight / 2
+        plusButton.backgroundColor = StyleSheet.Color.TabBar.plusButtonBackground
+        plusButton.setImage(UIImage(named: "plus"), for: .normal)
+        plusButton.addTarget(self, action: #selector(plusButtonAction), for: .touchUpInside)
+        plusButton.clipsToBounds = false
+        self.addSubview(plusButton)
     }
 
-    @objc private func plustButtonAction(sender: UIButton) {
+    @objc private func plusButtonAction(sender: UIButton) {
         // TODO: PERFORM AN ANIMATION WITH THE BUTTON
+
+        let angle = CGFloat.pi
+        plusButton.imageView?.animate(.rotated(angle: angle))
 
         blackListTabBardelegate?.plusButtonClicked()
     }
