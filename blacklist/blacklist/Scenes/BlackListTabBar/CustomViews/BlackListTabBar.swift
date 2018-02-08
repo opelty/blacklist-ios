@@ -26,7 +26,7 @@ class BlackListTabBar: UITabBar {
         return self.frame.midX - plusButtonHeight / 2
     }
 
-    private var plusButton: UIButton = UIButton()
+    private var plusButton: UIView = UIView()
     weak var blackListTabBardelegate: BlackListTabBarDelegate?
 
     // MARK: - Life cycle
@@ -70,14 +70,31 @@ class BlackListTabBar: UITabBar {
         plusButton.frame = CGRect(x: plusButtonXPosition, y: plusButtonYPosition, width: plusButtonHeight, height: plusButtonHeight)
         plusButton.layer.cornerRadius = plusButtonHeight / 2
         plusButton.backgroundColor = StyleSheet.Color.TabBar.plusButtonBackground
-        plusButton.setImage(UIImage(named: "plus"), for: .normal)
-        plusButton.addTarget(self, action: #selector(plusButtonAction), for: .touchUpInside)
         plusButton.clipsToBounds = false
+
+        let imageView = UIImageView(image: UIImage(named: "plus"))
+        imageView.frame.origin.x = plusButtonHeight / 2 - 15
+        imageView.frame.origin.y = plusButtonHeight / 2 - 15
+        plusButton.addSubview(imageView)
         self.addSubview(plusButton)
     }
 
-    @objc private func plusButtonAction(sender: UIButton) {
-        plusButton.animate(.rotated(angle: CGFloat.pi))
-        blackListTabBardelegate?.plusButtonClicked()
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        super.touchesBegan(touches, with: event)
+        if let touch = touches.first {
+            if touch.view == plusButton {
+                let imageView = plusButton.subviews.first
+                imageView?.animate(.scalate(toX: 0.3, toY: 0.3), .scalate(toX: 1.0, toY: 1.0))
+                imageView?.animate(.rotated(angle: CGFloat.pi))
+                plusButton.animate(.scalate(toX: 0.95, toY: 0.95), .scalate(toX: 1.0, toY: 1.0))
+                blackListTabBardelegate?.plusButtonClicked()
+            }
+        }
+    }
+
+    override func hitTest(_ point: CGPoint, with event: UIEvent?) -> UIView? {
+        let pointForTargetView = plusButton.convert(point, from: self)
+        
+        return plusButton.bounds.contains(pointForTargetView) ? plusButton : super.hitTest(point, with: event)
     }
 }
