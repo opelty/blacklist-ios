@@ -13,4 +13,18 @@ protocol HomeView: View {
 }
 
 class HomePresenter: Presenter {
+    typealias V = HomeView
+
+    weak var view: V?
+
+    func call(to phone: String) {
+        let prefix = "telprompt://" + phone
+
+        if let url = URL(string: prefix) {
+            Application.open(url: url)
+        }
+
+        view?.go(to: "R", sender: nil)
+    }
+
 }
