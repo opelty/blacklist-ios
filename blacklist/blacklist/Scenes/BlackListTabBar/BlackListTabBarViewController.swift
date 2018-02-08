@@ -33,6 +33,7 @@ class BlackListTabBarViewController: UITabBarController {
 
 extension BlackListTabBarViewController: BlackListTabBarDelegate {
     func plusButtonClicked() {
+        // TODO: Make plus action
         print("Plus button in tab bar was clicked.")
     }
 }

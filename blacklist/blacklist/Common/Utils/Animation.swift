@@ -26,7 +26,7 @@ public struct Animation {
         return Animation(duration: duration, handler: { $0.bounds.size = size })
     }
 
-    static func escalate(duration: TimeInterval = Animation.defaultDuration, toX x: CGFloat, toY y: CGFloat) -> Animation {
+    static func scalate(duration: TimeInterval = Animation.defaultDuration, toX x: CGFloat, toY y: CGFloat) -> Animation {
         return Animation(duration: duration, handler: { $0.transform = CGAffineTransform(scaleX: x, y: y) })
     }
 
@@ -38,49 +38,4 @@ public struct Animation {
         return Animation(duration: duration, handler: { $0.transform = CGAffineTransform(rotationAngle: angle) })
     }
     // Add generic animations...
-}
-
-extension UIView {
-    public func animate(_ animations: Animation..., shouldParallelize: Bool = false) {
-        if shouldParallelize {
-            animate(inParallel: animations)
-        } else {
-            animate(animations)
-        }
-    }
-
-    public func animate(inParallel animations: [Animation], endingWithAnimation endingAnimation: Animation) {
-        for (index, animation) in animations.enumerated() {
-            UIView.animate(withDuration: animation.duration, animations: {
-                animation.handler(self)
-            }, completion: { _ in
-                if index == animations.count - 1 {
-                    self.animate(endingAnimation)
-                }
-            })
-        }
-    }
-
-    fileprivate func animate(_ animations: [Animation]) {
-        guard !animations.isEmpty else {
-            return
-        }
-
-        var animations = animations
-        let animation = animations.removeFirst()
-
-        UIView.animate(
-            withDuration: animation.duration,
-            animations: { animation.handler(self) },
-            completion: { _ in self.animate(animations) }
-        )
-    }
-
-    fileprivate func animate(inParallel animations: [Animation]) {
-        for animation in animations {
-            UIView.animate(withDuration: animation.duration) {
-                animation.handler(self)
-            }
-        }
-    }
 }

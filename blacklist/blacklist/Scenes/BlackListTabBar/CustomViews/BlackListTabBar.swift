@@ -26,13 +26,12 @@ class BlackListTabBar: UITabBar {
         return self.frame.midX - plusButtonHeight / 2
     }
 
-    private var plusButton: UIButton
+    private var plusButton: UIButton = UIButton()
     weak var blackListTabBardelegate: BlackListTabBarDelegate?
 
     // MARK: - Life cycle
 
     required init?(coder aDecoder: NSCoder) {
-        plusButton = UIButton()
         super.init(coder: aDecoder)
         setup()
     }
@@ -44,6 +43,20 @@ class BlackListTabBar: UITabBar {
     override func draw(_ rect: CGRect) {
         super.draw(rect)
         createPlusButton()
+    }
+
+    override func layoutSubviews() {
+        super.layoutSubviews()
+
+        // Sets insets on image tab bar to center it.
+        let distanceFromMiddle: CGFloat = plusButtonXPosition / 2 - tabBarImageSize
+        let centerVertically: CGFloat =  -((frame.height - tabBarImageSize) / 2)
+
+        let upcommingItem = items?.first
+        let lendingItem = items?.last
+
+        upcommingItem?.imageInsets = UIEdgeInsets(top: 0, left: 0, bottom: centerVertically, right: distanceFromMiddle)
+        lendingItem?.imageInsets = UIEdgeInsets(top: 0, left: distanceFromMiddle, bottom: centerVertically, right: 0)
     }
 
     // MARK: - Private Methods
@@ -64,51 +77,7 @@ class BlackListTabBar: UITabBar {
     }
 
     @objc private func plusButtonAction(sender: UIButton) {
-        // TODO: PERFORM AN ANIMATION WITH THE BUTTON
-
-        let angle = CGFloat.pi
-        plusButton.imageView?.animate(.rotated(angle: angle))
-
+        plusButton.animate(.rotated(angle: CGFloat.pi))
         blackListTabBardelegate?.plusButtonClicked()
-    }
-
-    override func layoutSubviews() {
-        super.layoutSubviews()
-
-        // Sets insets on image tab bar to center it.
-        let distanceFromMiddle: CGFloat = plusButtonXPosition / 2 - tabBarImageSize
-        let centerVertically: CGFloat =  -((frame.height - tabBarImageSize) / 2)
-
-        let upcommingItem = items?.first
-        let lendingItem = items?.last
-
-        upcommingItem?.imageInsets = UIEdgeInsets(top: 0, left: 0, bottom: centerVertically, right: distanceFromMiddle)
-        lendingItem?.imageInsets = UIEdgeInsets(top: 0, left: distanceFromMiddle, bottom: centerVertically, right: 0)
-
-    }
-
-}
-
-extension UIView {
-    func addCircleLayer(lineWidth: CGFloat = 0.0, backgroundColor: UIColor, strokeColor: UIColor? = nil) {
-
-        let halfSize = bounds.height / 2
-
-        let circlePath = UIBezierPath(
-            arcCenter: CGPoint(x: halfSize, y: halfSize),
-            radius: halfSize - lineWidth,
-            startAngle: CGFloat(0),
-            endAngle:CGFloat(Double.pi * 2),
-            clockwise: true
-        )
-
-        let circleLayer = CAShapeLayer()
-        circleLayer.path = circlePath.cgPath
-
-        circleLayer.fillColor = backgroundColor.cgColor
-        circleLayer.strokeColor = strokeColor?.cgColor
-        circleLayer.lineWidth = lineWidth
-
-        layer.addSublayer(circleLayer)
     }
 }

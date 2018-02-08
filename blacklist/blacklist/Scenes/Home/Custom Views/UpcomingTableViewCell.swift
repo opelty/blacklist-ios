@@ -29,6 +29,8 @@ class UpcomingTableViewCell: UITableViewCell {
 
     private var callback: UpcomingActionCompletion?
 
+    static let identifier: String = "UpcomingTableViewCell"
+
     override func awakeFromNib() {
         super.awakeFromNib()
 
