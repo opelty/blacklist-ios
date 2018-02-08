@@ -18,8 +18,8 @@ public struct Animation {
         return Animation(duration: duration, handler: { $0.alpha = 1.0 })
     }
 
-    static func bounce(duration: TimeInterval = Animation.defaultDuration, bounceOffset: CGFloat) -> Animation {
-        return Animation(duration: duration, handler: { $0.frame.origin.x = bounceOffset })
+    static func traslation(duration: TimeInterval = Animation.defaultDuration, to point: CGPoint) -> Animation {
+        return Animation(duration: duration, handler: { $0.frame.origin = point })
     }
 
     static func resize(duration: TimeInterval = Animation.defaultDuration, to size: CGSize) -> Animation {

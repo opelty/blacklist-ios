@@ -81,26 +81,24 @@ class UpcomingTableViewCell: UITableViewCell {
     }
 
     public func bounce() {
-        let bounceLeft = Animation.bounce(
-            bounceOffset: containerView.frame.origin.x - UpcomingTableViewCell.leadingPadding
-        )
+        let bouncePoint = containerView.frame.origin
+        let left = bouncePoint.x - UpcomingTableViewCell.leadingPadding
+        let right = actionsView.frame.origin.x
 
-        let bounceRigth = Animation.bounce(
-            bounceOffset: actionsView.frame.origin.x
-        )
+        let bounceLeft = Animation.traslation(to: CGPoint(x: left, y: bouncePoint.y))
+        let bounceRight = Animation.traslation(to: CGPoint(x: right, y: bouncePoint.y))
 
-        containerView.animate(bounceLeft, bounceRigth)
+        containerView.animate(bounceLeft, bounceRight)
     }
 
     public func colapse(animated: Bool = true) {
-        let execution = { [unowned self] in
-            self.containerView.frame.origin.x = self.actionsView.frame.origin.x
-        }
+        var point = self.actionsView.frame.origin
+        point.y = containerView.frame.origin.y
 
         if animated {
-            //UIView.animate(withDuration: Constants.Animations.duration, animations: execution)
+            containerView.animate(.traslation(to: point))
         } else {
-            execution()
+            containerView.frame.origin = point
         }
     }
 

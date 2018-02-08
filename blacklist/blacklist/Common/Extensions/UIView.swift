@@ -35,7 +35,12 @@ extension UIView {
 // MARK: - Animations
 
 extension UIView {
+
     public func animate(_ animations: Animation..., shouldParallelize: Bool = false) {
+        animate(animations: animations, shouldParallelize: shouldParallelize)
+    }
+
+    public func animate(animations: [Animation], shouldParallelize: Bool = false) {
         if shouldParallelize {
             animate(inParallel: animations)
         } else {

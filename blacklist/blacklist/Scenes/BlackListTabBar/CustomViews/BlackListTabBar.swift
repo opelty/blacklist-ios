@@ -94,7 +94,7 @@ class BlackListTabBar: UITabBar {
 
     override func hitTest(_ point: CGPoint, with event: UIEvent?) -> UIView? {
         let pointForTargetView = plusButton.convert(point, from: self)
-        
+
         return plusButton.bounds.contains(pointForTargetView) ? plusButton : super.hitTest(point, with: event)
     }
 }
