@@ -29,6 +29,9 @@
 		44EE24D620264EF800C2C586 /* RealmManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44EE24D520264EF800C2C586 /* RealmManager.swift */; };
 		44EE24D9202660AB00C2C586 /* RealmManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44EE24D8202660AB00C2C586 /* RealmManager.swift */; };
 		44EE24DB2026719300C2C586 /* FileManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44EE24DA2026719300C2C586 /* FileManager.swift */; };
+		96615767202B906900D10333 /* BlackListTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96615766202B906900D10333 /* BlackListTabBar.swift */; };
+		96615774202BCE8900D10333 /* Upcomming.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 96615773202BCE8900D10333 /* Upcomming.storyboard */; };
+		96615776202BCF7400D10333 /* Lendings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 96615775202BCF7400D10333 /* Lendings.storyboard */; };
 		D2C28C8DB3FE523480FE3ACC /* Pods_blacklistTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 76CC509BEFC64FF91398CCB5 /* Pods_blacklistTests.framework */; };
 		F1F6E52EDFC9945464867067 /* Pods_blacklist.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 53208D8CF1CFAA4BD8163FEB /* Pods_blacklist.framework */; };
 /* End PBXBuildFile section */
@@ -74,6 +77,9 @@
 		53208D8CF1CFAA4BD8163FEB /* Pods_blacklist.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_blacklist.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		72B14658C6E06E5C809D3FFB /* Pods-blacklist.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-blacklist.release.xcconfig"; path = "Pods/Target Support Files/Pods-blacklist/Pods-blacklist.release.xcconfig"; sourceTree = "<group>"; };
 		76CC509BEFC64FF91398CCB5 /* Pods_blacklistTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_blacklistTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		96615766202B906900D10333 /* BlackListTabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlackListTabBar.swift; sourceTree = SOURCE_ROOT; };
+		96615773202BCE8900D10333 /* Upcomming.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Upcomming.storyboard; sourceTree = "<group>"; };
+		96615775202BCF7400D10333 /* Lendings.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Lendings.storyboard; sourceTree = "<group>"; };
 		BF55FF33AB7E5BB6A1D97B6D /* Pods-blacklistTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-blacklistTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-blacklistTests/Pods-blacklistTests.debug.xcconfig"; sourceTree = "<group>"; };
 		DCEE3BFA15ED06CB07285B9A /* Pods-blacklistTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-blacklistTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-blacklistTests/Pods-blacklistTests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -282,6 +288,7 @@
 		449D631920255F460031BA92 /* Custom Views */ = {
 			isa = PBXGroup;
 			children = (
+				96615766202B906900D10333 /* BlackListTabBar.swift */,
 			);
 			path = "Custom Views";
 			sourceTree = "<group>";
@@ -291,6 +298,8 @@
 			children = (
 				449D62DF20254BA80031BA92 /* Main.storyboard */,
 				449D62E420254BA80031BA92 /* LaunchScreen.storyboard */,
+				96615773202BCE8900D10333 /* Upcomming.storyboard */,
+				96615775202BCF7400D10333 /* Lendings.storyboard */,
 			);
 			path = Storyboards;
 			sourceTree = "<group>";
@@ -412,9 +421,11 @@
 			files = (
 				44D0B0EE20264C5200E7C5D5 /* EntitiesStructs in Resources */,
 				44D0B0EC20264C3500E7C5D5 /* UseCases in Resources */,
+				96615774202BCE8900D10333 /* Upcomming.storyboard in Resources */,
 				449D62E620254BA80031BA92 /* LaunchScreen.storyboard in Resources */,
 				44D0B0F220264C7C00E7C5D5 /* RealmGatewayImplementation in Resources */,
 				449D62E320254BA80031BA92 /* Assets.xcassets in Resources */,
+				96615776202BCF7400D10333 /* Lendings.storyboard in Resources */,
 				44D0B0F020264C6F00E7C5D5 /* ServiceGatewayImplementation in Resources */,
 				449D62E120254BA80031BA92 /* Main.storyboard in Resources */,
 				44D0B0EA20264C2200E7C5D5 /* GatewayProtocols in Resources */,
@@ -560,6 +571,7 @@
 				449D631D20255FCE0031BA92 /* HomeViewController.swift in Sources */,
 				449D631620255F2E0031BA92 /* HomePresenter.swift in Sources */,
 				44D0B0E620264A5B00E7C5D5 /* SegueIndentifier.swift in Sources */,
+				96615767202B906900D10333 /* BlackListTabBar.swift in Sources */,
 				44D0B0DF2025C1CC00E7C5D5 /* AppConstants.swift in Sources */,
 				44D0B0E12025C21B00E7C5D5 /* UIColor.swift in Sources */,
 				449D631F20255FFF0031BA92 /* HomeRouter.swift in Sources */,
