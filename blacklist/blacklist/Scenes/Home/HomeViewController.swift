@@ -15,10 +15,6 @@ class HomeViewController: UIViewController, ViewControllerProtocol {
     var presenter: HomePresenter!
     var router: HomeRouter?
 
-    struct Constants {
-        static let upcomingTableViewCell = "UpcomingTableViewCell"
-    }
-
     fileprivate var tableViewTopConstraintConstant: CGFloat = 0.0
 
     // IBOutlets
@@ -29,8 +25,9 @@ class HomeViewController: UIViewController, ViewControllerProtocol {
     @IBOutlet weak var maximumUpcomingHuggingConstraint: NSLayoutConstraint!
 
     override func viewDidLoad() {
-        // Let's configure the presenter
         super.viewDidLoad()
+
+        // Let's configure the presenter
 
         configure { (context) -> (presenter: HomePresenter, router: HomeRouter?) in
             let presenter = HomePresenter()
@@ -83,8 +80,8 @@ class HomeViewController: UIViewController, ViewControllerProtocol {
 extension HomeViewController: UITableViewDataSource, UITableViewDelegate {
     func configureTableView() {
         // Let's configure the tableView
-        let upcomingTableViewCellNib = UINib(nibName: Constants.upcomingTableViewCell, bundle: nil)
-        tableView.register(upcomingTableViewCellNib, forCellReuseIdentifier: Constants.upcomingTableViewCell)
+        let upcomingTableViewCellNib = UINib(nibName: UpcomingTableViewCell.identifier, bundle: nil)
+        tableView.register(upcomingTableViewCellNib, forCellReuseIdentifier: UpcomingTableViewCell.identifier)
 
         tableView.estimatedRowHeight = 68.0
         tableView.rowHeight = UITableViewAutomaticDimension
@@ -106,7 +103,7 @@ extension HomeViewController: UITableViewDataSource, UITableViewDelegate {
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(
-            withIdentifier: Constants.upcomingTableViewCell,
+            withIdentifier: UpcomingTableViewCell.identifier,
             for: indexPath
         ) as! UpcomingTableViewCell
 
@@ -139,6 +136,7 @@ extension HomeViewController: UITableViewDataSource, UITableViewDelegate {
             cell.colapse()
         }
     }
+
 }
 
 // MARK: - Actions Handler
