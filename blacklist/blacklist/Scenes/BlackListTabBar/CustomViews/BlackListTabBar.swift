@@ -50,14 +50,17 @@ class BlackListTabBar: UITabBar {
         super.layoutSubviews()
 
         // Sets insets on image tab bar to center it.
-        let distanceFromMiddle: CGFloat = plusButtonXPosition / 2 - tabBarImageSize
-        let centerVertically: CGFloat =  -((frame.height - tabBarImageSize) / 2)
+
+        // We divided by 2 the final value because is require to set the same value on
+        // top, bottom, left, right insets to avoid shrink the image.
+        let distanceFromMiddle: CGFloat = (plusButtonXPosition / 2 - tabBarImageSize) / 2
+        let centerVertically: CGFloat =  (frame.height - tabBarImageSize / 2) / 2
 
         let upcommingItem = items?.first
         let lendingItem = items?.last
 
-        upcommingItem?.imageInsets = UIEdgeInsets(top: 0, left: 0, bottom: centerVertically, right: distanceFromMiddle)
-        lendingItem?.imageInsets = UIEdgeInsets(top: 0, left: distanceFromMiddle, bottom: centerVertically, right: 0)
+        upcommingItem?.imageInsets = UIEdgeInsets(top: centerVertically, left: -distanceFromMiddle, bottom: -centerVertically, right: distanceFromMiddle)
+        lendingItem?.imageInsets = UIEdgeInsets(top: centerVertically, left: distanceFromMiddle, bottom: -centerVertically, right: -distanceFromMiddle)
     }
 
     // MARK: - Private Methods
