@@ -9,10 +9,14 @@
 import UIKit
 
 class Router {
-    public private(set) weak var viewController: UIViewController?
+    public private(set) weak var viewController: Viewable?
 
-    required init(viewController: UIViewController) {
+    required init(viewController: Viewable) {
         self.viewController = viewController
+    }
+
+    func go(to: String, sender: Any?) {
+        viewController?.performSegue(withIdentifier: to, sender: sender)
     }
 
     func prepare(for segue: UIStoryboardSegue, sender: Any?) { }
