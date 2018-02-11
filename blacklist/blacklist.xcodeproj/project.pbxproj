@@ -11,6 +11,11 @@
 		440442E2203021E80099D3D9 /* Debtor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 440442E1203021E80099D3D9 /* Debtor.swift */; };
 		440442E52030231F0099D3D9 /* RealmDebtor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 440442E42030231F0099D3D9 /* RealmDebtor.swift */; };
 		441EADBE20284E6A007E1D9A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 441EADBD20284E6A007E1D9A /* ViewController.swift */; };
+		444939992030F1DE007CDF3B /* Period.swift in Sources */ = {isa = PBXBuildFile; fileRef = 444939982030F1DE007CDF3B /* Period.swift */; };
+		4449399B2030F392007CDF3B /* RealmPeriod.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4449399A2030F392007CDF3B /* RealmPeriod.swift */; };
+		4449399D2030F4D9007CDF3B /* Amortization.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4449399C2030F4D9007CDF3B /* Amortization.swift */; };
+		4449399F2030F4F3007CDF3B /* Lending.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4449399E2030F4F3007CDF3B /* Lending.swift */; };
+		444939A12030F505007CDF3B /* Context.swift in Sources */ = {isa = PBXBuildFile; fileRef = 444939A02030F505007CDF3B /* Context.swift */; };
 		449D62DC20254BA80031BA92 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 449D62DB20254BA80031BA92 /* AppDelegate.swift */; };
 		449D62E120254BA80031BA92 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 449D62DF20254BA80031BA92 /* Main.storyboard */; };
 		449D62E320254BA80031BA92 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 449D62E220254BA80031BA92 /* Assets.xcassets */; };
@@ -77,6 +82,11 @@
 		440442E1203021E80099D3D9 /* Debtor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Debtor.swift; sourceTree = "<group>"; };
 		440442E42030231F0099D3D9 /* RealmDebtor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmDebtor.swift; sourceTree = "<group>"; };
 		441EADBD20284E6A007E1D9A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		444939982030F1DE007CDF3B /* Period.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Period.swift; sourceTree = "<group>"; };
+		4449399A2030F392007CDF3B /* RealmPeriod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmPeriod.swift; sourceTree = "<group>"; };
+		4449399C2030F4D9007CDF3B /* Amortization.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Amortization.swift; sourceTree = "<group>"; };
+		4449399E2030F4F3007CDF3B /* Lending.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Lending.swift; sourceTree = "<group>"; };
+		444939A02030F505007CDF3B /* Context.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Context.swift; sourceTree = "<group>"; };
 		449D62D820254BA80031BA92 /* blacklist.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = blacklist.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		449D62DB20254BA80031BA92 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		449D62E020254BA80031BA92 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -169,6 +179,7 @@
 			isa = PBXGroup;
 			children = (
 				440442E42030231F0099D3D9 /* RealmDebtor.swift */,
+				4449399A2030F392007CDF3B /* RealmPeriod.swift */,
 			);
 			path = Entities;
 			sourceTree = "<group>";
@@ -288,6 +299,10 @@
 			isa = PBXGroup;
 			children = (
 				440442E1203021E80099D3D9 /* Debtor.swift */,
+				444939982030F1DE007CDF3B /* Period.swift */,
+				4449399C2030F4D9007CDF3B /* Amortization.swift */,
+				4449399E2030F4F3007CDF3B /* Lending.swift */,
+				444939A02030F505007CDF3B /* Context.swift */,
 			);
 			path = Entities;
 			sourceTree = "<group>";
@@ -687,6 +702,7 @@
 			files = (
 				96C1CB27202CB3C80070B173 /* UIView.swift in Sources */,
 				44DD66A620293EF700934457 /* Application.swift in Sources */,
+				4449399B2030F392007CDF3B /* RealmPeriod.swift in Sources */,
 				441EADBE20284E6A007E1D9A /* ViewController.swift in Sources */,
 				44EE24FD2027A0C500C2C586 /* UpcomingTableViewCell.swift in Sources */,
 				44D16964202B6EC200824633 /* Animation.swift in Sources */,
@@ -695,10 +711,14 @@
 				44EE24D620264EF800C2C586 /* RealmManager.swift in Sources */,
 				44EE24DB2026719300C2C586 /* FileManager.swift in Sources */,
 				440442E0202FE6C40099D3D9 /* CGFloat.swift in Sources */,
+				444939992030F1DE007CDF3B /* Period.swift in Sources */,
 				44EE25002027B2AA00C2C586 /* UIScrollView.swift in Sources */,
 				44D0B0E32025C42D00E7C5D5 /* StyleSheet.swift in Sources */,
 				449D631D20255FCE0031BA92 /* HomeViewController.swift in Sources */,
+				4449399F2030F4F3007CDF3B /* Lending.swift in Sources */,
 				440442E52030231F0099D3D9 /* RealmDebtor.swift in Sources */,
+				444939A12030F505007CDF3B /* Context.swift in Sources */,
+				4449399D2030F4D9007CDF3B /* Amortization.swift in Sources */,
 				440442E2203021E80099D3D9 /* Debtor.swift in Sources */,
 				449D631620255F2E0031BA92 /* HomePresenter.swift in Sources */,
 				44D0B0E620264A5B00E7C5D5 /* SegueIndentifier.swift in Sources */,

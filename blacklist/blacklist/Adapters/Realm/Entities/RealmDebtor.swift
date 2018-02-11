@@ -10,7 +10,7 @@ import Foundation
 import RealmSwift
 
 class RealmDebtor: Object {
-    @objc dynamic var r_firstName: String?
+    @objc dynamic var r_firstName: String = ""
     @objc dynamic var r_lastName: String?
     @objc dynamic var r_company: String?
     @objc dynamic var r_image: String?
@@ -20,7 +20,7 @@ class RealmDebtor: Object {
 }
 
 extension RealmDebtor: Debtor {
-    var firstName: String? {
+    var firstName: String {
         return r_firstName
     }
 

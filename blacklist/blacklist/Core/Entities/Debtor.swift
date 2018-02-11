@@ -9,7 +9,7 @@
 import Foundation
 
 protocol Debtor {
-    var firstName: String? { get }
+    var firstName: String { get }
     var lastName: String? { get }
     var company: String? { get }
     var image: String? { get }
@@ -19,7 +19,7 @@ protocol Debtor {
 }
 
 struct DebtorEntity: Debtor {
-    internal var firstName: String?
+    internal var firstName: String
     internal var lastName: String?
     internal var company: String?
     internal var image: String?
