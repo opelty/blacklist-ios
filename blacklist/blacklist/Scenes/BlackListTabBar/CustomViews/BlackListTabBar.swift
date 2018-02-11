@@ -20,7 +20,7 @@ class BlackListTabBar: UITabBar {
     private let plusButtonYPosition: CGFloat = -31
 
     /// Apple Default size for TabBarItem image
-    private let tabBarImageSize: CGFloat = 30
+    private let tabBarImageSize: CGFloat = 23
 
     private var plusButtonXPosition: CGFloat {
         return self.frame.midX - plusButtonHeight / 2
@@ -54,7 +54,7 @@ class BlackListTabBar: UITabBar {
         // We divided by 2 the final value because is require to set the same value on
         // top, bottom, left, right insets to avoid shrink the image.
         let distanceFromMiddle: CGFloat = (plusButtonXPosition / 2 - tabBarImageSize) / 2
-        let centerVertically: CGFloat =  (frame.height - tabBarImageSize / 2) / 2
+        let centerVertically: CGFloat =  ((frame.height - tabBarImageSize) / 2) / 2
 
         let upcommingItem = items?.first
         let lendingItem = items?.last
