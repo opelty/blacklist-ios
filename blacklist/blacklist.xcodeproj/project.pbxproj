@@ -27,7 +27,6 @@
 		44D0B0E620264A5B00E7C5D5 /* SegueIndentifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44D0B0E520264A5B00E7C5D5 /* SegueIndentifier.swift */; };
 		44D0B0EA20264C2200E7C5D5 /* GatewayProtocols in Resources */ = {isa = PBXBuildFile; fileRef = 44D0B0E920264C2200E7C5D5 /* GatewayProtocols */; };
 		44D0B0EC20264C3500E7C5D5 /* UseCases in Resources */ = {isa = PBXBuildFile; fileRef = 44D0B0EB20264C3500E7C5D5 /* UseCases */; };
-		44D0B0EE20264C5200E7C5D5 /* EntitiesStructs in Resources */ = {isa = PBXBuildFile; fileRef = 44D0B0ED20264C5200E7C5D5 /* EntitiesStructs */; };
 		44D0B0F020264C6F00E7C5D5 /* ServiceGatewayImplementation in Resources */ = {isa = PBXBuildFile; fileRef = 44D0B0EF20264C6F00E7C5D5 /* ServiceGatewayImplementation */; };
 		44D0B0F220264C7C00E7C5D5 /* RealmGatewayImplementation in Resources */ = {isa = PBXBuildFile; fileRef = 44D0B0F120264C7C00E7C5D5 /* RealmGatewayImplementation */; };
 		44D16964202B6EC200824633 /* Animation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44D16963202B6EC200824633 /* Animation.swift */; };
@@ -98,7 +97,6 @@
 		44D0B0E520264A5B00E7C5D5 /* SegueIndentifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SegueIndentifier.swift; sourceTree = "<group>"; };
 		44D0B0E920264C2200E7C5D5 /* GatewayProtocols */ = {isa = PBXFileReference; lastKnownFileType = text; path = GatewayProtocols; sourceTree = "<group>"; };
 		44D0B0EB20264C3500E7C5D5 /* UseCases */ = {isa = PBXFileReference; lastKnownFileType = text; path = UseCases; sourceTree = "<group>"; };
-		44D0B0ED20264C5200E7C5D5 /* EntitiesStructs */ = {isa = PBXFileReference; lastKnownFileType = text; path = EntitiesStructs; sourceTree = "<group>"; };
 		44D0B0EF20264C6F00E7C5D5 /* ServiceGatewayImplementation */ = {isa = PBXFileReference; lastKnownFileType = text; path = ServiceGatewayImplementation; sourceTree = "<group>"; };
 		44D0B0F120264C7C00E7C5D5 /* RealmGatewayImplementation */ = {isa = PBXFileReference; lastKnownFileType = text; path = RealmGatewayImplementation; sourceTree = "<group>"; };
 		44D16963202B6EC200824633 /* Animation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Animation.swift; sourceTree = "<group>"; };
@@ -289,7 +287,6 @@
 		449D6308202557950031BA92 /* Entities */ = {
 			isa = PBXGroup;
 			children = (
-				44D0B0ED20264C5200E7C5D5 /* EntitiesStructs */,
 				440442E1203021E80099D3D9 /* Debtor.swift */,
 			);
 			path = Entities;
@@ -530,7 +527,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				44EE24E02027961200C2C586 /* Lobster-Licence.txt in Resources */,
-				44D0B0EE20264C5200E7C5D5 /* EntitiesStructs in Resources */,
 				44EE24F42027961F00C2C586 /* Roboto-BlackItalic.ttf in Resources */,
 				44D0B0EC20264C3500E7C5D5 /* UseCases in Resources */,
 				96615774202BCE8900D10333 /* Upcomming.storyboard in Resources */,
