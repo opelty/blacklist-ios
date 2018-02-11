@@ -21,6 +21,7 @@ class HomeViewController: UIViewController, ViewControllerProtocol {
     @IBOutlet weak var lendingAmountLabel: UILabel!
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var gradientContainerView: UIView!
+    @IBOutlet weak var tableViewHeaderView: UIView!
     @IBOutlet weak var tableViewTopConstraint: NSLayoutConstraint!
     @IBOutlet weak var maximumUpcomingHuggingConstraint: NSLayoutConstraint!
 
@@ -159,11 +160,34 @@ extension HomeViewController {
 // MARK: - ScrollView Delegate
 
 extension HomeViewController {
-    func scrollViewDidScroll(_ scrollView: UIScrollView) {
-        let y = tableViewTopConstraintConstant - scrollView.contentOffset.y
+    fileprivate func performMovement(for scrollView: UIScrollView, restartLayout: Bool) {
+        guard !restartLayout else {
+            tableViewTopConstraint.constant = tableViewTopConstraintConstant
+            tableViewHeaderView.alpha = 1.0
 
-        if !scrollView.isBouncing && y > 0 {
-            tableViewTopConstraint.constant = y
+            return
+        }
+
+        let y = tableViewTopConstraintConstant - scrollView.contentOffset.y
+        let alpha = y / tableViewTopConstraintConstant
+
+        tableViewTopConstraint.constant = y > 0 ? y : 0
+        tableViewHeaderView.alpha = alpha.percentage
+    }
+
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        if !scrollView.isBouncing {
+            performMovement(for: scrollView, restartLayout: false)
+        } else {
+            performMovement(for: scrollView, restartLayout: true)
+        }
+    }
+
+    func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
+        if !scrollView.isBouncing {
+            performMovement(for: scrollView, restartLayout: false)
+        } else {
+            performMovement(for: scrollView, restartLayout: true)
         }
     }
 }

@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="cj1-qH-qkF">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="cj1-qH-qkF">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13174"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -56,7 +56,7 @@
                                         <color key="backgroundColor" red="0.88628995420000001" green="0.88628989459999996" blue="0.88628989459999996" alpha="0.94999999999999996" colorSpace="custom" customColorSpace="displayP3"/>
                                         <constraints>
                                             <constraint firstAttribute="trailing" secondItem="s2j-7K-jJ9" secondAttribute="trailing" constant="15" id="CpJ-Tb-35u"/>
-                                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="25" id="D9o-57-azY"/>
+                                            <constraint firstAttribute="height" relation="greaterThanOrEqual" id="D9o-57-azY"/>
                                             <constraint firstItem="s2j-7K-jJ9" firstAttribute="leading" secondItem="t1B-ii-8iU" secondAttribute="leading" constant="15" id="hD6-Sc-bnB"/>
                                             <constraint firstItem="s2j-7K-jJ9" firstAttribute="centerY" secondItem="t1B-ii-8iU" secondAttribute="centerY" id="jsB-7I-in2"/>
                                         </constraints>
@@ -137,6 +137,7 @@
                         <outlet property="lendingAmountLabel" destination="Qcn-Gh-DjP" id="cto-OW-g7r"/>
                         <outlet property="maximumUpcomingHuggingConstraint" destination="D9o-57-azY" id="qBr-ha-7LY"/>
                         <outlet property="tableView" destination="j61-P4-0V9" id="p5o-Xg-Lem"/>
+                        <outlet property="tableViewHeaderView" destination="t1B-ii-8iU" id="jFt-yd-akI"/>
                         <outlet property="tableViewTopConstraint" destination="BCg-de-tFa" id="yp0-du-guy"/>
                         <segue destination="o0S-Sg-mGh" kind="show" identifier="Test" id="Es0-oo-baF"/>
                     </connections>
