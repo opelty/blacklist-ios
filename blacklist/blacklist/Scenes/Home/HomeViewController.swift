@@ -114,12 +114,12 @@ extension HomeViewController: UITableViewDataSource, UITableViewDelegate {
         headerLabel.text = header
         headerLabel.textAlignment = .center
         headerLabel.font = UIFont(name: StyleSheet.Font.robotoRegular, size: Constants.emptyViewHeaderSize)
-        headerLabel.textColor = UIColor(hex: 0x222831)
+        headerLabel.textColor = StyleSheet.Color.Home.emptyHeaderText
 
         subheaderLabel.text = subheader
         subheaderLabel.textAlignment = .center
         subheaderLabel.font = UIFont(name: StyleSheet.Font.robotoLight, size: Constants.emptyViewSubHeaderSize)
-        subheaderLabel.textColor = UIColor(hex: 0x222831)
+        subheaderLabel.textColor = StyleSheet.Color.Home.emptySubHeaderText
 
         view.addSubview(headerLabel)
         view.addSubview(subheaderLabel)
