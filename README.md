@@ -1,8 +1,37 @@
-## Welcome to The Blacklist iOS
+# About the project
 
-You can use the [editor on GitHub](https://github.com/opelty/core-ios/edit/master/README.md) to maintain and preview the content for your website in Markdown files.
+This application is pretended to be used as a tool which permits manage all your loans, giving you the opportunity to don't 
+worry about memorizing who is in debt with you, how much money did you lend and how much money would you win after the loan finishes.
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+In order to make the best of this project, we have searched about different software design patterns like _MVC_, _VIPER_, _MVVM_ and we've chosen the combining between _MVP_ and _Clean architecture_. Please find below a short meaningful description about each one.
+
+## Architecture
+
+### MVP (Model-View-Presenter)
+
+**Model:**
+Contains all the logic of the bussines
+
+**View:**
+It is passive and is in charge of display the data to the user and receive all the user interactions.
+
+**Presenter:** 
+It is the connector between the model and the view. It handles all the user interactions and converts the data retrieved from the model to friendly human readable format.
+
+### Clean architecture
+
+# About us
+
+We are fascinated iOS and software developers, enjoy converting a cup of ☕️ in hundred lines of code. We met in our actual job and decided to start developing open source applications wishing someday the community can contribute in our projects and help us making a "common" application into a big one with the best coding practices and using a clean architecture.
+
+- Jose Lopez
+
+- Santiago Carmona
+
+- Mateo Olaya.
+ 
+# Dependencies
+
 
 ### Markdown
 
@@ -26,12 +55,3 @@ Syntax highlighted code block
 [Link](url) and ![Image](src)
 ```
 
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
-
-### Jekyll Themes
-
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/opelty/core-ios/settings). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
-
-### Support or Contact
-
-Having trouble with Pages? Check out our [documentation](https://help.github.com/categories/github-pages-basics/) or [contact support](https://github.com/contact) and we’ll help you sort it out.
