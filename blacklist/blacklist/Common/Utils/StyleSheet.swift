@@ -10,6 +10,10 @@ import UIKit
 
 struct StyleSheet {
     // Define here fonts, colors and design constants.
+    struct Font {
+        static let robotoRegular = "Roboto-Regular"
+        static let robotoLight = "Roboto-Light"
+    }
 
     struct Color {
 
