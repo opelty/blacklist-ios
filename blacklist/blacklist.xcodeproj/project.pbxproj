@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		440442E0202FE6C40099D3D9 /* CGFloat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 440442DF202FE6C40099D3D9 /* CGFloat.swift */; };
 		441EADBE20284E6A007E1D9A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 441EADBD20284E6A007E1D9A /* ViewController.swift */; };
 		449D62DC20254BA80031BA92 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 449D62DB20254BA80031BA92 /* AppDelegate.swift */; };
 		449D62E120254BA80031BA92 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 449D62DF20254BA80031BA92 /* Main.storyboard */; };
@@ -71,6 +72,7 @@
 
 /* Begin PBXFileReference section */
 		0189BB6A85C388034BB1B777 /* Pods-blacklist.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-blacklist.debug.xcconfig"; path = "Pods/Target Support Files/Pods-blacklist/Pods-blacklist.debug.xcconfig"; sourceTree = "<group>"; };
+		440442DF202FE6C40099D3D9 /* CGFloat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CGFloat.swift; sourceTree = "<group>"; };
 		441EADBD20284E6A007E1D9A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		449D62D820254BA80031BA92 /* blacklist.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = blacklist.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		449D62DB20254BA80031BA92 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -321,6 +323,7 @@
 				44EE24DA2026719300C2C586 /* FileManager.swift */,
 				44EE24FF2027B2AA00C2C586 /* UIScrollView.swift */,
 				96C1CB26202CB3C80070B173 /* UIView.swift */,
+				440442DF202FE6C40099D3D9 /* CGFloat.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -681,6 +684,7 @@
 				449D6310202558BE0031BA92 /* Presenter.swift in Sources */,
 				44EE24D620264EF800C2C586 /* RealmManager.swift in Sources */,
 				44EE24DB2026719300C2C586 /* FileManager.swift in Sources */,
+				440442E0202FE6C40099D3D9 /* CGFloat.swift in Sources */,
 				44EE25002027B2AA00C2C586 /* UIScrollView.swift in Sources */,
 				44D0B0E32025C42D00E7C5D5 /* StyleSheet.swift in Sources */,
 				449D631D20255FCE0031BA92 /* HomeViewController.swift in Sources */,
@@ -847,12 +851,12 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = JXJ9GDPGJT;
+				DEVELOPMENT_TEAM = 65JJM7BL69;
 				GCC_TREAT_WARNINGS_AS_ERRORS = YES;
 				INFOPLIST_FILE = "$(SRCROOT)/blacklist/Common/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = io.github.opelty.blacklistsc;
+				PRODUCT_BUNDLE_IDENTIFIER = io.github.opelty.blacklist;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = 1;
@@ -865,12 +869,12 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = JXJ9GDPGJT;
+				DEVELOPMENT_TEAM = 65JJM7BL69;
 				GCC_TREAT_WARNINGS_AS_ERRORS = YES;
 				INFOPLIST_FILE = "$(SRCROOT)/blacklist/Common/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = io.github.opelty.blacklistsc;
+				PRODUCT_BUNDLE_IDENTIFIER = io.github.opelty.blacklist;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = 1;
