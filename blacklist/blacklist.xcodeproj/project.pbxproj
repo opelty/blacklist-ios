@@ -17,6 +17,7 @@
 		4449399F2030F4F3007CDF3B /* Lending.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4449399E2030F4F3007CDF3B /* Lending.swift */; };
 		444939A12030F505007CDF3B /* Context.swift in Sources */ = {isa = PBXBuildFile; fileRef = 444939A02030F505007CDF3B /* Context.swift */; };
 		444939A32030F657007CDF3B /* RealmAmortization.swift in Sources */ = {isa = PBXBuildFile; fileRef = 444939A22030F657007CDF3B /* RealmAmortization.swift */; };
+		444939A52030FAD9007CDF3B /* RealmLending.swift in Sources */ = {isa = PBXBuildFile; fileRef = 444939A42030FAD9007CDF3B /* RealmLending.swift */; };
 		449D62DC20254BA80031BA92 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 449D62DB20254BA80031BA92 /* AppDelegate.swift */; };
 		449D62E120254BA80031BA92 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 449D62DF20254BA80031BA92 /* Main.storyboard */; };
 		449D62E320254BA80031BA92 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 449D62E220254BA80031BA92 /* Assets.xcassets */; };
@@ -89,6 +90,7 @@
 		4449399E2030F4F3007CDF3B /* Lending.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Lending.swift; sourceTree = "<group>"; };
 		444939A02030F505007CDF3B /* Context.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Context.swift; sourceTree = "<group>"; };
 		444939A22030F657007CDF3B /* RealmAmortization.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmAmortization.swift; sourceTree = "<group>"; };
+		444939A42030FAD9007CDF3B /* RealmLending.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmLending.swift; sourceTree = "<group>"; };
 		449D62D820254BA80031BA92 /* blacklist.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = blacklist.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		449D62DB20254BA80031BA92 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		449D62E020254BA80031BA92 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -183,6 +185,7 @@
 				440442E42030231F0099D3D9 /* RealmDebtor.swift */,
 				4449399A2030F392007CDF3B /* RealmPeriod.swift */,
 				444939A22030F657007CDF3B /* RealmAmortization.swift */,
+				444939A42030FAD9007CDF3B /* RealmLending.swift */,
 			);
 			path = Entities;
 			sourceTree = "<group>";
@@ -708,6 +711,7 @@
 				4449399B2030F392007CDF3B /* RealmPeriod.swift in Sources */,
 				441EADBE20284E6A007E1D9A /* ViewController.swift in Sources */,
 				44EE24FD2027A0C500C2C586 /* UpcomingTableViewCell.swift in Sources */,
+				444939A52030FAD9007CDF3B /* RealmLending.swift in Sources */,
 				44D16964202B6EC200824633 /* Animation.swift in Sources */,
 				449D631220255AED0031BA92 /* Router.swift in Sources */,
 				449D6310202558BE0031BA92 /* Presenter.swift in Sources */,

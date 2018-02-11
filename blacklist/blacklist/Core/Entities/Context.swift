@@ -7,3 +7,5 @@
 //
 
 import Foundation
+
+// This entity was defined for future use!

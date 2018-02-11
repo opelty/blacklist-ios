@@ -19,3 +19,13 @@ protocol Amortization {
     // Relationships
     var periods: [Period] { get }
 }
+
+struct AmortizationEntity: Amortization {
+    internal var amount: Double
+    internal var createdAt: Date
+    internal var updatedAt: Date?
+    internal var payments: Int
+    internal var payment: Double
+    internal var interest: Float?
+    internal var periods: [Period]
+}

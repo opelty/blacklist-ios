@@ -7,3 +7,13 @@
 //
 
 import Foundation
+
+protocol Lending {
+    var amortization: Amortization { get }
+    var debtor: Debtor { get }
+}
+
+struct LendingEntity: Lending {
+    internal var amortization: Amortization
+    internal var debtor: Debtor
+}
