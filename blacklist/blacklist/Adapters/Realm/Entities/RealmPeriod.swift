@@ -14,8 +14,11 @@ class RealmPeriod: Object {
     @objc dynamic var r_date: Date = Date()
     @objc dynamic var r_payment: Double = 0.0
     @objc dynamic var r_principal: Double = 0.0
-    @objc dynamic var r_interest: Float = 0.0
     @objc dynamic var r_balance: Double = 0.0
+    @objc dynamic var r_paid: Bool = false
+    @objc dynamic var r_invalidated: Bool = false
+
+    let r_interest = RealmOptional<Float>()
 }
 
 extension RealmPeriod: Period {
@@ -35,11 +38,19 @@ extension RealmPeriod: Period {
         return r_principal
     }
 
-    var interest: Float {
-        return r_interest
+    var interest: Float? {
+        return r_interest.value
     }
 
     var balance: Double {
         return r_balance
+    }
+
+    var isPaid: Bool {
+        return r_paid
+    }
+
+    var isInvalidatedPeriod: Bool {
+        return r_invalidated
     }
 }

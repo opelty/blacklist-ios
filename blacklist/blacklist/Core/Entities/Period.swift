@@ -13,8 +13,10 @@ protocol Period {
     var date: Date { get }
     var payment: Double { get }
     var principal: Double { get }
-    var interest: Float { get }
+    var interest: Float? { get }
     var balance: Double { get }
+    var isPaid: Bool { get }
+    var isInvalidatedPeriod: Bool { get }
 }
 
 struct PeriodEntity: Period {
@@ -22,6 +24,8 @@ struct PeriodEntity: Period {
     internal var date: Date
     internal var payment: Double
     internal var principal: Double
-    internal var interest: Float
+    internal var interest: Float?
     internal var balance: Double
+    internal var isPaid: Bool
+    internal var isInvalidatedPeriod: Bool
 }

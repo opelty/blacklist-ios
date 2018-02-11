@@ -16,6 +16,7 @@
 		4449399D2030F4D9007CDF3B /* Amortization.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4449399C2030F4D9007CDF3B /* Amortization.swift */; };
 		4449399F2030F4F3007CDF3B /* Lending.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4449399E2030F4F3007CDF3B /* Lending.swift */; };
 		444939A12030F505007CDF3B /* Context.swift in Sources */ = {isa = PBXBuildFile; fileRef = 444939A02030F505007CDF3B /* Context.swift */; };
+		444939A32030F657007CDF3B /* RealmAmortization.swift in Sources */ = {isa = PBXBuildFile; fileRef = 444939A22030F657007CDF3B /* RealmAmortization.swift */; };
 		449D62DC20254BA80031BA92 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 449D62DB20254BA80031BA92 /* AppDelegate.swift */; };
 		449D62E120254BA80031BA92 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 449D62DF20254BA80031BA92 /* Main.storyboard */; };
 		449D62E320254BA80031BA92 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 449D62E220254BA80031BA92 /* Assets.xcassets */; };
@@ -87,6 +88,7 @@
 		4449399C2030F4D9007CDF3B /* Amortization.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Amortization.swift; sourceTree = "<group>"; };
 		4449399E2030F4F3007CDF3B /* Lending.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Lending.swift; sourceTree = "<group>"; };
 		444939A02030F505007CDF3B /* Context.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Context.swift; sourceTree = "<group>"; };
+		444939A22030F657007CDF3B /* RealmAmortization.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmAmortization.swift; sourceTree = "<group>"; };
 		449D62D820254BA80031BA92 /* blacklist.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = blacklist.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		449D62DB20254BA80031BA92 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		449D62E020254BA80031BA92 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -180,6 +182,7 @@
 			children = (
 				440442E42030231F0099D3D9 /* RealmDebtor.swift */,
 				4449399A2030F392007CDF3B /* RealmPeriod.swift */,
+				444939A22030F657007CDF3B /* RealmAmortization.swift */,
 			);
 			path = Entities;
 			sourceTree = "<group>";
@@ -724,6 +727,7 @@
 				44D0B0E620264A5B00E7C5D5 /* SegueIndentifier.swift in Sources */,
 				96615767202B906900D10333 /* BlackListTabBar.swift in Sources */,
 				96615779202BD71A00D10333 /* BlackListTabBarViewController.swift in Sources */,
+				444939A32030F657007CDF3B /* RealmAmortization.swift in Sources */,
 				44D0B0DF2025C1CC00E7C5D5 /* AppConstants.swift in Sources */,
 				44D0B0E12025C21B00E7C5D5 /* UIColor.swift in Sources */,
 				449D631F20255FFF0031BA92 /* HomeRouter.swift in Sources */,
