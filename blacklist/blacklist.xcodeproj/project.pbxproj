@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		440442E0202FE6C40099D3D9 /* CGFloat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 440442DF202FE6C40099D3D9 /* CGFloat.swift */; };
+		440442E2203021E80099D3D9 /* Debtor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 440442E1203021E80099D3D9 /* Debtor.swift */; };
+		440442E52030231F0099D3D9 /* RealmDebtor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 440442E42030231F0099D3D9 /* RealmDebtor.swift */; };
 		441EADBE20284E6A007E1D9A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 441EADBD20284E6A007E1D9A /* ViewController.swift */; };
 		449D62DC20254BA80031BA92 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 449D62DB20254BA80031BA92 /* AppDelegate.swift */; };
 		449D62E120254BA80031BA92 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 449D62DF20254BA80031BA92 /* Main.storyboard */; };
@@ -73,6 +75,8 @@
 /* Begin PBXFileReference section */
 		0189BB6A85C388034BB1B777 /* Pods-blacklist.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-blacklist.debug.xcconfig"; path = "Pods/Target Support Files/Pods-blacklist/Pods-blacklist.debug.xcconfig"; sourceTree = "<group>"; };
 		440442DF202FE6C40099D3D9 /* CGFloat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CGFloat.swift; sourceTree = "<group>"; };
+		440442E1203021E80099D3D9 /* Debtor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Debtor.swift; sourceTree = "<group>"; };
+		440442E42030231F0099D3D9 /* RealmDebtor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmDebtor.swift; sourceTree = "<group>"; };
 		441EADBD20284E6A007E1D9A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		449D62D820254BA80031BA92 /* blacklist.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = blacklist.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		449D62DB20254BA80031BA92 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -123,7 +127,7 @@
 		53208D8CF1CFAA4BD8163FEB /* Pods_blacklist.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_blacklist.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		72B14658C6E06E5C809D3FFB /* Pods-blacklist.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-blacklist.release.xcconfig"; path = "Pods/Target Support Files/Pods-blacklist/Pods-blacklist.release.xcconfig"; sourceTree = "<group>"; };
 		76CC509BEFC64FF91398CCB5 /* Pods_blacklistTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_blacklistTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		96615766202B906900D10333 /* BlackListTabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = BlackListTabBar.swift; path = blacklist/Scenes/BlackListTabBar/CustomViews/BlackListTabBar.swift; sourceTree = SOURCE_ROOT; };
+		96615766202B906900D10333 /* BlackListTabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = BlackListTabBar.swift; path = "blacklist/Scenes/BlackListTabBar/Custom Views/BlackListTabBar.swift"; sourceTree = SOURCE_ROOT; };
 		96615773202BCE8900D10333 /* Upcomming.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Upcomming.storyboard; sourceTree = "<group>"; };
 		96615775202BCF7400D10333 /* Lendings.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Lendings.storyboard; sourceTree = "<group>"; };
 		96615778202BD71A00D10333 /* BlackListTabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlackListTabBarViewController.swift; sourceTree = "<group>"; };
@@ -161,6 +165,14 @@
 				DCEE3BFA15ED06CB07285B9A /* Pods-blacklistTests.release.xcconfig */,
 			);
 			name = Pods;
+			sourceTree = "<group>";
+		};
+		440442E32030230E0099D3D9 /* Entities */ = {
+			isa = PBXGroup;
+			children = (
+				440442E42030231F0099D3D9 /* RealmDebtor.swift */,
+			);
+			path = Entities;
 			sourceTree = "<group>";
 		};
 		449D62CF20254BA80031BA92 = {
@@ -260,6 +272,7 @@
 		449D63062025576A0031BA92 /* Realm */ = {
 			isa = PBXGroup;
 			children = (
+				440442E32030230E0099D3D9 /* Entities */,
 				44D0B0F120264C7C00E7C5D5 /* RealmGatewayImplementation */,
 			);
 			path = Realm;
@@ -277,6 +290,7 @@
 			isa = PBXGroup;
 			children = (
 				44D0B0ED20264C5200E7C5D5 /* EntitiesStructs */,
+				440442E1203021E80099D3D9 /* Debtor.swift */,
 			);
 			path = Entities;
 			sourceTree = "<group>";
@@ -411,18 +425,18 @@
 		96615777202BD6C400D10333 /* BlackListTabBar */ = {
 			isa = PBXGroup;
 			children = (
-				9661577A202BD78300D10333 /* CustomViews */,
+				9661577A202BD78300D10333 /* Custom Views */,
 				96615778202BD71A00D10333 /* BlackListTabBarViewController.swift */,
 			);
 			path = BlackListTabBar;
 			sourceTree = "<group>";
 		};
-		9661577A202BD78300D10333 /* CustomViews */ = {
+		9661577A202BD78300D10333 /* Custom Views */ = {
 			isa = PBXGroup;
 			children = (
 				96615766202B906900D10333 /* BlackListTabBar.swift */,
 			);
-			path = CustomViews;
+			path = "Custom Views";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -688,6 +702,8 @@
 				44EE25002027B2AA00C2C586 /* UIScrollView.swift in Sources */,
 				44D0B0E32025C42D00E7C5D5 /* StyleSheet.swift in Sources */,
 				449D631D20255FCE0031BA92 /* HomeViewController.swift in Sources */,
+				440442E52030231F0099D3D9 /* RealmDebtor.swift in Sources */,
+				440442E2203021E80099D3D9 /* Debtor.swift in Sources */,
 				449D631620255F2E0031BA92 /* HomePresenter.swift in Sources */,
 				44D0B0E620264A5B00E7C5D5 /* SegueIndentifier.swift in Sources */,
 				96615767202B906900D10333 /* BlackListTabBar.swift in Sources */,
