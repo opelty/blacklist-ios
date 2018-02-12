@@ -19,7 +19,9 @@ We are fascinated iOS and software developers, enjoy converting a cup of ☕️ 
 
   ![Santiago Carmona](https://avatars2.githubusercontent.com/u/5218843?s=150&v=4)
 
-  > Add an small bio here 
+  > Santiago enjoys coding in Swift since 3 years ago, he thinks: "Coding definitely is a pleasure that only a few can feel, sometimes it is very difficult, frustrating and tiring but all these feelings are forgotten when you realized what you have created after building and running your code"
+  >
+  > Last updated: Feb/2018
 
 - **Mateo Olaya.**
 
