@@ -11,39 +11,62 @@ import UIKit
 class BlackListNavBar: UINavigationController {
 
     // MARK: - Vars & Constants
-    let getStatusBarHeight = UIApplication.shared.statusBarFrame.height
-    let statusBarView = UIView(frame: CGRect(x: 0, y: 0, width: UIApplication.shared.statusBarFrame.width, height: UIApplication.shared.statusBarFrame.height))
+    let statusBarHeight = UIApplication.shared.statusBarFrame.height
+    let screenWidth = UIScreen.main.bounds.width
+    let navBarTitleFont = StyleSheet.Font.lobsterRegular
 
     override func viewDidLoad() {
-     
+        super.viewDidLoad()
+        setUpNavBar()
+        setUpStatusbar()
 
     }
 
     override var preferredStatusBarStyle: UIStatusBarStyle {
         return .lightContent
     }
-    
-    func setUpNavBar() {
-        let navBar: UINavigationBar = UINavigationBar(frame: CGRect(x: 0, y: getStatusBarHeight, width: self.view.frame.width, height: 0))
-        self.view.addSubview(navBar)
-        let navItem = UINavigationItem(title: "La listBlack")
-        let doneItem = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.pause, target: nil, action:  #selector(backButtonAction()), for: .touchUpInside)
-        let back = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.bookmarks, target: nil, action: "")
-        navItem.rightBarButtonItem = doneItem
-        navItem.leftBarButtonItem = back
-        navBar.setItems([navItem], animated: false)
-        navBar.barStyle = .default
-        navBar.barTintColor = StyleSheet.Color.TabBar.background
+
+    func setUpStatusbar() {
+
+         // MARK: - Setting the statusBar
+
+        let statusBarView = UIView(frame: CGRect(x: 0, y: 0, width: screenWidth, height: statusBarHeight))
         statusBarView.backgroundColor = StyleSheet.Color.TabBar.background
-        view.addSubview(statusBarView)
-        
+
+        self.view.addSubview(statusBarView)
+
     }
-    
-    func backButtonAction() {
-        print("Pa atra <-- Pa atra")
+
+    func setUpNavBar() {
+
+        // MARK: - Setting the navBar
+
+        let navBar = UINavigationBar(frame: CGRect(x: 0, y: statusBarHeight, width: screenWidth, height: 44))
+        navBar.barTintColor = StyleSheet.Color.TabBar.background
+        navBar.tintColor = .white
+
+         // MARK: - Setting navBar Items
+        let navItem = UINavigationItem(title: "Blacklist")
+        let settingsItem = UIBarButtonItem(image: UIImage(named: "settings"), style: .done, target: nil, action: #selector(self.settingsButtonAction))
+        let backItem = UIBarButtonItem(image: UIImage(named: "back"), style: .done, target: nil, action: #selector(self.backButtonAction))
+
+        navItem.rightBarButtonItem = settingsItem
+        navItem.leftBarButtonItem = backItem
+        navBar.titleTextAttributes = [
+            NSAttributedStringKey.font: UIFont(name: navBarTitleFont, size: 25.0)!,
+            NSAttributedStringKey.foregroundColor: UIColor.white
+        ]
+
+        navBar.setItems([navItem], animated: false)
+
+        self.view.addSubview(navBar)
     }
-    
-    func settingsButtonAction() {
+
+    @objc func backButtonAction() {
+        print("Pa tra <-- Pa tra")
+    }
+
+    @objc func settingsButtonAction() {
         print("los Ajustos los ajustes!!!")
     }
 
