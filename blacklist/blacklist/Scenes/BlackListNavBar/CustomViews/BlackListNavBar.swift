@@ -11,6 +11,7 @@ import UIKit
 class BlackListNavBar: UINavigationController {
 
     // MARK: - Vars & Constants
+
     let statusBarHeight = UIApplication.shared.statusBarFrame.height
     let screenWidth = UIScreen.main.bounds.width
     let navBarTitleFont = StyleSheet.Font.lobsterRegular
@@ -41,8 +42,6 @@ class BlackListNavBar: UINavigationController {
 
         // MARK: - Setting the navBar
 
-        //navigationBar.isTranslucent = false
-
         let navBar = UINavigationBar(frame: CGRect(x: 0, y: statusBarHeight, width: screenWidth, height: 44))
         navBar.barTintColor = StyleSheet.Color.TabBar.background
 
@@ -51,6 +50,7 @@ class BlackListNavBar: UINavigationController {
         navBar.tintColor = .white
 
          // MARK: - Setting navBar Items
+
         let navItem = UINavigationItem(title: "Blacklist")
         let settingsItem = UIBarButtonItem(image: UIImage(named: "settings"), style: .done, target: nil, action: #selector(self.settingsButtonAction))
         let backItem = UIBarButtonItem(image: UIImage(named: "back"), style: .done, target: nil, action: #selector(self.backButtonAction))
@@ -74,5 +74,4 @@ class BlackListNavBar: UINavigationController {
     @objc func settingsButtonAction() {
         print("los Ajustos los ajustes!!!")
     }
-
 }
