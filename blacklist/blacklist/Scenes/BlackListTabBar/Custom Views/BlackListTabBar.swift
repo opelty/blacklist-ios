@@ -87,9 +87,9 @@ class BlackListTabBar: UITabBar {
         if let touch = touches.first {
             if touch.view == plusButton {
                 let imageView = plusButton.subviews.first
-                imageView?.animate(.scalate(toX: 0.3, toY: 0.3), .scalate(toX: 1.0, toY: 1.0))
+                imageView?.animate(.scale(toX: 0.3, toY: 0.3), .scale(toX: 1.0, toY: 1.0))
                 imageView?.animate(.rotated(angle: CGFloat.pi))
-                plusButton.animate(.scalate(toX: 0.95, toY: 0.95), .scalate(toX: 1.0, toY: 1.0))
+                plusButton.animate(.scale(toX: 0.95, toY: 0.95), .scale(toX: 1.0, toY: 1.0))
                 blackListTabBardelegate?.plusButtonClicked()
             }
         }
