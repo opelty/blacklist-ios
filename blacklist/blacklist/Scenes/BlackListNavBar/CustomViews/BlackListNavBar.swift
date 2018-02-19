@@ -41,8 +41,13 @@ class BlackListNavBar: UINavigationController {
 
         // MARK: - Setting the navBar
 
+        //navigationBar.isTranslucent = false
+
         let navBar = UINavigationBar(frame: CGRect(x: 0, y: statusBarHeight, width: screenWidth, height: 44))
         navBar.barTintColor = StyleSheet.Color.TabBar.background
+
+        navBar.isTranslucent = false
+
         navBar.tintColor = .white
 
          // MARK: - Setting navBar Items
@@ -63,7 +68,7 @@ class BlackListNavBar: UINavigationController {
     }
 
     @objc func backButtonAction() {
-        print("Pa tra <-- Pa tra")
+       popViewController(animated: true)
     }
 
     @objc func settingsButtonAction() {
