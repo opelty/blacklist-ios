@@ -9,15 +9,19 @@
 import UIKit
 
 class HomeViewController: UIViewController, ViewControllerProtocol {
+    struct Constants {
+        static let emptyViewHeaderSize: CGFloat = 24.0
+        static let emptyViewSubHeaderSize: CGFloat = 14.0
+    }
+
     typealias P = HomePresenter
     typealias R = HomeRouter
 
     var presenter: HomePresenter!
     var router: HomeRouter?
 
-    struct Constants {
-        static let upcomingTableViewCell = "UpcomingTableViewCell"
-    }
+    // TODO: Change this array type
+    var upcomings: [Any] = Array(repeating: 1, count: 5)
 
     fileprivate var tableViewTopConstraintConstant: CGFloat = 0.0
 
@@ -25,12 +29,14 @@ class HomeViewController: UIViewController, ViewControllerProtocol {
     @IBOutlet weak var lendingAmountLabel: UILabel!
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var gradientContainerView: UIView!
+    @IBOutlet weak var tableViewHeaderView: UIView!
     @IBOutlet weak var tableViewTopConstraint: NSLayoutConstraint!
     @IBOutlet weak var maximumUpcomingHuggingConstraint: NSLayoutConstraint!
 
     override func viewDidLoad() {
-        // Let's configure the presenter
         super.viewDidLoad()
+
+        // Let's configure the presenter
 
         configure { (context) -> (presenter: HomePresenter, router: HomeRouter?) in
             let presenter = HomePresenter()
@@ -83,8 +89,8 @@ class HomeViewController: UIViewController, ViewControllerProtocol {
 extension HomeViewController: UITableViewDataSource, UITableViewDelegate {
     func configureTableView() {
         // Let's configure the tableView
-        let upcomingTableViewCellNib = UINib(nibName: Constants.upcomingTableViewCell, bundle: nil)
-        tableView.register(upcomingTableViewCellNib, forCellReuseIdentifier: Constants.upcomingTableViewCell)
+        let upcomingTableViewCellNib = UINib(nibName: UpcomingTableViewCell.identifier, bundle: nil)
+        tableView.register(upcomingTableViewCellNib, forCellReuseIdentifier: UpcomingTableViewCell.identifier)
 
         tableView.estimatedRowHeight = 68.0
         tableView.rowHeight = UITableViewAutomaticDimension
@@ -96,17 +102,70 @@ extension HomeViewController: UITableViewDataSource, UITableViewDelegate {
         }
     }
 
+    func addTableViewPlaceholderView() {
+        let header = "Noting so far" // TODO: Localize this string
+        let subheader = "You are on day :)" // TODO: Localize this string
+
+        let view = UIView(frame: .zero)
+
+        let headerLabel = UILabel(frame: .zero)
+        let subheaderLabel = UILabel(frame: .zero)
+
+        headerLabel.text = header
+        headerLabel.textAlignment = .center
+        headerLabel.font = UIFont(name: StyleSheet.Font.robotoRegular, size: Constants.emptyViewHeaderSize)
+        headerLabel.textColor = StyleSheet.Color.Home.emptyHeaderText
+
+        subheaderLabel.text = subheader
+        subheaderLabel.textAlignment = .center
+        subheaderLabel.font = UIFont(name: StyleSheet.Font.robotoLight, size: Constants.emptyViewSubHeaderSize)
+        subheaderLabel.textColor = StyleSheet.Color.Home.emptySubHeaderText
+
+        view.addSubview(headerLabel)
+        view.addSubview(subheaderLabel)
+        tableView.backgroundView = view
+
+        view.leadingAnchor.constraint(equalTo: tableView.leadingAnchor, constant: 0).isActive = true
+        view.trailingAnchor.constraint(equalTo: tableView.trailingAnchor, constant: 0).isActive = true
+        view.topAnchor.constraint(equalTo: tableView.topAnchor, constant: 0).isActive = true
+        view.bottomAnchor.constraint(equalTo: tableView.bottomAnchor, constant: 0).isActive = true
+
+        view.translatesAutoresizingMaskIntoConstraints = false
+
+        headerLabel.centerXAnchor.constraint(equalTo: tableView.centerXAnchor).isActive = true
+        headerLabel.centerYAnchor.constraint(
+            equalTo: tableView.centerYAnchor,
+            constant: -tableViewTopConstraintConstant
+        ).isActive = true
+
+        subheaderLabel.centerXAnchor.constraint(equalTo: tableView.centerXAnchor).isActive = true
+        subheaderLabel.centerYAnchor.constraint(
+            equalTo: tableView.centerYAnchor,
+            constant: -tableViewTopConstraintConstant + Constants.emptyViewHeaderSize
+            ).isActive = true
+
+        headerLabel.translatesAutoresizingMaskIntoConstraints = false
+        subheaderLabel.translatesAutoresizingMaskIntoConstraints = false
+    }
+
     func numberOfSections(in tableView: UITableView) -> Int {
-        return 1
+        if upcomings.count > 0 {
+            return 1
+        } else {
+            // Let's add the empty view placeholder
+            addTableViewPlaceholderView()
+
+            return 0
+        }
     }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 100
+        return upcomings.count
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(
-            withIdentifier: Constants.upcomingTableViewCell,
+            withIdentifier: UpcomingTableViewCell.identifier,
             for: indexPath
         ) as! UpcomingTableViewCell
 
@@ -139,6 +198,7 @@ extension HomeViewController: UITableViewDataSource, UITableViewDelegate {
             cell.colapse()
         }
     }
+
 }
 
 // MARK: - Actions Handler
@@ -161,11 +221,34 @@ extension HomeViewController {
 // MARK: - ScrollView Delegate
 
 extension HomeViewController {
-    func scrollViewDidScroll(_ scrollView: UIScrollView) {
-        let y = tableViewTopConstraintConstant - scrollView.contentOffset.y
+    fileprivate func performMovement(for scrollView: UIScrollView, restartLayout: Bool) {
+        guard !restartLayout else {
+            tableViewTopConstraint.constant = tableViewTopConstraintConstant
+            tableViewHeaderView.alpha = 1.0
 
-        if !scrollView.isBouncing && y > 0 {
-            tableViewTopConstraint.constant = y
+            return
+        }
+
+        let y = tableViewTopConstraintConstant - scrollView.contentOffset.y
+        let alpha = y / tableViewTopConstraintConstant
+
+        tableViewTopConstraint.constant = y > 0 ? y : 0
+        tableViewHeaderView.alpha = alpha.percentage
+    }
+
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        if !scrollView.isBouncing {
+            performMovement(for: scrollView, restartLayout: false)
+        } else {
+            performMovement(for: scrollView, restartLayout: true)
+        }
+    }
+
+    func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
+        if !scrollView.isBouncing {
+            performMovement(for: scrollView, restartLayout: false)
+        } else {
+            performMovement(for: scrollView, restartLayout: true)
         }
     }
 }

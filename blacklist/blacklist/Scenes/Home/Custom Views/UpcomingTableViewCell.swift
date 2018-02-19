@@ -29,13 +29,21 @@ class UpcomingTableViewCell: UITableViewCell {
 
     private var callback: UpcomingActionCompletion?
 
+    static let identifier: String = "UpcomingTableViewCell"
+
     override func awakeFromNib() {
         super.awakeFromNib()
 
         let panGuesture = UIPanGestureRecognizer(target: self, action: #selector(panActionRecognizer(_:)))
 
         panGuesture.delegate = self
+        panGuesture.delaysTouchesBegan = true
+        panGuesture.delaysTouchesEnded = true
+        panGuesture.cancelsTouchesInView = true
+        panGuesture.maximumNumberOfTouches = 1
         containerView.addGestureRecognizer(panGuesture)
+
+        actionsView.alpha = 0.0
     }
 
     override func layoutSubviews() {
@@ -79,88 +87,26 @@ class UpcomingTableViewCell: UITableViewCell {
     }
 
     public func bounce() {
-        let bounceLeft = Animation.bounce(
-            bounceOffset: containerView.frame.origin.x - UpcomingTableViewCell.leadingPadding
-        )
+        guard containerView.frame.origin.x == actionsView.frame.origin.x else { return }
 
-        let bounceRigth = Animation.bounce(
-            bounceOffset: actionsView.frame.origin.x
-        )
+        let bouncePoint = containerView.frame.origin
+        let left = bouncePoint.x - UpcomingTableViewCell.leadingPadding
+        let right = actionsView.frame.origin.x
 
-        containerView.animate(bounceLeft, bounceRigth)
+        let bounceLeft = Animation.traslation(to: CGPoint(x: left, y: bouncePoint.y))
+        let bounceRight = Animation.traslation(to: CGPoint(x: right, y: bouncePoint.y))
+
+        containerView.animate(bounceLeft, bounceRight)
     }
 
     public func colapse(animated: Bool = true) {
-        let execution = { [unowned self] in
-            self.containerView.frame.origin.x = self.actionsView.frame.origin.x
-        }
+        var point = self.actionsView.frame.origin
+        point.y = containerView.frame.origin.y
 
         if animated {
-            //UIView.animate(withDuration: Constants.Animations.duration, animations: execution)
+            containerView.animate(.traslation(to: point))
         } else {
-            execution()
-        }
-    }
-
-    // MARK: - Cell Actions
-
-    fileprivate func performMovement(for gestureTranslation: CGPoint) {
-        let dx = fabs(self.frame.origin.x - gestureTranslation.x)
-        let actionsViewMaximumWidth = actionsViewTrailingConstraint.constant
-        let actionViewContainerViewDistance = (
-            containerView.frame.origin.x - actionsView.frame.origin.x
-        )
-
-        if gestureTranslation.x > 10 {
-            // Rigth movement behavior.
-            if actionViewContainerViewDistance < -UpcomingTableViewCell.trailingPadding {
-                // Let's move the containerView in order to hide the actions.
-                containerView.frame.origin.x = containerViewOriginConstant.x + dx
-
-            }
-        } else if gestureTranslation.x < 10 {
-            // Left movement behavior.
-
-            if fabs(actionViewContainerViewDistance) < actionsViewMaximumWidth {
-                // Let's move the containerView in order to show the actions.
-                containerView.frame.origin.x = containerViewOriginConstant.x - dx
-            }
-        }
-    }
-
-    fileprivate func finishMovement() {
-        let actionsViewMaximumWidth = actionsViewTrailingConstraint.constant
-        let actionViewContainerViewDistance = (
-            containerView.frame.origin.x - actionsView.frame.origin.x
-        )
-
-        // Check the last state and animate movement difference.
-        let halfActionsViewWidth = actionsViewMaximumWidth / 2
-
-        UIView.animate(withDuration: Animation.defaultDuration) { [unowned self] in
-            if fabs(actionViewContainerViewDistance) > halfActionsViewWidth {
-                // Finish showing
-                self.containerView.frame.origin.x = -actionsViewMaximumWidth
-            } else {
-                // Finish hiding
-                self.containerView.frame.origin.x = self.actionsView.frame.origin.x
-            }
-        }
-    }
-
-    @objc func panActionRecognizer(_ sender: UIPanGestureRecognizer) {
-        guard fabs(sender.velocity(in: self).x) > 30 else { return }
-
-        switch sender.state {
-        case .began:
-            containerViewOriginConstant = containerView.frame.origin
-            break
-        case .changed:
-            performMovement(for: sender.translation(in: self))
-            break
-        default:
-            finishMovement()
-            break
+            containerView.frame.origin = point
         }
     }
 
@@ -173,4 +119,60 @@ class UpcomingTableViewCell: UITableViewCell {
         }
     }
 
+    // MARK: - Touches handler
+
+    fileprivate func performMovement(for gestureTranslation: CGPoint) {
+        let x = fabs(gestureTranslation.x)
+        let actionsViewMaximumWidth = actionsViewTrailingConstraint.constant
+        let actionViewContainerViewDistance = (
+            containerView.frame.origin.x - actionsView.frame.origin.x
+        )
+
+        if gestureTranslation.x > 0 {
+            // Rigth movement behavior.
+
+            if actionViewContainerViewDistance < 0 {
+                // Let's move the containerView in order to hide the actions.
+                containerView.frame.origin.x = containerViewOriginConstant.x + x
+            }
+        } else if gestureTranslation.x < 0 {
+            // Left movement behavior.
+
+            if fabs(actionViewContainerViewDistance) < actionsViewMaximumWidth {
+                // Let's move the containerView in order to show the actions.
+                containerView.frame.origin.x = containerViewOriginConstant.x - x
+            }
+        }
+
+        let alpha = fabs(containerView.frame.origin.x) / actionsViewMaximumWidth
+        actionsView.alpha = alpha.percentage
+    }
+
+    fileprivate func finishMovement(for translation: CGPoint, velocity: CGPoint) {
+        let actionsViewMaximumWidth = actionsViewTrailingConstraint.constant
+        let factor = min(fabs(containerView.bounds.size.width / velocity.x), 0.5)
+        let x = translation.x > 0 ? actionsView.frame.origin.x : -actionsViewMaximumWidth
+        let alpha = translation.x > 0 ? 0.0 : 1.0
+
+        UIView.setAnimationCurve(.easeOut)
+        UIView.animate(withDuration: TimeInterval(factor)) { [unowned self] in
+            self.containerView.frame.origin.x = x
+            self.actionsView.alpha = CGFloat(alpha)
+        }
+
+    }
+
+    @objc func panActionRecognizer(_ sender: UIPanGestureRecognizer) {
+        switch sender.state {
+        case .began:
+            containerViewOriginConstant = containerView.frame.origin
+            break
+        case .changed:
+            performMovement(for: sender.translation(in: self))
+            break
+        default:
+            finishMovement(for: sender.translation(in: self), velocity: sender.velocity(in: self))
+            break
+        }
+    }
 }
