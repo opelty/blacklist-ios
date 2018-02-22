@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="DebtorCollectionViewCell" customModule="blacklist" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="200" height="200"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="200" height="200"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="monster" translatesAutoresizingMaskIntoConstraints="NO" id="JP8-96-O6a">
+                        <rect key="frame" x="0.0" y="0.0" width="200" height="200"/>
+                    </imageView>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hKM-rX-1pd">
+                        <rect key="frame" x="40" y="155" width="120" height="40"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Santiago Carmona" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Yrx-t2-INf">
+                                <rect key="frame" x="5" y="5" width="110" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Yrx-t2-INf" firstAttribute="top" secondItem="hKM-rX-1pd" secondAttribute="top" constant="5" id="EDn-61-e1E"/>
+                            <constraint firstItem="Yrx-t2-INf" firstAttribute="leading" secondItem="hKM-rX-1pd" secondAttribute="leading" constant="5" id="FXM-Wj-nU1"/>
+                            <constraint firstAttribute="trailing" secondItem="Yrx-t2-INf" secondAttribute="trailing" constant="5" id="OHf-9q-5uG"/>
+                            <constraint firstAttribute="height" constant="40" id="h0g-LY-jPd"/>
+                            <constraint firstAttribute="bottom" secondItem="Yrx-t2-INf" secondAttribute="bottom" constant="5" id="zVD-cH-BWG"/>
+                        </constraints>
+                    </view>
+                </subviews>
+            </view>
+            <constraints>
+                <constraint firstAttribute="bottom" secondItem="hKM-rX-1pd" secondAttribute="bottom" constant="5" id="2bo-9d-NCS"/>
+                <constraint firstAttribute="trailing" secondItem="hKM-rX-1pd" secondAttribute="trailing" constant="40" id="I9o-yM-RlK"/>
+                <constraint firstAttribute="bottom" secondItem="JP8-96-O6a" secondAttribute="bottom" id="M2o-b5-2g6"/>
+                <constraint firstItem="JP8-96-O6a" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="U0k-nv-Kwh"/>
+                <constraint firstAttribute="trailing" secondItem="JP8-96-O6a" secondAttribute="trailing" id="b7S-gp-s2y"/>
+                <constraint firstItem="JP8-96-O6a" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="dLl-b6-fkE"/>
+                <constraint firstItem="hKM-rX-1pd" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="40" id="qDJ-53-wmP"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+            <connections>
+                <outlet property="debtorNameLabel" destination="Yrx-t2-INf" id="KXd-nK-IM4"/>
+                <outlet property="monsterImageView" destination="JP8-96-O6a" id="MaI-On-qJC"/>
+            </connections>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <image name="monster" width="268" height="268"/>
+    </resources>
+</document>

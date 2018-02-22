@@ -8,18 +8,37 @@
 
 import UIKit
 
-class BlackListTabBarViewController: UITabBarController {
+class BlackListTabBarViewController: UITabBarController, ViewControllerProtocol {
+
+    // MARK: - Vars & Constants
+
+    typealias P = BlackListTabBarPresenter
+    typealias R = BlackListTabBarRouter
+
+    var presenter: BlackListTabBarPresenter!
+    var router: BlackListTabBarRouter?
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        setupTabBar()
+        configure { (context) -> (presenter: P, router: R?) in
+            let presenter = P()
+            let router = R(viewController: context)
+
+            return (presenter: presenter, router: router)
+        }
+
+        configure()
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
 
-    // Private Methods
+    // Methods
+
+    private func configure() {
+        setupTabBar()
+    }
 
     private func setupTabBar() {
         if let blackListTabBar = tabBar as? BlackListTabBar {
@@ -33,7 +52,6 @@ class BlackListTabBarViewController: UITabBarController {
 
 extension BlackListTabBarViewController: BlackListTabBarDelegate {
     func plusButtonClicked() {
-        // TODO: Make plus action
-        print("Plus button in tab bar was clicked.")
+        router?.debtorsList()
     }
 }

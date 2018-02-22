@@ -10,6 +10,7 @@ import UIKit
 
 protocol Viewable: class {
     func performSegue(withIdentifier identifier: String, sender: Any?)
+    func present(_ viewControllerToPresent: UIViewController, animated: Bool, completion: (() -> Void)?)
 }
 
 protocol ViewControllerProtocol: Viewable {
