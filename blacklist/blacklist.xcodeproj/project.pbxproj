@@ -59,6 +59,7 @@
 		44EE24FD2027A0C500C2C586 /* UpcomingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44EE24FB2027A0C500C2C586 /* UpcomingTableViewCell.swift */; };
 		44EE24FE2027A0C500C2C586 /* UpcomingTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 44EE24FC2027A0C500C2C586 /* UpcomingTableViewCell.xib */; };
 		44EE25002027B2AA00C2C586 /* UIScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44EE24FF2027B2AA00C2C586 /* UIScrollView.swift */; };
+		489958E020311072009B6760 /* BlackListNavBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 489958DF20311072009B6760 /* BlackListNavBar.swift */; };
 		96615767202B906900D10333 /* BlackListTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96615766202B906900D10333 /* BlackListTabBar.swift */; };
 		96615774202BCE8900D10333 /* Upcomming.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 96615773202BCE8900D10333 /* Upcomming.storyboard */; };
 		96615776202BCF7400D10333 /* Lendings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 96615775202BCF7400D10333 /* Lendings.storyboard */; };
@@ -136,6 +137,7 @@
 		44EE24FB2027A0C500C2C586 /* UpcomingTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpcomingTableViewCell.swift; sourceTree = "<group>"; };
 		44EE24FC2027A0C500C2C586 /* UpcomingTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UpcomingTableViewCell.xib; sourceTree = "<group>"; };
 		44EE24FF2027B2AA00C2C586 /* UIScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIScrollView.swift; sourceTree = "<group>"; };
+		489958DF20311072009B6760 /* BlackListNavBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlackListNavBar.swift; sourceTree = "<group>"; };
 		53208D8CF1CFAA4BD8163FEB /* Pods_blacklist.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_blacklist.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		72B14658C6E06E5C809D3FFB /* Pods-blacklist.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-blacklist.release.xcconfig"; path = "Pods/Target Support Files/Pods-blacklist/Pods-blacklist.release.xcconfig"; sourceTree = "<group>"; };
 		76CC509BEFC64FF91398CCB5 /* Pods_blacklistTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_blacklistTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -245,6 +247,7 @@
 		449D6302202556F00031BA92 /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				489958DD20311024009B6760 /* BlackListNavBar */,
 				96615777202BD6C400D10333 /* BlackListTabBar */,
 				449D6305202557560031BA92 /* Home */,
 			);
@@ -431,6 +434,22 @@
 			path = Fonts;
 			sourceTree = "<group>";
 		};
+		489958DD20311024009B6760 /* BlackListNavBar */ = {
+			isa = PBXGroup;
+			children = (
+				489958DE2031103E009B6760 /* CustomViews */,
+			);
+			path = BlackListNavBar;
+			sourceTree = "<group>";
+		};
+		489958DE2031103E009B6760 /* CustomViews */ = {
+			isa = PBXGroup;
+			children = (
+				489958DF20311072009B6760 /* BlackListNavBar.swift */,
+			);
+			path = CustomViews;
+			sourceTree = "<group>";
+		};
 		4BAD82D406E02A0713A98E9D /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -514,7 +533,7 @@
 				TargetAttributes = {
 					449D62D720254BA80031BA92 = {
 						CreatedOnToolsVersion = 9.0.1;
-						ProvisioningStyle = Automatic;
+						ProvisioningStyle = Manual;
 					};
 					449D62EB20254BA80031BA92 = {
 						CreatedOnToolsVersion = 9.0.1;
@@ -710,6 +729,7 @@
 				44DD66A620293EF700934457 /* Application.swift in Sources */,
 				4449399B2030F392007CDF3B /* RealmPeriod.swift in Sources */,
 				441EADBE20284E6A007E1D9A /* ViewController.swift in Sources */,
+				489958E020311072009B6760 /* BlackListNavBar.swift in Sources */,
 				44EE24FD2027A0C500C2C586 /* UpcomingTableViewCell.swift in Sources */,
 				444939A52030FAD9007CDF3B /* RealmLending.swift in Sources */,
 				44D16964202B6EC200824633 /* Animation.swift in Sources */,
@@ -890,14 +910,15 @@
 			baseConfigurationReference = 0189BB6A85C388034BB1B777 /* Pods-blacklist.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 65JJM7BL69;
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = "";
 				GCC_TREAT_WARNINGS_AS_ERRORS = YES;
 				INFOPLIST_FILE = "$(SRCROOT)/blacklist/Common/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = io.github.opelty.blacklist;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -908,14 +929,15 @@
 			baseConfigurationReference = 72B14658C6E06E5C809D3FFB /* Pods-blacklist.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 65JJM7BL69;
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = "";
 				GCC_TREAT_WARNINGS_AS_ERRORS = YES;
 				INFOPLIST_FILE = "$(SRCROOT)/blacklist/Common/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = io.github.opelty.blacklist;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};

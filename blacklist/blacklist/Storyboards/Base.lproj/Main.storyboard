@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Dxo-0G-a3T">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Dxo-0G-a3T">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Navigation Controller-->
+        <!--Black List Nav Bar-->
         <scene sceneID="Jkd-Yk-oPr">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Xwu-Rp-LLn" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Xwu-Rp-LLn" customClass="BlackListNavBar" customModule="blacklist" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="" image="upcomming" id="bRN-AS-0gt"/>
                     <toolbarItems/>
                     <size key="freeformSize" width="375" height="60"/>
@@ -69,10 +69,10 @@
             </objects>
             <point key="canvasLocation" x="-335" y="130"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--Black List Nav Bar-->
         <scene sceneID="8JQ-GT-IOb">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="3v7-3c-yD1" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="3v7-3c-yD1" customClass="BlackListNavBar" customModule="blacklist" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="" image="lendings" id="5Up-Kd-8KQ"/>
                     <toolbarItems/>
                     <size key="freeformSize" width="375" height="60"/>
