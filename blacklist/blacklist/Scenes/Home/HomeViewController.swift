@@ -14,8 +14,8 @@ class HomeViewController: UIViewController, ViewControllerProtocol {
         static let emptyViewSubHeaderSize: CGFloat = 14.0
     }
 
-    typealias P = HomePresenter
-    typealias R = HomeRouter
+    typealias Presenter = HomePresenter
+    typealias Router = HomeRouter
 
     var presenter: HomePresenter!
     var router: HomeRouter?
@@ -38,9 +38,9 @@ class HomeViewController: UIViewController, ViewControllerProtocol {
 
         // Let's configure the presenter
 
-        configure { (context) -> (presenter: HomePresenter, router: HomeRouter?) in
-            let presenter = HomePresenter()
-            let router = HomeRouter(viewController: context)
+        configure { (context) -> (presenter: Presenter, router: Router?) in
+            let presenter = Presenter()
+            let router = Router(viewController: context)
 
             return (presenter: presenter, router: router)
         }

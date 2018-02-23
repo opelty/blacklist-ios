@@ -16,8 +16,8 @@ class DebtorsViewController: UIViewController, ViewControllerProtocol {
 
     // MARK: - Vars & Constants
 
-    typealias P = DebtorsPresenter
-    typealias R = DebtorsRouter
+    typealias Presenter = DebtorsPresenter
+    typealias Router = DebtorsRouter
 
     var presenter: DebtorsPresenter!
     var router: DebtorsRouter?
@@ -28,13 +28,12 @@ class DebtorsViewController: UIViewController, ViewControllerProtocol {
 
         // Let's configure the presenter
 
-        configure { (context) -> (presenter: P, router: R?) in
-            let presenter = P()
-            let router = R(viewController: context)
+        configure { (context) -> (presenter: Presenter, router: Router?) in
+            let presenter = Presenter()
+            let router = Router(viewController: context)
 
             return (presenter: presenter, router: router)
         }
-
         configure()
     }
 
@@ -51,6 +50,17 @@ class DebtorsViewController: UIViewController, ViewControllerProtocol {
     }
 
     func configureCollectionView() {
+        let flowLayout = UICollectionViewFlowLayout()
+        let sectionInsets = UIEdgeInsets(top: 10, left: 20, bottom: 10, right: 20)
+        let itemsPerRow: CGFloat = 3
+        let paddingSpace = sectionInsets.left * (itemsPerRow + 1)
+        let availableWidth = view.frame.width - paddingSpace
+        let widthPerItem = availableWidth / itemsPerRow
+        flowLayout.itemSize = CGSize(width: widthPerItem, height: widthPerItem)
+        flowLayout.sectionInset = sectionInsets
+        flowLayout.minimumLineSpacing = sectionInsets.left
+
+        collectionView.setCollectionViewLayout(flowLayout, animated: true)
         collectionView.delegate = self
         collectionView.dataSource = self
         collectionView.register(

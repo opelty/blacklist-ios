@@ -72,6 +72,7 @@
 		96947E2C203F18E1009F5DA3 /* DebtorsRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96947E2B203F18E1009F5DA3 /* DebtorsRouter.swift */; };
 		96947E2E203F2BAF009F5DA3 /* BlackListTabBarRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96947E2D203F2BAF009F5DA3 /* BlackListTabBarRouter.swift */; };
 		96947E30203F2F7B009F5DA3 /* BlackListTabBarPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96947E2F203F2F7B009F5DA3 /* BlackListTabBarPresenter.swift */; };
+		96947E322040629C009F5DA3 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96947E312040629C009F5DA3 /* Utils.swift */; };
 		96C1CB27202CB3C80070B173 /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96C1CB26202CB3C80070B173 /* UIView.swift */; };
 		D2C28C8DB3FE523480FE3ACC /* Pods_blacklistTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 76CC509BEFC64FF91398CCB5 /* Pods_blacklistTests.framework */; };
 		F1F6E52EDFC9945464867067 /* Pods_blacklist.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 53208D8CF1CFAA4BD8163FEB /* Pods_blacklist.framework */; };
@@ -161,6 +162,7 @@
 		96947E2B203F18E1009F5DA3 /* DebtorsRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DebtorsRouter.swift; sourceTree = "<group>"; };
 		96947E2D203F2BAF009F5DA3 /* BlackListTabBarRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlackListTabBarRouter.swift; sourceTree = "<group>"; };
 		96947E2F203F2F7B009F5DA3 /* BlackListTabBarPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlackListTabBarPresenter.swift; sourceTree = "<group>"; };
+		96947E312040629C009F5DA3 /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
 		96C1CB26202CB3C80070B173 /* UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
 		BF55FF33AB7E5BB6A1D97B6D /* Pods-blacklistTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-blacklistTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-blacklistTests/Pods-blacklistTests.debug.xcconfig"; sourceTree = "<group>"; };
 		DCEE3BFA15ED06CB07285B9A /* Pods-blacklistTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-blacklistTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-blacklistTests/Pods-blacklistTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -389,6 +391,7 @@
 				44EE24D520264EF800C2C586 /* RealmManager.swift */,
 				44DD66A520293EF700934457 /* Application.swift */,
 				44D16963202B6EC200824633 /* Animation.swift */,
+				96947E312040629C009F5DA3 /* Utils.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -784,6 +787,7 @@
 				44EE24DB2026719300C2C586 /* FileManager.swift in Sources */,
 				440442E0202FE6C40099D3D9 /* CGFloat.swift in Sources */,
 				444939992030F1DE007CDF3B /* Period.swift in Sources */,
+				96947E322040629C009F5DA3 /* Utils.swift in Sources */,
 				96947E27203F11C1009F5DA3 /* DebtorCollectionViewCell.swift in Sources */,
 				44EE25002027B2AA00C2C586 /* UIScrollView.swift in Sources */,
 				44D0B0E32025C42D00E7C5D5 /* StyleSheet.swift in Sources */,

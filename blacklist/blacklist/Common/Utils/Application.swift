@@ -9,6 +9,7 @@
 import UIKit
 
 class Application {
+
     class func open(url: URL) {
         if UIApplication.shared.canOpenURL(url) {
             UIApplication.shared.openURL(url)

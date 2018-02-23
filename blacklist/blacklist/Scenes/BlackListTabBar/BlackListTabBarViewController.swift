@@ -12,17 +12,17 @@ class BlackListTabBarViewController: UITabBarController, ViewControllerProtocol 
 
     // MARK: - Vars & Constants
 
-    typealias P = BlackListTabBarPresenter
-    typealias R = BlackListTabBarRouter
+    typealias Presenter = BlackListTabBarPresenter
+    typealias Router = BlackListTabBarRouter
 
     var presenter: BlackListTabBarPresenter!
     var router: BlackListTabBarRouter?
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        configure { (context) -> (presenter: P, router: R?) in
-            let presenter = P()
-            let router = R(viewController: context)
+        configure { (context) -> (presenter: Presenter, router: Router?) in
+            let presenter = Presenter()
+            let router = Router(viewController: context)
 
             return (presenter: presenter, router: router)
         }
