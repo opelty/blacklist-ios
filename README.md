@@ -13,7 +13,9 @@ We are fascinated iOS and software developers, enjoy converting a cup of ☕️ 
 
   ![Jose Lopez](https://avatars1.githubusercontent.com/u/10122028?s=150&v=4)
 
-  > Add an small bio here...
+  > Jose is an computer science engineer who enjoy coding and graphic design (but he is not a designer). He found in iOS a perfect balance between coding and its beautiful result with just a little bit of UI design.
+  > 
+  > Last updated: Feb/2018
 
 - **Santiago Carmona.**
 
