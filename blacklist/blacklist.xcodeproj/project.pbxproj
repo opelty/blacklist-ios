@@ -11,12 +11,12 @@
 		449D62E120254BA80031BA92 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 449D62DF20254BA80031BA92 /* Main.storyboard */; };
 		449D62E320254BA80031BA92 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 449D62E220254BA80031BA92 /* Assets.xcassets */; };
 		449D62E620254BA80031BA92 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 449D62E420254BA80031BA92 /* LaunchScreen.storyboard */; };
-		449D62F120254BA80031BA92 /* blacklistTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 449D62F020254BA80031BA92 /* blacklistTests.swift */; };
 		449D6310202558BE0031BA92 /* Presenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 449D630F202558BE0031BA92 /* Presenter.swift */; };
 		449D631220255AED0031BA92 /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = 449D631120255AED0031BA92 /* Router.swift */; };
 		449D631620255F2E0031BA92 /* HomePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 449D631520255F2E0031BA92 /* HomePresenter.swift */; };
 		449D631D20255FCE0031BA92 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 449D631C20255FCE0031BA92 /* HomeViewController.swift */; };
 		449D631F20255FFF0031BA92 /* HomeRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 449D631E20255FFF0031BA92 /* HomeRouter.swift */; };
+		44CF75D42043669B00F881F0 /* RealmEntityTestProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44CF75D32043669B00F881F0 /* RealmEntityTestProtocol.swift */; };
 		44D0B0DF2025C1CC00E7C5D5 /* AppConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44D0B0DE2025C1CC00E7C5D5 /* AppConstants.swift */; };
 		44D0B0E12025C21B00E7C5D5 /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44D0B0E02025C21B00E7C5D5 /* UIColor.swift */; };
 		44D0B0E32025C42D00E7C5D5 /* StyleSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44D0B0E22025C42D00E7C5D5 /* StyleSheet.swift */; };
@@ -52,13 +52,13 @@
 		449D62E520254BA80031BA92 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		449D62E720254BA80031BA92 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		449D62EC20254BA80031BA92 /* blacklistTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = blacklistTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		449D62F020254BA80031BA92 /* blacklistTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = blacklistTests.swift; sourceTree = "<group>"; };
 		449D62F220254BA80031BA92 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		449D630F202558BE0031BA92 /* Presenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Presenter.swift; sourceTree = "<group>"; };
 		449D631120255AED0031BA92 /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
 		449D631520255F2E0031BA92 /* HomePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePresenter.swift; sourceTree = "<group>"; };
 		449D631C20255FCE0031BA92 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		449D631E20255FFF0031BA92 /* HomeRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeRouter.swift; sourceTree = "<group>"; };
+		44CF75D32043669B00F881F0 /* RealmEntityTestProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmEntityTestProtocol.swift; sourceTree = "<group>"; };
 		44D0B0DE2025C1CC00E7C5D5 /* AppConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConstants.swift; sourceTree = "<group>"; };
 		44D0B0E02025C21B00E7C5D5 /* UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
 		44D0B0E22025C42D00E7C5D5 /* StyleSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StyleSheet.swift; sourceTree = "<group>"; };
@@ -145,7 +145,6 @@
 			isa = PBXGroup;
 			children = (
 				44EE24D72026609200C2C586 /* Realm */,
-				449D62F020254BA80031BA92 /* blacklistTests.swift */,
 				449D62F220254BA80031BA92 /* Info.plist */,
 			);
 			path = blacklistTests;
@@ -303,10 +302,19 @@
 			path = AppDelegates;
 			sourceTree = "<group>";
 		};
+		44CF75D22043667000F881F0 /* Entities */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Entities;
+			sourceTree = "<group>";
+		};
 		44EE24D72026609200C2C586 /* Realm */ = {
 			isa = PBXGroup;
 			children = (
+				44CF75D32043669B00F881F0 /* RealmEntityTestProtocol.swift */,
 				44EE24D8202660AB00C2C586 /* RealmManager.swift */,
+				44CF75D22043667000F881F0 /* Entities */,
 			);
 			path = Realm;
 			sourceTree = "<group>";
@@ -455,9 +463,14 @@
 			files = (
 			);
 			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-blacklistTests/Pods-blacklistTests-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Nimble/Nimble.framework",
+				"${BUILT_PRODUCTS_DIR}/Quick/Quick.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Nimble.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Quick.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -571,7 +584,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				449D62F120254BA80031BA92 /* blacklistTests.swift in Sources */,
+				44CF75D42043669B00F881F0 /* RealmEntityTestProtocol.swift in Sources */,
 				44EE24D9202660AB00C2C586 /* RealmManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

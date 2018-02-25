@@ -101,11 +101,9 @@ final class RealmManager {
         return context.object(ofType: type, forPrimaryKey: id)
     }
 
-    public func update<M: Object>(object: M, clousure: () -> [String: Any]) {
+    public func update<M: Object>(object: M, clousure: (M) -> Void) {
         try! context.write {
-            let newData = clousure()
-
-            object.setValuesForKeys(newData)
+            clousure(object)
         }
     }
 
