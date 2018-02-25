@@ -11,9 +11,11 @@ import RealmSwift
 
 final class RealmManager {
     static let shared = RealmManager()
-
     fileprivate var context: Realm!
 
+    /**
+     * Gets the schema version for the current context
+     */
     public var currentSchemaVersion: UInt64 {
         let buildVersionString = Bundle.main.infoDictionary!["CFBundleVersion"] as! String
 
@@ -21,6 +23,9 @@ final class RealmManager {
         return schemaVersion
     }
 
+    /**
+     * Gets the Realm's root folder URL for the current context
+     */
     public var realmRootFolderURL: URL {
         guard let documentsPath = NSSearchPathForDirectoriesInDomains(
             .documentDirectory,
@@ -33,6 +38,9 @@ final class RealmManager {
         return URL(fileURLWithPath: documentsPath).appendingPathComponent(Constants.Realm.rootDirectory)
     }
 
+    /**
+     * Gets the Realm's database file URL for the current context
+     */
     public var fileURL: URL {
         return realmRootFolderURL.appendingPathComponent(Constants.Realm.databaseName)
     }
@@ -64,6 +72,12 @@ final class RealmManager {
         }
     }
 
+    /**
+     * Removes all Realm's file used in the current context.
+     *
+     * - returns:
+     *   Void
+     */
     public func removeContext() {
         self.deleteOldContext()
         self.configure()
@@ -71,6 +85,16 @@ final class RealmManager {
 
     // MARK: - CRUD
 
+    /**
+     * Adds an object to the database
+     *
+     * - parameters:
+     *   - object: Realm's object that will be stored
+     *   - update: Updates an existing object if have the same primaryKey (true)
+     *             or creates a new one stored object (false)
+     * - returns:
+     *   void
+     */
     public func add(object: Object, update: Bool = true) {
         if context.isInWriteTransaction {
             context.add(object, update: update)
@@ -81,13 +105,33 @@ final class RealmManager {
         }
     }
 
+    /**
+     * Adds several objects to the database
+     *
+     * - parameters:
+     *   - objects: Realm's objects that will be stored
+     *   - update: Updates the existing objects if have the same primaryKey (true)
+     *             or create those new objects (false)
+     * - returns:
+     *   void
+     */
     public func add(objects: Object..., update: Bool = true) {
         for object in objects {
             add(object: object, update: update)
         }
     }
 
-    public func all<M: Object>(for type: M.Type, predicate: String? = nil) -> [M] {
+    /**
+     * Gets all objects for the following type
+     *
+     * - parameters:
+     *   - type: Realm's object type that will be searched
+     *   - predicate: The predicate for the search, see Realm's documentation
+     * - returns:
+     *   Set of Realm's objects that satisfy the predicate or all stored items for
+     *   the defined type if the predicate is defined as nil.
+     */
+    public func all<Model: Object>(for type: Model.Type, predicate: String? = nil) -> [Model] {
         let objects = context.objects(type)
 
         if let predicate = predicate {
@@ -97,22 +141,55 @@ final class RealmManager {
         return Array(objects)
     }
 
-    public func find<M: Object>(for type: M.Type, id: String) -> M? {
+    /**
+     * Gets the object for the following type that has the id field as primaryKey
+     *
+     * - parameters:
+     *   - type: Realm's object type that will be searched
+     *   - id: The primaryKey that will be searched
+     * - returns:
+     *   A Realm's object that has the id field as primaryKey or nil if none satisfy the predicate
+     */
+    public func find<Model: Object>(for type: Model.Type, id: String) -> Model? {
         return context.object(ofType: type, forPrimaryKey: id)
     }
 
-    public func update<M: Object>(object: M, clousure: (M) -> Void) {
+    /**
+     * Updates the object provided inside of the write transaction.
+     *
+     * - parameters:
+     *   - object: Realm's object that should be updated
+     *   - closure: Closure to make changes, all changes in the M (model) will be stored.
+     *     - Model: The reference to the provided Realm's object that will be changed.
+     * - returns:
+     *   Void
+     */
+    public func update<Model: Object>(object: Model, closure: (Model) -> Void) {
         try! context.write {
-            clousure(object)
+           closure(object)
         }
     }
 
+    /**
+     * Deletes the Realm's object provided.
+     *
+     * - parameters:
+     *   - object: Realm's object type that will be deleted.
+     * - returns:
+     *   Void
+     */
     public func delete(object: Object) {
         try! context.write {
             context.delete(object)
         }
     }
 
+    /**
+     * Deletes all Realm's objects stored in the current context.
+     *
+     * - returns:
+     *   Void
+     */
     public func clear() {
         try! context.write {
             context.deleteAll()

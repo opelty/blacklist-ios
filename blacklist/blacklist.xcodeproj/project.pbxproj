@@ -7,6 +7,17 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		440442E0202FE6C40099D3D9 /* CGFloat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 440442DF202FE6C40099D3D9 /* CGFloat.swift */; };
+		440442E2203021E80099D3D9 /* Debtor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 440442E1203021E80099D3D9 /* Debtor.swift */; };
+		440442E52030231F0099D3D9 /* RealmDebtor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 440442E42030231F0099D3D9 /* RealmDebtor.swift */; };
+		441EADBE20284E6A007E1D9A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 441EADBD20284E6A007E1D9A /* ViewController.swift */; };
+		444939992030F1DE007CDF3B /* Period.swift in Sources */ = {isa = PBXBuildFile; fileRef = 444939982030F1DE007CDF3B /* Period.swift */; };
+		4449399B2030F392007CDF3B /* RealmPeriod.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4449399A2030F392007CDF3B /* RealmPeriod.swift */; };
+		4449399D2030F4D9007CDF3B /* Amortization.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4449399C2030F4D9007CDF3B /* Amortization.swift */; };
+		4449399F2030F4F3007CDF3B /* Lending.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4449399E2030F4F3007CDF3B /* Lending.swift */; };
+		444939A12030F505007CDF3B /* Context.swift in Sources */ = {isa = PBXBuildFile; fileRef = 444939A02030F505007CDF3B /* Context.swift */; };
+		444939A32030F657007CDF3B /* RealmAmortization.swift in Sources */ = {isa = PBXBuildFile; fileRef = 444939A22030F657007CDF3B /* RealmAmortization.swift */; };
+		444939A52030FAD9007CDF3B /* RealmLending.swift in Sources */ = {isa = PBXBuildFile; fileRef = 444939A42030FAD9007CDF3B /* RealmLending.swift */; };
 		449D62DC20254BA80031BA92 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 449D62DB20254BA80031BA92 /* AppDelegate.swift */; };
 		449D62E120254BA80031BA92 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 449D62DF20254BA80031BA92 /* Main.storyboard */; };
 		449D62E320254BA80031BA92 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 449D62E220254BA80031BA92 /* Assets.xcassets */; };
@@ -23,12 +34,37 @@
 		44D0B0E620264A5B00E7C5D5 /* SegueIndentifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44D0B0E520264A5B00E7C5D5 /* SegueIndentifier.swift */; };
 		44D0B0EA20264C2200E7C5D5 /* GatewayProtocols in Resources */ = {isa = PBXBuildFile; fileRef = 44D0B0E920264C2200E7C5D5 /* GatewayProtocols */; };
 		44D0B0EC20264C3500E7C5D5 /* UseCases in Resources */ = {isa = PBXBuildFile; fileRef = 44D0B0EB20264C3500E7C5D5 /* UseCases */; };
-		44D0B0EE20264C5200E7C5D5 /* EntitiesStructs in Resources */ = {isa = PBXBuildFile; fileRef = 44D0B0ED20264C5200E7C5D5 /* EntitiesStructs */; };
 		44D0B0F020264C6F00E7C5D5 /* ServiceGatewayImplementation in Resources */ = {isa = PBXBuildFile; fileRef = 44D0B0EF20264C6F00E7C5D5 /* ServiceGatewayImplementation */; };
 		44D0B0F220264C7C00E7C5D5 /* RealmGatewayImplementation in Resources */ = {isa = PBXBuildFile; fileRef = 44D0B0F120264C7C00E7C5D5 /* RealmGatewayImplementation */; };
+		44D16964202B6EC200824633 /* Animation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44D16963202B6EC200824633 /* Animation.swift */; };
+		44DD66A620293EF700934457 /* Application.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44DD66A520293EF700934457 /* Application.swift */; };
 		44EE24D620264EF800C2C586 /* RealmManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44EE24D520264EF800C2C586 /* RealmManager.swift */; };
 		44EE24D9202660AB00C2C586 /* RealmManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44EE24D8202660AB00C2C586 /* RealmManager.swift */; };
 		44EE24DB2026719300C2C586 /* FileManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44EE24DA2026719300C2C586 /* FileManager.swift */; };
+		44EE24DF2027961200C2C586 /* Lobster-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 44EE24DD2027961200C2C586 /* Lobster-Regular.ttf */; };
+		44EE24E02027961200C2C586 /* Lobster-Licence.txt in Resources */ = {isa = PBXBuildFile; fileRef = 44EE24DE2027961200C2C586 /* Lobster-Licence.txt */; };
+		44EE24EE2027961F00C2C586 /* Roboto-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 44EE24E12027961E00C2C586 /* Roboto-Light.ttf */; };
+		44EE24EF2027961F00C2C586 /* Roboto-BoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 44EE24E22027961E00C2C586 /* Roboto-BoldItalic.ttf */; };
+		44EE24F02027961F00C2C586 /* Roboto-Thin.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 44EE24E32027961E00C2C586 /* Roboto-Thin.ttf */; };
+		44EE24F12027961F00C2C586 /* Roboto-ThinItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 44EE24E42027961E00C2C586 /* Roboto-ThinItalic.ttf */; };
+		44EE24F22027961F00C2C586 /* Roboto-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 44EE24E52027961E00C2C586 /* Roboto-Regular.ttf */; };
+		44EE24F32027961F00C2C586 /* Roboto-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 44EE24E62027961E00C2C586 /* Roboto-Black.ttf */; };
+		44EE24F42027961F00C2C586 /* Roboto-BlackItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 44EE24E72027961F00C2C586 /* Roboto-BlackItalic.ttf */; };
+		44EE24F52027961F00C2C586 /* Roboto-Licence.txt in Resources */ = {isa = PBXBuildFile; fileRef = 44EE24E82027961F00C2C586 /* Roboto-Licence.txt */; };
+		44EE24F62027961F00C2C586 /* Roboto-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 44EE24E92027961F00C2C586 /* Roboto-Medium.ttf */; };
+		44EE24F72027961F00C2C586 /* Roboto-MediumItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 44EE24EA2027961F00C2C586 /* Roboto-MediumItalic.ttf */; };
+		44EE24F82027961F00C2C586 /* Roboto-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 44EE24EB2027961F00C2C586 /* Roboto-Italic.ttf */; };
+		44EE24F92027961F00C2C586 /* Roboto-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 44EE24EC2027961F00C2C586 /* Roboto-Bold.ttf */; };
+		44EE24FA2027961F00C2C586 /* Roboto-LightItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 44EE24ED2027961F00C2C586 /* Roboto-LightItalic.ttf */; };
+		44EE24FD2027A0C500C2C586 /* UpcomingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44EE24FB2027A0C500C2C586 /* UpcomingTableViewCell.swift */; };
+		44EE24FE2027A0C500C2C586 /* UpcomingTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 44EE24FC2027A0C500C2C586 /* UpcomingTableViewCell.xib */; };
+		44EE25002027B2AA00C2C586 /* UIScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44EE24FF2027B2AA00C2C586 /* UIScrollView.swift */; };
+		489958E020311072009B6760 /* BlackListNavBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 489958DF20311072009B6760 /* BlackListNavBar.swift */; };
+		96615767202B906900D10333 /* BlackListTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96615766202B906900D10333 /* BlackListTabBar.swift */; };
+		96615774202BCE8900D10333 /* Upcomming.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 96615773202BCE8900D10333 /* Upcomming.storyboard */; };
+		96615776202BCF7400D10333 /* Lendings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 96615775202BCF7400D10333 /* Lendings.storyboard */; };
+		96615779202BD71A00D10333 /* BlackListTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96615778202BD71A00D10333 /* BlackListTabBarViewController.swift */; };
+		96C1CB27202CB3C80070B173 /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96C1CB26202CB3C80070B173 /* UIView.swift */; };
 		D2C28C8DB3FE523480FE3ACC /* Pods_blacklistTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 76CC509BEFC64FF91398CCB5 /* Pods_blacklistTests.framework */; };
 		F1F6E52EDFC9945464867067 /* Pods_blacklist.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 53208D8CF1CFAA4BD8163FEB /* Pods_blacklist.framework */; };
 /* End PBXBuildFile section */
@@ -45,6 +81,17 @@
 
 /* Begin PBXFileReference section */
 		0189BB6A85C388034BB1B777 /* Pods-blacklist.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-blacklist.debug.xcconfig"; path = "Pods/Target Support Files/Pods-blacklist/Pods-blacklist.debug.xcconfig"; sourceTree = "<group>"; };
+		440442DF202FE6C40099D3D9 /* CGFloat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CGFloat.swift; sourceTree = "<group>"; };
+		440442E1203021E80099D3D9 /* Debtor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Debtor.swift; sourceTree = "<group>"; };
+		440442E42030231F0099D3D9 /* RealmDebtor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmDebtor.swift; sourceTree = "<group>"; };
+		441EADBD20284E6A007E1D9A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		444939982030F1DE007CDF3B /* Period.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Period.swift; sourceTree = "<group>"; };
+		4449399A2030F392007CDF3B /* RealmPeriod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmPeriod.swift; sourceTree = "<group>"; };
+		4449399C2030F4D9007CDF3B /* Amortization.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Amortization.swift; sourceTree = "<group>"; };
+		4449399E2030F4F3007CDF3B /* Lending.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Lending.swift; sourceTree = "<group>"; };
+		444939A02030F505007CDF3B /* Context.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Context.swift; sourceTree = "<group>"; };
+		444939A22030F657007CDF3B /* RealmAmortization.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmAmortization.swift; sourceTree = "<group>"; };
+		444939A42030FAD9007CDF3B /* RealmLending.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmLending.swift; sourceTree = "<group>"; };
 		449D62D820254BA80031BA92 /* blacklist.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = blacklist.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		449D62DB20254BA80031BA92 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		449D62E020254BA80031BA92 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -65,15 +112,40 @@
 		44D0B0E520264A5B00E7C5D5 /* SegueIndentifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SegueIndentifier.swift; sourceTree = "<group>"; };
 		44D0B0E920264C2200E7C5D5 /* GatewayProtocols */ = {isa = PBXFileReference; lastKnownFileType = text; path = GatewayProtocols; sourceTree = "<group>"; };
 		44D0B0EB20264C3500E7C5D5 /* UseCases */ = {isa = PBXFileReference; lastKnownFileType = text; path = UseCases; sourceTree = "<group>"; };
-		44D0B0ED20264C5200E7C5D5 /* EntitiesStructs */ = {isa = PBXFileReference; lastKnownFileType = text; path = EntitiesStructs; sourceTree = "<group>"; };
 		44D0B0EF20264C6F00E7C5D5 /* ServiceGatewayImplementation */ = {isa = PBXFileReference; lastKnownFileType = text; path = ServiceGatewayImplementation; sourceTree = "<group>"; };
 		44D0B0F120264C7C00E7C5D5 /* RealmGatewayImplementation */ = {isa = PBXFileReference; lastKnownFileType = text; path = RealmGatewayImplementation; sourceTree = "<group>"; };
+		44D16963202B6EC200824633 /* Animation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Animation.swift; sourceTree = "<group>"; };
+		44DD66A520293EF700934457 /* Application.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Application.swift; sourceTree = "<group>"; };
 		44EE24D520264EF800C2C586 /* RealmManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmManager.swift; sourceTree = "<group>"; };
 		44EE24D8202660AB00C2C586 /* RealmManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmManager.swift; sourceTree = "<group>"; };
 		44EE24DA2026719300C2C586 /* FileManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileManager.swift; sourceTree = "<group>"; };
+		44EE24DD2027961200C2C586 /* Lobster-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lobster-Regular.ttf"; sourceTree = "<group>"; };
+		44EE24DE2027961200C2C586 /* Lobster-Licence.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "Lobster-Licence.txt"; sourceTree = "<group>"; };
+		44EE24E12027961E00C2C586 /* Roboto-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Light.ttf"; sourceTree = "<group>"; };
+		44EE24E22027961E00C2C586 /* Roboto-BoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-BoldItalic.ttf"; sourceTree = "<group>"; };
+		44EE24E32027961E00C2C586 /* Roboto-Thin.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Thin.ttf"; sourceTree = "<group>"; };
+		44EE24E42027961E00C2C586 /* Roboto-ThinItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-ThinItalic.ttf"; sourceTree = "<group>"; };
+		44EE24E52027961E00C2C586 /* Roboto-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Regular.ttf"; sourceTree = "<group>"; };
+		44EE24E62027961E00C2C586 /* Roboto-Black.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Black.ttf"; sourceTree = "<group>"; };
+		44EE24E72027961F00C2C586 /* Roboto-BlackItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-BlackItalic.ttf"; sourceTree = "<group>"; };
+		44EE24E82027961F00C2C586 /* Roboto-Licence.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "Roboto-Licence.txt"; sourceTree = "<group>"; };
+		44EE24E92027961F00C2C586 /* Roboto-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Medium.ttf"; sourceTree = "<group>"; };
+		44EE24EA2027961F00C2C586 /* Roboto-MediumItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-MediumItalic.ttf"; sourceTree = "<group>"; };
+		44EE24EB2027961F00C2C586 /* Roboto-Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Italic.ttf"; sourceTree = "<group>"; };
+		44EE24EC2027961F00C2C586 /* Roboto-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Bold.ttf"; sourceTree = "<group>"; };
+		44EE24ED2027961F00C2C586 /* Roboto-LightItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-LightItalic.ttf"; sourceTree = "<group>"; };
+		44EE24FB2027A0C500C2C586 /* UpcomingTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpcomingTableViewCell.swift; sourceTree = "<group>"; };
+		44EE24FC2027A0C500C2C586 /* UpcomingTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UpcomingTableViewCell.xib; sourceTree = "<group>"; };
+		44EE24FF2027B2AA00C2C586 /* UIScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIScrollView.swift; sourceTree = "<group>"; };
+		489958DF20311072009B6760 /* BlackListNavBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlackListNavBar.swift; sourceTree = "<group>"; };
 		53208D8CF1CFAA4BD8163FEB /* Pods_blacklist.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_blacklist.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		72B14658C6E06E5C809D3FFB /* Pods-blacklist.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-blacklist.release.xcconfig"; path = "Pods/Target Support Files/Pods-blacklist/Pods-blacklist.release.xcconfig"; sourceTree = "<group>"; };
 		76CC509BEFC64FF91398CCB5 /* Pods_blacklistTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_blacklistTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		96615766202B906900D10333 /* BlackListTabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = BlackListTabBar.swift; path = "blacklist/Scenes/BlackListTabBar/Custom Views/BlackListTabBar.swift"; sourceTree = SOURCE_ROOT; };
+		96615773202BCE8900D10333 /* Upcomming.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Upcomming.storyboard; sourceTree = "<group>"; };
+		96615775202BCF7400D10333 /* Lendings.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Lendings.storyboard; sourceTree = "<group>"; };
+		96615778202BD71A00D10333 /* BlackListTabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlackListTabBarViewController.swift; sourceTree = "<group>"; };
+		96C1CB26202CB3C80070B173 /* UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
 		BF55FF33AB7E5BB6A1D97B6D /* Pods-blacklistTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-blacklistTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-blacklistTests/Pods-blacklistTests.debug.xcconfig"; sourceTree = "<group>"; };
 		DCEE3BFA15ED06CB07285B9A /* Pods-blacklistTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-blacklistTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-blacklistTests/Pods-blacklistTests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -107,6 +179,17 @@
 				DCEE3BFA15ED06CB07285B9A /* Pods-blacklistTests.release.xcconfig */,
 			);
 			name = Pods;
+			sourceTree = "<group>";
+		};
+		440442E32030230E0099D3D9 /* Entities */ = {
+			isa = PBXGroup;
+			children = (
+				440442E42030231F0099D3D9 /* RealmDebtor.swift */,
+				4449399A2030F392007CDF3B /* RealmPeriod.swift */,
+				444939A22030F657007CDF3B /* RealmAmortization.swift */,
+				444939A42030FAD9007CDF3B /* RealmLending.swift */,
+			);
+			path = Entities;
 			sourceTree = "<group>";
 		};
 		449D62CF20254BA80031BA92 = {
@@ -163,6 +246,8 @@
 		449D6302202556F00031BA92 /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				489958DD20311024009B6760 /* BlackListNavBar */,
+				96615777202BD6C400D10333 /* BlackListTabBar */,
 				449D6305202557560031BA92 /* Home */,
 			);
 			path = Scenes;
@@ -204,6 +289,7 @@
 		449D63062025576A0031BA92 /* Realm */ = {
 			isa = PBXGroup;
 			children = (
+				440442E32030230E0099D3D9 /* Entities */,
 				44D0B0F120264C7C00E7C5D5 /* RealmGatewayImplementation */,
 			);
 			path = Realm;
@@ -220,7 +306,11 @@
 		449D6308202557950031BA92 /* Entities */ = {
 			isa = PBXGroup;
 			children = (
-				44D0B0ED20264C5200E7C5D5 /* EntitiesStructs */,
+				440442E1203021E80099D3D9 /* Debtor.swift */,
+				444939982030F1DE007CDF3B /* Period.swift */,
+				4449399C2030F4D9007CDF3B /* Amortization.swift */,
+				4449399E2030F4F3007CDF3B /* Lending.swift */,
+				444939A02030F505007CDF3B /* Context.swift */,
 			);
 			path = Entities;
 			sourceTree = "<group>";
@@ -244,6 +334,7 @@
 		449D630B202558470031BA92 /* Assets */ = {
 			isa = PBXGroup;
 			children = (
+				44EE24DC202795F100C2C586 /* Fonts */,
 				449D62E220254BA80031BA92 /* Assets.xcassets */,
 			);
 			path = Assets;
@@ -254,6 +345,7 @@
 			children = (
 				449D630F202558BE0031BA92 /* Presenter.swift */,
 				449D631120255AED0031BA92 /* Router.swift */,
+				441EADBD20284E6A007E1D9A /* ViewController.swift */,
 			);
 			path = Base;
 			sourceTree = "<group>";
@@ -263,6 +355,9 @@
 			children = (
 				44D0B0E02025C21B00E7C5D5 /* UIColor.swift */,
 				44EE24DA2026719300C2C586 /* FileManager.swift */,
+				44EE24FF2027B2AA00C2C586 /* UIScrollView.swift */,
+				96C1CB26202CB3C80070B173 /* UIView.swift */,
+				440442DF202FE6C40099D3D9 /* CGFloat.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -274,6 +369,8 @@
 				44D0B0E22025C42D00E7C5D5 /* StyleSheet.swift */,
 				44D0B0E520264A5B00E7C5D5 /* SegueIndentifier.swift */,
 				44EE24D520264EF800C2C586 /* RealmManager.swift */,
+				44DD66A520293EF700934457 /* Application.swift */,
+				44D16963202B6EC200824633 /* Animation.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -281,6 +378,8 @@
 		449D631920255F460031BA92 /* Custom Views */ = {
 			isa = PBXGroup;
 			children = (
+				44EE24FB2027A0C500C2C586 /* UpcomingTableViewCell.swift */,
+				44EE24FC2027A0C500C2C586 /* UpcomingTableViewCell.xib */,
 			);
 			path = "Custom Views";
 			sourceTree = "<group>";
@@ -290,6 +389,8 @@
 			children = (
 				449D62DF20254BA80031BA92 /* Main.storyboard */,
 				449D62E420254BA80031BA92 /* LaunchScreen.storyboard */,
+				96615773202BCE8900D10333 /* Upcomming.storyboard */,
+				96615775202BCF7400D10333 /* Lendings.storyboard */,
 			);
 			path = Storyboards;
 			sourceTree = "<group>";
@@ -319,6 +420,44 @@
 			path = Realm;
 			sourceTree = "<group>";
 		};
+		44EE24DC202795F100C2C586 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				44EE24E82027961F00C2C586 /* Roboto-Licence.txt */,
+				44EE24E62027961E00C2C586 /* Roboto-Black.ttf */,
+				44EE24E72027961F00C2C586 /* Roboto-BlackItalic.ttf */,
+				44EE24EC2027961F00C2C586 /* Roboto-Bold.ttf */,
+				44EE24E22027961E00C2C586 /* Roboto-BoldItalic.ttf */,
+				44EE24EB2027961F00C2C586 /* Roboto-Italic.ttf */,
+				44EE24E12027961E00C2C586 /* Roboto-Light.ttf */,
+				44EE24ED2027961F00C2C586 /* Roboto-LightItalic.ttf */,
+				44EE24E92027961F00C2C586 /* Roboto-Medium.ttf */,
+				44EE24EA2027961F00C2C586 /* Roboto-MediumItalic.ttf */,
+				44EE24E52027961E00C2C586 /* Roboto-Regular.ttf */,
+				44EE24E32027961E00C2C586 /* Roboto-Thin.ttf */,
+				44EE24E42027961E00C2C586 /* Roboto-ThinItalic.ttf */,
+				44EE24DD2027961200C2C586 /* Lobster-Regular.ttf */,
+				44EE24DE2027961200C2C586 /* Lobster-Licence.txt */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
+		489958DD20311024009B6760 /* BlackListNavBar */ = {
+			isa = PBXGroup;
+			children = (
+				489958DE2031103E009B6760 /* CustomViews */,
+			);
+			path = BlackListNavBar;
+			sourceTree = "<group>";
+		};
+		489958DE2031103E009B6760 /* CustomViews */ = {
+			isa = PBXGroup;
+			children = (
+				489958DF20311072009B6760 /* BlackListNavBar.swift */,
+			);
+			path = CustomViews;
+			sourceTree = "<group>";
+		};
 		4BAD82D406E02A0713A98E9D /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -326,6 +465,23 @@
 				76CC509BEFC64FF91398CCB5 /* Pods_blacklistTests.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		96615777202BD6C400D10333 /* BlackListTabBar */ = {
+			isa = PBXGroup;
+			children = (
+				9661577A202BD78300D10333 /* Custom Views */,
+				96615778202BD71A00D10333 /* BlackListTabBarViewController.swift */,
+			);
+			path = BlackListTabBar;
+			sourceTree = "<group>";
+		};
+		9661577A202BD78300D10333 /* Custom Views */ = {
+			isa = PBXGroup;
+			children = (
+				96615766202B906900D10333 /* BlackListTabBar.swift */,
+			);
+			path = "Custom Views";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -385,7 +541,7 @@
 				TargetAttributes = {
 					449D62D720254BA80031BA92 = {
 						CreatedOnToolsVersion = 9.0.1;
-						ProvisioningStyle = Automatic;
+						ProvisioningStyle = Manual;
 					};
 					449D62EB20254BA80031BA92 = {
 						CreatedOnToolsVersion = 9.0.1;
@@ -418,13 +574,30 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				44D0B0EE20264C5200E7C5D5 /* EntitiesStructs in Resources */,
+				44EE24E02027961200C2C586 /* Lobster-Licence.txt in Resources */,
+				44EE24F42027961F00C2C586 /* Roboto-BlackItalic.ttf in Resources */,
 				44D0B0EC20264C3500E7C5D5 /* UseCases in Resources */,
+				96615774202BCE8900D10333 /* Upcomming.storyboard in Resources */,
+				44EE24F92027961F00C2C586 /* Roboto-Bold.ttf in Resources */,
+				44EE24F82027961F00C2C586 /* Roboto-Italic.ttf in Resources */,
+				44EE24EE2027961F00C2C586 /* Roboto-Light.ttf in Resources */,
+				44EE24FE2027A0C500C2C586 /* UpcomingTableViewCell.xib in Resources */,
 				449D62E620254BA80031BA92 /* LaunchScreen.storyboard in Resources */,
 				44D0B0F220264C7C00E7C5D5 /* RealmGatewayImplementation in Resources */,
+				44EE24EF2027961F00C2C586 /* Roboto-BoldItalic.ttf in Resources */,
 				449D62E320254BA80031BA92 /* Assets.xcassets in Resources */,
+				96615776202BCF7400D10333 /* Lendings.storyboard in Resources */,
+				44EE24FA2027961F00C2C586 /* Roboto-LightItalic.ttf in Resources */,
+				44EE24F62027961F00C2C586 /* Roboto-Medium.ttf in Resources */,
 				44D0B0F020264C6F00E7C5D5 /* ServiceGatewayImplementation in Resources */,
 				449D62E120254BA80031BA92 /* Main.storyboard in Resources */,
+				44EE24F12027961F00C2C586 /* Roboto-ThinItalic.ttf in Resources */,
+				44EE24F52027961F00C2C586 /* Roboto-Licence.txt in Resources */,
+				44EE24F32027961F00C2C586 /* Roboto-Black.ttf in Resources */,
+				44EE24DF2027961200C2C586 /* Lobster-Regular.ttf in Resources */,
+				44EE24F72027961F00C2C586 /* Roboto-MediumItalic.ttf in Resources */,
+				44EE24F22027961F00C2C586 /* Roboto-Regular.ttf in Resources */,
+				44EE24F02027961F00C2C586 /* Roboto-Thin.ttf in Resources */,
 				44D0B0EA20264C2200E7C5D5 /* GatewayProtocols in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -565,14 +738,33 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				96C1CB27202CB3C80070B173 /* UIView.swift in Sources */,
+				44DD66A620293EF700934457 /* Application.swift in Sources */,
+				4449399B2030F392007CDF3B /* RealmPeriod.swift in Sources */,
+				441EADBE20284E6A007E1D9A /* ViewController.swift in Sources */,
+				489958E020311072009B6760 /* BlackListNavBar.swift in Sources */,
+				44EE24FD2027A0C500C2C586 /* UpcomingTableViewCell.swift in Sources */,
+				444939A52030FAD9007CDF3B /* RealmLending.swift in Sources */,
+				44D16964202B6EC200824633 /* Animation.swift in Sources */,
 				449D631220255AED0031BA92 /* Router.swift in Sources */,
 				449D6310202558BE0031BA92 /* Presenter.swift in Sources */,
 				44EE24D620264EF800C2C586 /* RealmManager.swift in Sources */,
 				44EE24DB2026719300C2C586 /* FileManager.swift in Sources */,
+				440442E0202FE6C40099D3D9 /* CGFloat.swift in Sources */,
+				444939992030F1DE007CDF3B /* Period.swift in Sources */,
+				44EE25002027B2AA00C2C586 /* UIScrollView.swift in Sources */,
 				44D0B0E32025C42D00E7C5D5 /* StyleSheet.swift in Sources */,
 				449D631D20255FCE0031BA92 /* HomeViewController.swift in Sources */,
+				4449399F2030F4F3007CDF3B /* Lending.swift in Sources */,
+				440442E52030231F0099D3D9 /* RealmDebtor.swift in Sources */,
+				444939A12030F505007CDF3B /* Context.swift in Sources */,
+				4449399D2030F4D9007CDF3B /* Amortization.swift in Sources */,
+				440442E2203021E80099D3D9 /* Debtor.swift in Sources */,
 				449D631620255F2E0031BA92 /* HomePresenter.swift in Sources */,
 				44D0B0E620264A5B00E7C5D5 /* SegueIndentifier.swift in Sources */,
+				96615767202B906900D10333 /* BlackListTabBar.swift in Sources */,
+				96615779202BD71A00D10333 /* BlackListTabBarViewController.swift in Sources */,
+				444939A32030F657007CDF3B /* RealmAmortization.swift in Sources */,
 				44D0B0DF2025C1CC00E7C5D5 /* AppConstants.swift in Sources */,
 				44D0B0E12025C21B00E7C5D5 /* UIColor.swift in Sources */,
 				449D631F20255FFF0031BA92 /* HomeRouter.swift in Sources */,
@@ -731,14 +923,15 @@
 			baseConfigurationReference = 0189BB6A85C388034BB1B777 /* Pods-blacklist.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 65JJM7BL69;
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = "";
 				GCC_TREAT_WARNINGS_AS_ERRORS = YES;
 				INFOPLIST_FILE = "$(SRCROOT)/blacklist/Common/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = io.github.opelty.blacklist;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -749,14 +942,15 @@
 			baseConfigurationReference = 72B14658C6E06E5C809D3FFB /* Pods-blacklist.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 65JJM7BL69;
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = "";
 				GCC_TREAT_WARNINGS_AS_ERRORS = YES;
 				INFOPLIST_FILE = "$(SRCROOT)/blacklist/Common/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = io.github.opelty.blacklist;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};

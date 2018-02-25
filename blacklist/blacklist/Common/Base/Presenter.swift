@@ -8,25 +8,31 @@
 
 import Foundation
 
-protocol View: class { }
+protocol View: class {
+    func go(to: String, sender: Any?)
+}
 
-class Presenter {
-    public private(set) weak var view: View?
-    public private(set) weak var router: Router?
+protocol Presenter: class {
+    associatedtype V
 
-    public func attach(view: View) {
+    var view: V? { get set }
+
+    func attach(view: V?)
+    func deattach()
+
+    var isAttached: Bool { get }
+}
+
+extension Presenter {
+    var isAttached: Bool {
+        return view != nil
+    }
+
+    func attach(view: V?) {
         self.view = view
     }
 
-    public func register(router: Router) {
-        self.router = router
-    }
-
-    public func deallocateView() {
+    func deattach() {
         self.view = nil
-    }
-
-    public func deallocateRouter() {
-        self.router = nil
     }
 }

@@ -6,10 +6,10 @@
 //  Copyright © 2018 Opelty's Open Source Projects. All rights reserved.
 //
 
-import XCTest
-import RealmSwift
 import Quick
 import Nimble
+
+import RealmSwift
 
 @testable import blacklist
 
@@ -68,7 +68,6 @@ class RealmHandlerSpecs: QuickSpec, RealmEntityTestProtocol {
 
                 // Add them to Realm
                 blacklist.RealmManager.shared.add(objects: dummyItem1, dummyItem2, dummyItem3)
-
                 let objects = blacklist.RealmManager.shared.all(for: DummyTestObject.self)
 
                 // Specs

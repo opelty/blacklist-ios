@@ -1,24 +1,97 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" systemVersion="17A277" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Dxo-0G-a3T">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
-        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
-        <scene sceneID="tne-QT-ifu">
+        <!--Black List Nav Bar-->
+        <scene sceneID="Jkd-Yk-oPr">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Xwu-Rp-LLn" customClass="BlackListNavBar" customModule="blacklist" customModuleProvider="target" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="" image="upcomming" id="bRN-AS-0gt"/>
+                    <toolbarItems/>
+                    <size key="freeformSize" width="375" height="60"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="nDN-vc-0uy">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" red="0.10622555017471313" green="0.12496106326580048" blue="0.15698294341564178" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="HkI-ha-xnc" kind="relationship" relationship="rootViewController" id="WmI-k2-14R"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="tI3-Ma-FXI" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="449" y="27"/>
+        </scene>
+        <!--UpcommingViewController-->
+        <scene sceneID="HF3-fd-omV">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Upcomming" referencedIdentifier="UpcommingViewController" id="HkI-ha-xnc" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="Iu3-er-hg6"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="OXI-FC-Qzp" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1102" y="27"/>
+        </scene>
+        <!--LendingsViewController-->
+        <scene sceneID="EZw-aL-K5D">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Lendings" referencedIdentifier="LendingsViewController" id="5Uz-p7-rxd" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="1GV-ww-HOG"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="1te-6m-xMJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1102" y="236"/>
+        </scene>
+        <!--Black List Tab Bar View Controller-->
+        <scene sceneID="2tf-sT-tqf">
+            <objects>
+                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="Dxo-0G-a3T" customClass="BlackListTabBarViewController" customModule="blacklist" customModuleProvider="target" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="CNe-x1-vxg" customClass="BlackListTabBar" customModule="blacklist" customModuleProvider="target">
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="Xwu-Rp-LLn" kind="relationship" relationship="viewControllers" id="43Q-Bl-6qj"/>
+                        <segue destination="3v7-3c-yD1" kind="relationship" relationship="viewControllers" id="hKO-JU-1oe"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fED-rJ-Eg6" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-335" y="130"/>
+        </scene>
+        <!--Black List Nav Bar-->
+        <scene sceneID="8JQ-GT-IOb">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="3v7-3c-yD1" customClass="BlackListNavBar" customModule="blacklist" customModuleProvider="target" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="" image="lendings" id="5Up-Kd-8KQ"/>
+                    <toolbarItems/>
+                    <size key="freeformSize" width="375" height="60"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="ctd-9l-c5b">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="5Uz-p7-rxd" kind="relationship" relationship="rootViewController" id="LB1-0h-EKm"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="5Sk-2U-u5v" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="449" y="236"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="lendings" width="24" height="20"/>
+        <image name="upcomming" width="26" height="24"/>
+    </resources>
 </document>
