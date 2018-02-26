@@ -30,24 +30,49 @@
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Z7R-zf-w44">
                         <rect key="frame" x="15" y="0.0" width="345" height="100"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KD1-ox-EzJ">
-                                <rect key="frame" x="275" y="0.0" width="60" height="60"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" image="checked"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KD1-ox-EzJ">
+                                <rect key="frame" x="215" y="30" width="40" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="40" id="6bA-vI-YTC"/>
+                                    <constraint firstAttribute="height" constant="40" id="NDh-Ns-1hf"/>
+                                </constraints>
+                                <state key="normal" image="unsuccessful_pay"/>
                                 <connections>
                                     <action selector="didPressAction:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="qDE-cX-Kji"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="REa-q5-z9T">
-                                <rect key="frame" x="210" y="0.0" width="60" height="60"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="REa-q5-z9T">
+                                <rect key="frame" x="155" y="30" width="40" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="40" id="3VR-9h-qCu"/>
+                                    <constraint firstAttribute="height" constant="40" id="G5B-NQ-P34"/>
+                                </constraints>
                                 <state key="normal" image="telephone"/>
                                 <connections>
                                     <action selector="didPressAction:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="uQt-AZ-zej"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="h4k-Go-5iB">
+                                <rect key="frame" x="275" y="30" width="40" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="40" id="Pwk-W6-63o"/>
+                                    <constraint firstAttribute="height" constant="40" id="dNm-oJ-bNp"/>
+                                </constraints>
+                                <state key="normal" image="successful_pay"/>
+                                <connections>
+                                    <action selector="didPressAction:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="BCz-tC-ERf"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.37254901960784315" green="0.73333333333333328" blue="0.61960784313725492" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <constraints>
+                            <constraint firstItem="REa-q5-z9T" firstAttribute="centerY" secondItem="Z7R-zf-w44" secondAttribute="centerY" id="9Kb-yN-hJa"/>
+                            <constraint firstAttribute="trailing" secondItem="h4k-Go-5iB" secondAttribute="trailing" constant="30" id="NSg-Or-ybC"/>
+                            <constraint firstItem="KD1-ox-EzJ" firstAttribute="centerY" secondItem="Z7R-zf-w44" secondAttribute="centerY" id="PaP-nr-qUC"/>
+                            <constraint firstItem="KD1-ox-EzJ" firstAttribute="leading" secondItem="REa-q5-z9T" secondAttribute="trailing" constant="20" id="RpL-ko-xUy"/>
+                            <constraint firstItem="h4k-Go-5iB" firstAttribute="leading" secondItem="KD1-ox-EzJ" secondAttribute="trailing" constant="20" id="bhh-ls-1xG"/>
+                            <constraint firstItem="h4k-Go-5iB" firstAttribute="centerY" secondItem="Z7R-zf-w44" secondAttribute="centerY" id="eg1-7R-CDd"/>
+                        </constraints>
                     </view>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8zU-7S-V9K">
                         <rect key="frame" x="15" y="0.0" width="345" height="100"/>
@@ -138,7 +163,7 @@
                     <constraint firstItem="Z7R-zf-w44" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="K3Y-ND-9Ij"/>
                     <constraint firstAttribute="trailing" secondItem="8zU-7S-V9K" secondAttribute="trailing" constant="15" id="Zco-jl-va6"/>
                     <constraint firstItem="Z7R-zf-w44" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="15" id="cfS-tb-buD"/>
-                    <constraint firstAttribute="trailing" secondItem="Z7R-zf-w44" secondAttribute="trailing" constant="15" id="dop-fz-P20"/>
+                    <constraint firstAttribute="trailing" relation="lessThanOrEqual" secondItem="Z7R-zf-w44" secondAttribute="trailing" constant="210" id="dop-fz-P20"/>
                     <constraint firstItem="8zU-7S-V9K" firstAttribute="height" secondItem="Z7R-zf-w44" secondAttribute="height" id="e97-6f-fto"/>
                     <constraint firstItem="8zU-7S-V9K" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="15" id="nCf-Ej-9jR"/>
                     <constraint firstAttribute="bottom" secondItem="8zU-7S-V9K" secondAttribute="bottom" constant="15" id="puB-gN-C86"/>
@@ -150,8 +175,11 @@
             <connections>
                 <outlet property="actionsView" destination="Z7R-zf-w44" id="IpH-Pd-jKX"/>
                 <outlet property="actionsViewTrailingConstraint" destination="dop-fz-P20" id="sqx-SX-Pwc"/>
+                <outlet property="amountLabel" destination="0Yk-jj-ttw" id="6Go-Sj-S1F"/>
                 <outlet property="checkButton" destination="KD1-ox-EzJ" id="sPc-H8-fmf"/>
                 <outlet property="containerView" destination="8zU-7S-V9K" id="SSc-JU-H6w"/>
+                <outlet property="deadlineLabel" destination="dUV-rN-Zpz" id="Gvu-OF-3Kq"/>
+                <outlet property="debtorNameLabel" destination="5uH-Vy-VOp" id="E5M-AS-yKS"/>
                 <outlet property="phoneButton" destination="REa-q5-z9T" id="vHj-A6-CGk"/>
             </connections>
             <point key="canvasLocation" x="-110.5" y="-79.5"/>
@@ -159,9 +187,10 @@
     </objects>
     <resources>
         <image name="calendar" width="41" height="36"/>
-        <image name="checked" width="26" height="20"/>
         <image name="dollar_icon" width="34" height="34"/>
         <image name="m1" width="136" height="156"/>
-        <image name="telephone" width="26" height="26"/>
+        <image name="successful_pay" width="87" height="71"/>
+        <image name="telephone" width="70" height="71"/>
+        <image name="unsuccessful_pay" width="86" height="71"/>
     </resources>
 </document>

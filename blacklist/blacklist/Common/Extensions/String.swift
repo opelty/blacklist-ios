@@ -12,4 +12,8 @@ extension String {
     var localized: String {
         return NSLocalizedString(self, comment: self)
     }
+
+    func remove(substring: String) -> String {
+        return self.replacingOccurrences(of: substring, with: "")
+    }
 }

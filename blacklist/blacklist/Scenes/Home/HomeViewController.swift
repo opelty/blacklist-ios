@@ -174,6 +174,7 @@ extension HomeViewController: UITableViewDataSource, UITableViewDelegate {
             for: indexPath
         ) as! UpcomingTableViewCell
 
+        cell.setContent(debtorName: "Mateo Olaya", amount: 3_000, deadline: Date(timeIntervalSinceNow: 1_000_000))
         cell.registerHandler { [weak self] (cell, action) in
             self?.didPerform(action: action, in: cell)
         }

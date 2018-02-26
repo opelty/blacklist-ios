@@ -23,6 +23,9 @@ class UpcomingTableViewCell: UITableViewCell {
     @IBOutlet fileprivate weak var actionsViewTrailingConstraint: NSLayoutConstraint!
     @IBOutlet fileprivate weak var containerView: UIView!
     @IBOutlet fileprivate weak var actionsView: UIView!
+    @IBOutlet fileprivate weak var debtorNameLabel: UILabel!
+    @IBOutlet fileprivate weak var amountLabel: UILabel!
+    @IBOutlet fileprivate weak var deadlineLabel: UILabel!
 
     @IBOutlet fileprivate weak var checkButton: UIButton!
     @IBOutlet fileprivate weak var phoneButton: UIButton!
@@ -107,6 +110,28 @@ class UpcomingTableViewCell: UITableViewCell {
             containerView.animate(.traslation(to: point))
         } else {
             containerView.frame.origin = point
+        }
+    }
+
+    public func setContent(debtorName: String, amount: Double, deadline: Date) {
+        let formatter = NumberFormatter()
+        formatter.locale = Locale.current
+        formatter.numberStyle = .currency
+
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateStyle = .full
+
+        debtorNameLabel.text = debtorName
+        deadlineLabel.text = dateFormatter.string(from: deadline)
+
+        if let formattedAmount = formatter.string(from: amount as NSNumber) {
+            if let currencySymbol = Locale.current.currencySymbol {
+                amountLabel.text = formattedAmount.remove(substring: currencySymbol)
+            } else {
+                amountLabel.text = formattedAmount
+            }
+        } else {
+            amountLabel.text = "0.00"
         }
     }
 
