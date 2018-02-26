@@ -28,6 +28,7 @@
 		449D631D20255FCE0031BA92 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 449D631C20255FCE0031BA92 /* HomeViewController.swift */; };
 		449D631F20255FFF0031BA92 /* HomeRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 449D631E20255FFF0031BA92 /* HomeRouter.swift */; };
 		44CF75D42043669B00F881F0 /* RealmEntityTestProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44CF75D32043669B00F881F0 /* RealmEntityTestProtocol.swift */; };
+		44CF75E02043A69C00F881F0 /* UpcomingTableViewHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44CF75DF2043A69C00F881F0 /* UpcomingTableViewHeader.swift */; };
 		44D0B0DF2025C1CC00E7C5D5 /* AppConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44D0B0DE2025C1CC00E7C5D5 /* AppConstants.swift */; };
 		44D0B0E12025C21B00E7C5D5 /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44D0B0E02025C21B00E7C5D5 /* UIColor.swift */; };
 		44D0B0E32025C42D00E7C5D5 /* StyleSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44D0B0E22025C42D00E7C5D5 /* StyleSheet.swift */; };
@@ -106,6 +107,7 @@
 		449D631C20255FCE0031BA92 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		449D631E20255FFF0031BA92 /* HomeRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeRouter.swift; sourceTree = "<group>"; };
 		44CF75D32043669B00F881F0 /* RealmEntityTestProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmEntityTestProtocol.swift; sourceTree = "<group>"; };
+		44CF75DF2043A69C00F881F0 /* UpcomingTableViewHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpcomingTableViewHeader.swift; sourceTree = "<group>"; };
 		44D0B0DE2025C1CC00E7C5D5 /* AppConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConstants.swift; sourceTree = "<group>"; };
 		44D0B0E02025C21B00E7C5D5 /* UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
 		44D0B0E22025C42D00E7C5D5 /* StyleSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StyleSheet.swift; sourceTree = "<group>"; };
@@ -246,8 +248,8 @@
 		449D6302202556F00031BA92 /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
-				489958DD20311024009B6760 /* BlackListNavBar */,
-				96615777202BD6C400D10333 /* BlackListTabBar */,
+				489958DD20311024009B6760 /* BlacklistNavBar */,
+				96615777202BD6C400D10333 /* BlacklistTabBar */,
 				449D6305202557560031BA92 /* Home */,
 			);
 			path = Scenes;
@@ -380,6 +382,7 @@
 			children = (
 				44EE24FB2027A0C500C2C586 /* UpcomingTableViewCell.swift */,
 				44EE24FC2027A0C500C2C586 /* UpcomingTableViewCell.xib */,
+				44CF75DF2043A69C00F881F0 /* UpcomingTableViewHeader.swift */,
 			);
 			path = "Custom Views";
 			sourceTree = "<group>";
@@ -442,12 +445,12 @@
 			path = Fonts;
 			sourceTree = "<group>";
 		};
-		489958DD20311024009B6760 /* BlackListNavBar */ = {
+		489958DD20311024009B6760 /* BlacklistNavBar */ = {
 			isa = PBXGroup;
 			children = (
 				489958DE2031103E009B6760 /* CustomViews */,
 			);
-			path = BlackListNavBar;
+			path = BlacklistNavBar;
 			sourceTree = "<group>";
 		};
 		489958DE2031103E009B6760 /* CustomViews */ = {
@@ -467,13 +470,13 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		96615777202BD6C400D10333 /* BlackListTabBar */ = {
+		96615777202BD6C400D10333 /* BlacklistTabBar */ = {
 			isa = PBXGroup;
 			children = (
 				9661577A202BD78300D10333 /* Custom Views */,
 				96615778202BD71A00D10333 /* BlackListTabBarViewController.swift */,
 			);
-			path = BlackListTabBar;
+			path = BlacklistTabBar;
 			sourceTree = "<group>";
 		};
 		9661577A202BD78300D10333 /* Custom Views */ = {
@@ -744,6 +747,7 @@
 				441EADBE20284E6A007E1D9A /* ViewController.swift in Sources */,
 				489958E020311072009B6760 /* BlackListNavBar.swift in Sources */,
 				44EE24FD2027A0C500C2C586 /* UpcomingTableViewCell.swift in Sources */,
+				44CF75E02043A69C00F881F0 /* UpcomingTableViewHeader.swift in Sources */,
 				444939A52030FAD9007CDF3B /* RealmLending.swift in Sources */,
 				44D16964202B6EC200824633 /* Animation.swift in Sources */,
 				449D631220255AED0031BA92 /* Router.swift in Sources */,

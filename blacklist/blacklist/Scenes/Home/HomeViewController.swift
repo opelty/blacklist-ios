@@ -12,6 +12,10 @@ class HomeViewController: UIViewController, ViewControllerProtocol {
     struct Constants {
         static let emptyViewHeaderSize: CGFloat = 24.0
         static let emptyViewSubHeaderSize: CGFloat = 14.0
+
+        struct PrototypeCells {
+            static let headerCell = "HeaderCell"
+        }
     }
 
     typealias P = HomePresenter
@@ -29,7 +33,6 @@ class HomeViewController: UIViewController, ViewControllerProtocol {
     @IBOutlet weak var lendingAmountLabel: UILabel!
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var gradientContainerView: UIView!
-    @IBOutlet weak var tableViewHeaderView: UIView!
     @IBOutlet weak var tableViewTopConstraint: NSLayoutConstraint!
     @IBOutlet weak var maximumUpcomingHuggingConstraint: NSLayoutConstraint!
 
@@ -38,9 +41,9 @@ class HomeViewController: UIViewController, ViewControllerProtocol {
 
         // Let's configure the presenter
 
-        configure { (context) -> (presenter: HomePresenter, router: HomeRouter?) in
-            let presenter = HomePresenter()
-            let router = HomeRouter(viewController: context)
+        configure { (context) -> (presenter: P, router: R?) in
+            let presenter = P()
+            let router = R(viewController: context)
 
             return (presenter: presenter, router: router)
         }
@@ -70,7 +73,7 @@ class HomeViewController: UIViewController, ViewControllerProtocol {
         let gradient = CAGradientLayer()
         gradient.frame = gradientContainerView.bounds
         gradient.colors = [UIColor.black.cgColor, UIColor.clear.cgColor]
-        gradient.locations = [0.9, 1.0]
+        gradient.locations = [0.95, 1.0]
 
         gradientContainerView.layer.mask = gradient
 
@@ -90,10 +93,12 @@ extension HomeViewController: UITableViewDataSource, UITableViewDelegate {
     func configureTableView() {
         // Let's configure the tableView
         let upcomingTableViewCellNib = UINib(nibName: UpcomingTableViewCell.identifier, bundle: nil)
+
         tableView.register(upcomingTableViewCellNib, forCellReuseIdentifier: UpcomingTableViewCell.identifier)
 
-        tableView.estimatedRowHeight = 68.0
+        tableView.estimatedRowHeight = 115.0
         tableView.rowHeight = UITableViewAutomaticDimension
+        tableView.layoutIfNeeded()
 
         tableViewTopConstraintConstant = tableViewTopConstraint.constant
 
@@ -185,12 +190,12 @@ extension HomeViewController: UITableViewDataSource, UITableViewDelegate {
         }
     }
 
-    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        return 0.1
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        return tableView.dequeueReusableCell(withIdentifier: Constants.PrototypeCells.headerCell)
     }
 
-    func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
-        return 1.0
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return 50.0
     }
 
     func tableView(_ tableView: UITableView, didEndDisplaying cell: UITableViewCell, forRowAt indexPath: IndexPath) {
@@ -224,7 +229,6 @@ extension HomeViewController {
     fileprivate func performMovement(for scrollView: UIScrollView, restartLayout: Bool) {
         guard !restartLayout else {
             tableViewTopConstraint.constant = tableViewTopConstraintConstant
-            tableViewHeaderView.alpha = 1.0
 
             return
         }
@@ -233,7 +237,6 @@ extension HomeViewController {
         let alpha = y / tableViewTopConstraintConstant
 
         tableViewTopConstraint.constant = y > 0 ? y : 0
-        tableViewHeaderView.alpha = alpha.percentage
     }
 
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
