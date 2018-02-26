@@ -32,7 +32,7 @@ extension ViewControllerProtocol {
         router = context.router
     }
 
-    func go(to: String, sender: Any?) {
+    func go(to: SegueIndentifier, sender: Any?) {
         router?.go(to: to, sender: sender)
     }
 }

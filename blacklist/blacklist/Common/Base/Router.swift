@@ -15,8 +15,8 @@ class Router {
         self.viewController = viewController
     }
 
-    func go(to: String, sender: Any?) {
-        viewController?.performSegue(withIdentifier: to, sender: sender)
+    func go(to: SegueIndentifier, sender: Any?) {
+        viewController?.performSegue(withIdentifier: to.rawValue, sender: sender)
     }
 
     func presentViewController(withIdentifier identifier: String, fromStoryboard name: String, bundle: Bundle? = nil, animated: Bool = true, completion: (() -> Void)?) {

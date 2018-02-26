@@ -14,7 +14,7 @@ class DebtorsRouter: Router {
     func goToContinueAction() { // TODO: Finish this
         print("Going to continue screen...")
 
-        go(to: "EmptyScreen", sender: nil)
+        go(to: .emptyScreen, sender: nil)
     }
 
     // MARK: - Overrides

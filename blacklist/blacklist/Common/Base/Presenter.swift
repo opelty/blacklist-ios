@@ -9,7 +9,7 @@
 import Foundation
 
 protocol View: class {
-    func go(to: String, sender: Any?)
+    func go(to: SegueIndentifier, sender: Any?)
 }
 
 protocol Presenter: class {
