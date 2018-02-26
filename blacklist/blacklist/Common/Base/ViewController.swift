@@ -20,7 +20,7 @@ protocol ViewControllerProtocol: Viewable {
     var router: R? { get set }
 }
 
-extension UIViewController: Viewable { }
+extension UIViewController: Viewable {}
 
 extension ViewControllerProtocol {
     func configure(handler: ((Viewable) -> (presenter: P, router: R?))) {
@@ -30,5 +30,9 @@ extension ViewControllerProtocol {
         presenter.attach(view: self as? Self.P.V)
 
         router = context.router
+    }
+
+    func go(to: String, sender: Any?) {
+        router?.go(to: to, sender: sender)
     }
 }
