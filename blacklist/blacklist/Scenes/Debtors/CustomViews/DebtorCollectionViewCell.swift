@@ -27,9 +27,14 @@ class DebtorCollectionViewCell: UICollectionViewCell {
 
     override func awakeFromNib() {
         super.awakeFromNib()
+        setup()
     }
 
     // MARK: - Methods
+
+    private func setup() {
+        debtorNameLabel.font = UIFont.get(withType: .robotoLight, size: 12)
+    }
 
     func setCellData(debtor: Debtor) {
         var completeName = debtor.firstName

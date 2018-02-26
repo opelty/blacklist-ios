@@ -27,6 +27,10 @@ class DebtorsViewController: UIViewController, ViewControllerProtocol {
     private let continueButtonTextSize: CGFloat = 30
     private let bottomSpaceInset: CGFloat = 30
     private let searchPlaceHolder: String = "Buscar"
+    private let minimumCollectionCellWidth: CGFloat = 120
+    private var itemsPerRow: CGFloat {
+        return (Utils.screenWidth / minimumCollectionCellWidth).rounded(.down)
+    }
     private var debtors: [Debtor] = []
 
     var presenter: DebtorsPresenter!
@@ -93,7 +97,6 @@ class DebtorsViewController: UIViewController, ViewControllerProtocol {
     func getCollectionViewLayout() -> UICollectionViewFlowLayout {
         let flowLayout = UICollectionViewFlowLayout()
         let sectionInsets = UIEdgeInsets(top: 10, left: 20, bottom: continueButton.frame.height + bottomSpaceInset, right: 20)
-        let itemsPerRow: CGFloat = 3
         let paddingSpace = sectionInsets.left * (itemsPerRow + 1)
         let availableWidth = view.frame.width - paddingSpace
         let widthPerItem = availableWidth / itemsPerRow
@@ -116,10 +119,6 @@ class DebtorsViewController: UIViewController, ViewControllerProtocol {
 // MARK: - DebtorsView conformance
 
 extension DebtorsViewController: DebtorsView {
-    func go(to: String, sender: Any?) {
-
-    }
-
     func showDebtors(debtors: [Debtor]) {
         self.debtors = debtors
         collectionView.reloadData()
@@ -139,15 +138,15 @@ extension DebtorsViewController: UICollectionViewDataSource {
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
 
-        let debtorCell = collectionView.dequeueReusableCell(withReuseIdentifier: DebtorCollectionViewCell.identifier, for: indexPath) as? DebtorCollectionViewCell
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: DebtorCollectionViewCell.identifier, for: indexPath)
 
-        guard let cell = debtorCell else {
-            assertionFailure("Unexpected cell type: \(type(of: debtorCell))")
-            return UICollectionViewCell()
+        guard let debtorCell = cell as? DebtorCollectionViewCell else {
+            assertionFailure("Unexpected cell type: \(type(of: cell))")
+            return cell
         }
 
         let debtor = debtors[indexPath.row]
-        cell.setCellData(debtor: debtor)
+        debtorCell.setCellData(debtor: debtor)
 
         return cell
     }
@@ -158,21 +157,11 @@ extension DebtorsViewController: UICollectionViewDataSource {
 extension DebtorsViewController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let debtorCell = collectionView.cellForItem(at: indexPath) as? DebtorCollectionViewCell
-        guard let cell = debtorCell else {
-            assertionFailure("Unexpected cell type: \(type(of: debtorCell))")
-            return
-        }
-
-        cell.selectCell()
+        debtorCell?.selectCell()
     }
 
     func collectionView(_ collectionView: UICollectionView, didDeselectItemAt indexPath: IndexPath) {
         let debtorCell = collectionView.cellForItem(at: indexPath) as? DebtorCollectionViewCell
-        guard let cell = debtorCell else {
-            assertionFailure("Unexpected cell type: \(type(of: debtorCell))")
-            return
-        }
-
-        cell.deselectCell()
+        debtorCell?.deselectCell()
     }
 }
