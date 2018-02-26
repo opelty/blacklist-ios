@@ -68,7 +68,11 @@ class BlackListNavBar: UINavigationController {
     }
 
     @objc func backButtonAction() {
-       popViewController(animated: true)
+        if topViewController?.navigationController?.viewControllers.count == 1 {
+            topViewController?.navigationController?.dismiss(animated: true, completion: nil)
+        } else {
+            popViewController(animated: true)
+        }
     }
 
     @objc func settingsButtonAction() {

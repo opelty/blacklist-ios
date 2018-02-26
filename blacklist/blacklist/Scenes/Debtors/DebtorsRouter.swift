@@ -11,10 +11,10 @@ import UIKit
 class DebtorsRouter: Router {
     // Add transition methods here...
 
-    func loanDetails(with loan: Any) { // TODO: Finish this
-        print("Going to loan details...")
+    func goToContinueAction() { // TODO: Finish this
+        print("Going to continue screen...")
 
-        go(to: "Test", sender: nil)
+        go(to: "EmptyScreen", sender: nil)
     }
 
     // MARK: - Overrides

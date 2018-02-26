@@ -65,6 +65,9 @@
                                 <state key="normal" title="Continue">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="continueAction:" destination="EmW-9U-Zzt" eventType="touchUpInside" id="jCs-1S-Zcd"/>
+                                </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="continue_arrow" translatesAutoresizingMaskIntoConstraints="NO" id="b7a-yS-6kK">
                                 <rect key="frame" x="269" y="597" width="20" height="40"/>
@@ -96,11 +99,27 @@
                         <outlet property="collectionView" destination="gYf-pC-iPu" id="gAq-Rc-cjL"/>
                         <outlet property="continueButton" destination="KJV-eu-fQg" id="6PX-CR-ZyY"/>
                         <outlet property="searchBar" destination="zok-Bt-56l" id="Yz1-gH-aOW"/>
+                        <segue destination="ams-3G-g6w" kind="show" identifier="EmptyScreen" id="0a0-fp-DlW"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7nl-Sc-4xZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="308" y="194.75262368815595"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="BRH-cN-txZ">
+            <objects>
+                <viewController id="ams-3G-g6w" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="bvG-MA-ZSH">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <viewLayoutGuide key="safeArea" id="Ovg-RC-t2c"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="lGc-cH-uJU" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1084" y="195"/>
         </scene>
         <!--Black List Nav Bar-->
         <scene sceneID="8kU-BR-Icm">

@@ -25,6 +25,7 @@ class DebtorsViewController: UIViewController, ViewControllerProtocol {
     private let continueButtonShadowOffset: CGSize = CGSize(width: 0.0, height: 1.0)
     private let continueButtonShadowOppacity: Float = 1.0
     private let continueButtonTextSize: CGFloat = 30
+    private let bottomSpaceInset: CGFloat = 30
     private let searchPlaceHolder: String = "Buscar"
     private var debtors: [Debtor] = []
 
@@ -78,7 +79,7 @@ class DebtorsViewController: UIViewController, ViewControllerProtocol {
     }
 
     func configureCollectionView() {
-        let flowLayout = collectionViewLayout()
+        let flowLayout = getCollectionViewLayout()
         collectionView.setCollectionViewLayout(flowLayout, animated: true)
         collectionView.backgroundColor = .clear
         collectionView.delegate = self
@@ -89,9 +90,9 @@ class DebtorsViewController: UIViewController, ViewControllerProtocol {
         )
     }
 
-    func collectionViewLayout() -> UICollectionViewFlowLayout {
+    func getCollectionViewLayout() -> UICollectionViewFlowLayout {
         let flowLayout = UICollectionViewFlowLayout()
-        let sectionInsets = UIEdgeInsets(top: 10, left: 20, bottom: 10, right: 20)
+        let sectionInsets = UIEdgeInsets(top: 10, left: 20, bottom: continueButton.frame.height + bottomSpaceInset, right: 20)
         let itemsPerRow: CGFloat = 3
         let paddingSpace = sectionInsets.left * (itemsPerRow + 1)
         let availableWidth = view.frame.width - paddingSpace
@@ -102,6 +103,12 @@ class DebtorsViewController: UIViewController, ViewControllerProtocol {
         flowLayout.minimumLineSpacing = sectionInsets.left
 
         return flowLayout
+    }
+
+    // MARK: - IBActions
+
+    @IBAction func continueAction(_ sender: UIButton) {
+        router?.goToContinueAction()
     }
 
 }
