@@ -234,7 +234,6 @@ extension HomeViewController {
         }
 
         let y = tableViewTopConstraintConstant - scrollView.contentOffset.y
-        let alpha = y / tableViewTopConstraintConstant
 
         tableViewTopConstraint.constant = y > 0 ? y : 0
     }

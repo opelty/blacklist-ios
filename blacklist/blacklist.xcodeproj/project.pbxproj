@@ -11,6 +11,8 @@
 		440442E2203021E80099D3D9 /* Debtor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 440442E1203021E80099D3D9 /* Debtor.swift */; };
 		440442E52030231F0099D3D9 /* RealmDebtor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 440442E42030231F0099D3D9 /* RealmDebtor.swift */; };
 		441EADBE20284E6A007E1D9A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 441EADBD20284E6A007E1D9A /* ViewController.swift */; };
+		4427823620448066005D3DF1 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 4427823820448066005D3DF1 /* Localizable.strings */; };
+		4427823A20448107005D3DF1 /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4427823920448107005D3DF1 /* String.swift */; };
 		444939992030F1DE007CDF3B /* Period.swift in Sources */ = {isa = PBXBuildFile; fileRef = 444939982030F1DE007CDF3B /* Period.swift */; };
 		4449399B2030F392007CDF3B /* RealmPeriod.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4449399A2030F392007CDF3B /* RealmPeriod.swift */; };
 		4449399D2030F4D9007CDF3B /* Amortization.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4449399C2030F4D9007CDF3B /* Amortization.swift */; };
@@ -86,6 +88,8 @@
 		440442E1203021E80099D3D9 /* Debtor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Debtor.swift; sourceTree = "<group>"; };
 		440442E42030231F0099D3D9 /* RealmDebtor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmDebtor.swift; sourceTree = "<group>"; };
 		441EADBD20284E6A007E1D9A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		4427823720448066005D3DF1 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		4427823920448107005D3DF1 /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
 		444939982030F1DE007CDF3B /* Period.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Period.swift; sourceTree = "<group>"; };
 		4449399A2030F392007CDF3B /* RealmPeriod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmPeriod.swift; sourceTree = "<group>"; };
 		4449399C2030F4D9007CDF3B /* Amortization.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Amortization.swift; sourceTree = "<group>"; };
@@ -338,6 +342,7 @@
 			children = (
 				44EE24DC202795F100C2C586 /* Fonts */,
 				449D62E220254BA80031BA92 /* Assets.xcassets */,
+				4427823820448066005D3DF1 /* Localizable.strings */,
 			);
 			path = Assets;
 			sourceTree = "<group>";
@@ -360,6 +365,7 @@
 				44EE24FF2027B2AA00C2C586 /* UIScrollView.swift */,
 				96C1CB26202CB3C80070B173 /* UIView.swift */,
 				440442DF202FE6C40099D3D9 /* CGFloat.swift */,
+				4427823920448107005D3DF1 /* String.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -544,7 +550,7 @@
 				TargetAttributes = {
 					449D62D720254BA80031BA92 = {
 						CreatedOnToolsVersion = 9.0.1;
-						ProvisioningStyle = Manual;
+						ProvisioningStyle = Automatic;
 					};
 					449D62EB20254BA80031BA92 = {
 						CreatedOnToolsVersion = 9.0.1;
@@ -586,6 +592,7 @@
 				44EE24EE2027961F00C2C586 /* Roboto-Light.ttf in Resources */,
 				44EE24FE2027A0C500C2C586 /* UpcomingTableViewCell.xib in Resources */,
 				449D62E620254BA80031BA92 /* LaunchScreen.storyboard in Resources */,
+				4427823620448066005D3DF1 /* Localizable.strings in Resources */,
 				44D0B0F220264C7C00E7C5D5 /* RealmGatewayImplementation in Resources */,
 				44EE24EF2027961F00C2C586 /* Roboto-BoldItalic.ttf in Resources */,
 				449D62E320254BA80031BA92 /* Assets.xcassets in Resources */,
@@ -753,6 +760,7 @@
 				449D631220255AED0031BA92 /* Router.swift in Sources */,
 				449D6310202558BE0031BA92 /* Presenter.swift in Sources */,
 				44EE24D620264EF800C2C586 /* RealmManager.swift in Sources */,
+				4427823A20448107005D3DF1 /* String.swift in Sources */,
 				44EE24DB2026719300C2C586 /* FileManager.swift in Sources */,
 				440442E0202FE6C40099D3D9 /* CGFloat.swift in Sources */,
 				444939992030F1DE007CDF3B /* Period.swift in Sources */,
@@ -796,6 +804,14 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
+		4427823820448066005D3DF1 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				4427823720448066005D3DF1 /* en */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
 		449D62DF20254BA80031BA92 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -927,8 +943,9 @@
 			baseConfigurationReference = 0189BB6A85C388034BB1B777 /* Pods-blacklist.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_STYLE = Manual;
-				DEVELOPMENT_TEAM = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 65JJM7BL69;
 				GCC_TREAT_WARNINGS_AS_ERRORS = YES;
 				INFOPLIST_FILE = "$(SRCROOT)/blacklist/Common/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
@@ -946,8 +963,9 @@
 			baseConfigurationReference = 72B14658C6E06E5C809D3FFB /* Pods-blacklist.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_STYLE = Manual;
-				DEVELOPMENT_TEAM = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 65JJM7BL69;
 				GCC_TREAT_WARNINGS_AS_ERRORS = YES;
 				INFOPLIST_FILE = "$(SRCROOT)/blacklist/Common/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;

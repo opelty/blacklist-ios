@@ -1,0 +1,17 @@
+/* 
+  Localizable.strings
+  blacklist
+
+  Created by Mateo Olaya Bernal on 2/26/18.
+  Copyright © 2018 Opelty's Open Source Projects. All rights reserved.
+
+  This file stores all localizable strings for the blacklist, this is
+  sorted by scenes and you must group the localizable in the scenes group.
+
+  The keys must be prepended by the scene name and be capitalized.
+*/
+
+// ~> Upcoming scenes localizations
+"UPCOMING_HOME_UPCOMING_PAYS" = "Upcoming pays...";
+// <~end localizations
+

@@ -14,13 +14,13 @@ class UpcomingTableViewHeader: UITableViewCell {
 
     override func awakeFromNib() {
         super.awakeFromNib()
-
         roundedView.layer.masksToBounds = true
+
+        titleLabel.text = "UPCOMING_HOME_UPCOMING_PAYS".localized
     }
 
     override func layoutSubviews() {
         super.layoutSubviews()
-
         roundedView.layer.cornerRadius = roundedView.bounds.size.height / 2.0
     }
 }
