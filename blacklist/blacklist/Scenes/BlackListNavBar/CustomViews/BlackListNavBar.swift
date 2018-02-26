@@ -14,7 +14,7 @@ class BlackListNavBar: UINavigationController {
 
     let statusBarHeight = UIApplication.shared.statusBarFrame.height
     let screenWidth = UIScreen.main.bounds.width
-    let navBarTitleFont = StyleSheet.Font.lobsterRegular
+    let navBarTitleFont = StyleSheet.Font.lobsterRegular.rawValue
 
     override func viewDidLoad() {
         super.viewDidLoad()

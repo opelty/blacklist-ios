@@ -14,6 +14,8 @@ class DebtorCollectionViewCell: UICollectionViewCell {
 
     @IBOutlet weak var monsterImageView: UIImageView!
     @IBOutlet weak var debtorNameLabel: UILabel!
+    @IBOutlet weak var monsterContainerView: UIView!
+    @IBOutlet weak var checkMarkImageView: UIImageView!
 
     // MARK: - Vars & Constants
 
@@ -37,5 +39,15 @@ class DebtorCollectionViewCell: UICollectionViewCell {
         }
 
         debtorNameLabel.text = completeName
+    }
+
+    func selectCell() {
+        monsterContainerView.alpha = 0.3
+        checkMarkImageView.isHidden = false
+    }
+
+    func deselectCell() {
+        monsterContainerView.alpha = 1.0
+        checkMarkImageView.isHidden = true
     }
 }

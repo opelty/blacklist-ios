@@ -57,7 +57,7 @@
                                 </cells>
                             </collectionView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KJV-eu-fQg">
-                                <rect key="frame" x="50" y="587" width="275" height="60"/>
+                                <rect key="frame" x="60" y="587" width="255" height="60"/>
                                 <color key="backgroundColor" red="0.47107461090000002" green="0.7536934018" blue="0.67454183099999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="60" id="Ufh-TQ-ZmG"/>
@@ -66,6 +66,13 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                             </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="continue_arrow" translatesAutoresizingMaskIntoConstraints="NO" id="b7a-yS-6kK">
+                                <rect key="frame" x="269" y="597" width="20" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="20" id="2f1-0x-NVR"/>
+                                    <constraint firstAttribute="height" constant="40" id="VgD-RP-etG"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -73,18 +80,22 @@
                             <constraint firstItem="wP5-EN-seB" firstAttribute="bottom" secondItem="gYf-pC-iPu" secondAttribute="bottom" id="78k-2c-v74"/>
                             <constraint firstItem="wP5-EN-seB" firstAttribute="trailing" secondItem="mik-zx-ic8" secondAttribute="trailing" id="BgP-gL-5P0"/>
                             <constraint firstItem="wP5-EN-seB" firstAttribute="bottom" secondItem="KJV-eu-fQg" secondAttribute="bottom" constant="20" id="DVU-za-fe4"/>
+                            <constraint firstItem="wP5-EN-seB" firstAttribute="trailing" secondItem="KJV-eu-fQg" secondAttribute="trailing" constant="60" id="E7q-3h-hrg"/>
                             <constraint firstItem="wP5-EN-seB" firstAttribute="trailing" secondItem="gYf-pC-iPu" secondAttribute="trailing" id="OFr-Zu-hKf"/>
+                            <constraint firstItem="KJV-eu-fQg" firstAttribute="leading" secondItem="wP5-EN-seB" secondAttribute="leading" constant="60" id="T48-YS-3tq"/>
                             <constraint firstItem="mik-zx-ic8" firstAttribute="leading" secondItem="wP5-EN-seB" secondAttribute="leading" id="VUn-PA-E3X"/>
+                            <constraint firstItem="b7a-yS-6kK" firstAttribute="centerY" secondItem="KJV-eu-fQg" secondAttribute="centerY" id="Xk1-DT-2JS"/>
                             <constraint firstItem="gYf-pC-iPu" firstAttribute="leading" secondItem="wP5-EN-seB" secondAttribute="leading" id="bda-tj-mKb"/>
-                            <constraint firstItem="wP5-EN-seB" firstAttribute="trailing" secondItem="KJV-eu-fQg" secondAttribute="trailing" constant="50" id="dKQ-sU-kHR"/>
-                            <constraint firstItem="KJV-eu-fQg" firstAttribute="leading" secondItem="wP5-EN-seB" secondAttribute="leading" constant="50" id="hxR-Y6-eBo"/>
                             <constraint firstItem="mik-zx-ic8" firstAttribute="top" secondItem="wP5-EN-seB" secondAttribute="top" id="rbc-IN-p7C"/>
+                            <constraint firstItem="b7a-yS-6kK" firstAttribute="trailing" secondItem="KJV-eu-fQg" secondAttribute="trailing" constant="-26" id="xSW-aR-vI9"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="wP5-EN-seB"/>
                     </view>
                     <navigationItem key="navigationItem" id="K1Y-qf-P4V"/>
                     <connections>
                         <outlet property="collectionView" destination="gYf-pC-iPu" id="gAq-Rc-cjL"/>
+                        <outlet property="continueButton" destination="KJV-eu-fQg" id="6PX-CR-ZyY"/>
+                        <outlet property="searchBar" destination="zok-Bt-56l" id="Yz1-gH-aOW"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7nl-Sc-4xZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -110,4 +121,7 @@
             <point key="canvasLocation" x="-506" y="195"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="continue_arrow" width="31" height="51"/>
+    </resources>
 </document>

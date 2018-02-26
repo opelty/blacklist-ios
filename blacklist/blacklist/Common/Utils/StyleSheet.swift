@@ -10,10 +10,10 @@ import UIKit
 
 struct StyleSheet {
     // Define here fonts, colors and design constants.
-    struct Font {
-        static let robotoRegular = "Roboto-Regular"
-        static let robotoLight = "Roboto-Light"
-        static let lobsterRegular = "Lobster-regular"
+    enum Font: String {
+        case robotoRegular = "Roboto-Regular"
+        case robotoLight = "Roboto-Light"
+        case lobsterRegular = "Lobster-regular"
     }
 
     struct Color {
@@ -28,6 +28,11 @@ struct StyleSheet {
         struct Home {
             static let emptyHeaderText = UIColor(hex: 0x222831)
             static let emptySubHeaderText = UIColor(hex: 0x222831)
+        }
+
+        struct Debtors {
+            static let background = #colorLiteral(red: 0.864806354, green: 0.8960095048, blue: 0.8077570796, alpha: 1)
+            static let green = #colorLiteral(red: 0.1842306554, green: 0.7449585795, blue: 0.6130102873, alpha: 1)
         }
     }
 }

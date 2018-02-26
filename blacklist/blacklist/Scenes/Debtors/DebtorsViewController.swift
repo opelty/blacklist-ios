@@ -13,15 +13,23 @@ class DebtorsViewController: UIViewController, ViewControllerProtocol {
     // MARK: - IBOutlets
 
     @IBOutlet weak var collectionView: UICollectionView!
+    @IBOutlet weak var continueButton: UIButton!
+    @IBOutlet weak var searchBar: UISearchBar!
 
     // MARK: - Vars & Constants
 
     typealias Presenter = DebtorsPresenter
     typealias Router = DebtorsRouter
 
+    private let continueButtonRadius: CGFloat = 25.0
+    private let continueButtonShadowOffset: CGSize = CGSize(width: 0.0, height: 1.0)
+    private let continueButtonShadowOppacity: Float = 1.0
+    private let continueButtonTextSize: CGFloat = 30
+    private let searchPlaceHolder: String = "Buscar"
+    private var debtors: [Debtor] = []
+
     var presenter: DebtorsPresenter!
     var router: DebtorsRouter?
-    var debtors: [Debtor] = []
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -45,28 +53,55 @@ class DebtorsViewController: UIViewController, ViewControllerProtocol {
 
     func configure() {
         presenter.loadDebtors()
+        setup()
         configureCollectionView()
         self.automaticallyAdjustsScrollViewInsets = false
     }
 
-    func configureCollectionView() {
-        let flowLayout = UICollectionViewFlowLayout()
-        let sectionInsets = UIEdgeInsets(top: 10, left: 20, bottom: 10, right: 20)
-        let itemsPerRow: CGFloat = 3
-        let paddingSpace = sectionInsets.left * (itemsPerRow + 1)
-        let availableWidth = view.frame.width - paddingSpace
-        let widthPerItem = availableWidth / itemsPerRow
-        flowLayout.itemSize = CGSize(width: widthPerItem, height: widthPerItem)
-        flowLayout.sectionInset = sectionInsets
-        flowLayout.minimumLineSpacing = sectionInsets.left
+    func setup() {
+        setupButton()
+        setupSearchBar()
+        view.backgroundColor = StyleSheet.Color.Debtors.background
+    }
 
+    func setupSearchBar() {
+        searchBar.tintColor = StyleSheet.Color.Debtors.green
+        searchBar.placeholder = searchPlaceHolder
+    }
+
+    func setupButton() {
+        continueButton.backgroundColor = StyleSheet.Color.Debtors.green
+        continueButton.layer.cornerRadius = continueButtonRadius
+        continueButton.layer.shadowOpacity = continueButtonShadowOppacity
+        continueButton.layer.shadowOffset = continueButtonShadowOffset
+        continueButton.titleLabel?.font = UIFont.get(withType: .robotoLight, size: continueButtonTextSize)
+    }
+
+    func configureCollectionView() {
+        let flowLayout = collectionViewLayout()
         collectionView.setCollectionViewLayout(flowLayout, animated: true)
+        collectionView.backgroundColor = .clear
         collectionView.delegate = self
         collectionView.dataSource = self
         collectionView.register(
             UINib(nibName: DebtorCollectionViewCell.identifier, bundle: nil),
             forCellWithReuseIdentifier: DebtorCollectionViewCell.identifier
         )
+    }
+
+    func collectionViewLayout() -> UICollectionViewFlowLayout {
+        let flowLayout = UICollectionViewFlowLayout()
+        let sectionInsets = UIEdgeInsets(top: 10, left: 20, bottom: 10, right: 20)
+        let itemsPerRow: CGFloat = 3
+        let paddingSpace = sectionInsets.left * (itemsPerRow + 1)
+        let availableWidth = view.frame.width - paddingSpace
+        let widthPerItem = availableWidth / itemsPerRow
+
+        flowLayout.itemSize = CGSize(width: widthPerItem, height: widthPerItem)
+        flowLayout.sectionInset = sectionInsets
+        flowLayout.minimumLineSpacing = sectionInsets.left
+
+        return flowLayout
     }
 
 }
@@ -114,5 +149,23 @@ extension DebtorsViewController: UICollectionViewDataSource {
 // MARK: - UICollectionView Delegate
 
 extension DebtorsViewController: UICollectionViewDelegate {
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let debtorCell = collectionView.cellForItem(at: indexPath) as? DebtorCollectionViewCell
+        guard let cell = debtorCell else {
+            assertionFailure("Unexpected cell type: \(type(of: debtorCell))")
+            return
+        }
 
+        cell.selectCell()
+    }
+
+    func collectionView(_ collectionView: UICollectionView, didDeselectItemAt indexPath: IndexPath) {
+        let debtorCell = collectionView.cellForItem(at: indexPath) as? DebtorCollectionViewCell
+        guard let cell = debtorCell else {
+            assertionFailure("Unexpected cell type: \(type(of: debtorCell))")
+            return
+        }
+
+        cell.deselectCell()
+    }
 }
