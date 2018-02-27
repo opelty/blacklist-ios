@@ -22,6 +22,8 @@
 		444939A52030FAD9007CDF3B /* RealmLending.swift in Sources */ = {isa = PBXBuildFile; fileRef = 444939A42030FAD9007CDF3B /* RealmLending.swift */; };
 		448B53F72044CE64006CBC59 /* UIViewControllerPartials.swift in Sources */ = {isa = PBXBuildFile; fileRef = 448B53F62044CE64006CBC59 /* UIViewControllerPartials.swift */; };
 		448B53F92044D2CD006CBC59 /* Array.swift in Sources */ = {isa = PBXBuildFile; fileRef = 448B53F82044D2CD006CBC59 /* Array.swift */; };
+		448B53FC2044E04F006CBC59 /* Array.swift in Sources */ = {isa = PBXBuildFile; fileRef = 448B53FB2044E04F006CBC59 /* Array.swift */; };
+		448B53FE2044E53B006CBC59 /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 448B53FD2044E53B006CBC59 /* String.swift */; };
 		449D62DC20254BA80031BA92 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 449D62DB20254BA80031BA92 /* AppDelegate.swift */; };
 		449D62E120254BA80031BA92 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 449D62DF20254BA80031BA92 /* Main.storyboard */; };
 		449D62E320254BA80031BA92 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 449D62E220254BA80031BA92 /* Assets.xcassets */; };
@@ -101,6 +103,8 @@
 		444939A42030FAD9007CDF3B /* RealmLending.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmLending.swift; sourceTree = "<group>"; };
 		448B53F62044CE64006CBC59 /* UIViewControllerPartials.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewControllerPartials.swift; sourceTree = "<group>"; };
 		448B53F82044D2CD006CBC59 /* Array.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Array.swift; sourceTree = "<group>"; };
+		448B53FB2044E04F006CBC59 /* Array.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Array.swift; sourceTree = "<group>"; };
+		448B53FD2044E53B006CBC59 /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
 		449D62D820254BA80031BA92 /* blacklist.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = blacklist.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		449D62DB20254BA80031BA92 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		449D62E020254BA80031BA92 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -210,6 +214,15 @@
 			path = Pertials;
 			sourceTree = "<group>";
 		};
+		448B53FA2044E02E006CBC59 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				448B53FB2044E04F006CBC59 /* Array.swift */,
+				448B53FD2044E53B006CBC59 /* String.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		449D62CF20254BA80031BA92 = {
 			isa = PBXGroup;
 			children = (
@@ -245,6 +258,7 @@
 		449D62EF20254BA80031BA92 /* blacklistTests */ = {
 			isa = PBXGroup;
 			children = (
+				448B53FA2044E02E006CBC59 /* Extensions */,
 				44EE24D72026609200C2C586 /* Realm */,
 				449D62F220254BA80031BA92 /* Info.plist */,
 			);
@@ -804,7 +818,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				448B53FC2044E04F006CBC59 /* Array.swift in Sources */,
 				44CF75D42043669B00F881F0 /* RealmEntityTestProtocol.swift in Sources */,
+				448B53FE2044E53B006CBC59 /* String.swift in Sources */,
 				44EE24D9202660AB00C2C586 /* RealmManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

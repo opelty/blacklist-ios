@@ -287,6 +287,10 @@ extension HomeViewController {
 // MARK: - View interface
 
 extension HomeViewController: HomeView {
+    func go(to: String, sender: Any?) {
+
+    }
+
     func doSomethingUI() {
         print("Hello World says presenter to the UI")
     }
