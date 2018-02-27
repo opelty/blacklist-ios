@@ -11,6 +11,10 @@
   The keys must be prepended by the scene name and be capitalized.
 */
 
+// ~> Partials: UIViewController Alerts
+"PARTIAL_UIVIEWCONTROLLER_OK" = "Oka";
+// <~end localizations
+
 // ~> Upcoming scenes localizations
 "UPCOMING_HOME_UPCOMING_PAYS" = "Upcoming pays...";
 // <~end localizations

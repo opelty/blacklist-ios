@@ -20,6 +20,8 @@
 		444939A12030F505007CDF3B /* Context.swift in Sources */ = {isa = PBXBuildFile; fileRef = 444939A02030F505007CDF3B /* Context.swift */; };
 		444939A32030F657007CDF3B /* RealmAmortization.swift in Sources */ = {isa = PBXBuildFile; fileRef = 444939A22030F657007CDF3B /* RealmAmortization.swift */; };
 		444939A52030FAD9007CDF3B /* RealmLending.swift in Sources */ = {isa = PBXBuildFile; fileRef = 444939A42030FAD9007CDF3B /* RealmLending.swift */; };
+		448B53F72044CE64006CBC59 /* UIViewControllerPartials.swift in Sources */ = {isa = PBXBuildFile; fileRef = 448B53F62044CE64006CBC59 /* UIViewControllerPartials.swift */; };
+		448B53F92044D2CD006CBC59 /* Array.swift in Sources */ = {isa = PBXBuildFile; fileRef = 448B53F82044D2CD006CBC59 /* Array.swift */; };
 		449D62DC20254BA80031BA92 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 449D62DB20254BA80031BA92 /* AppDelegate.swift */; };
 		449D62E120254BA80031BA92 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 449D62DF20254BA80031BA92 /* Main.storyboard */; };
 		449D62E320254BA80031BA92 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 449D62E220254BA80031BA92 /* Assets.xcassets */; };
@@ -97,6 +99,8 @@
 		444939A02030F505007CDF3B /* Context.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Context.swift; sourceTree = "<group>"; };
 		444939A22030F657007CDF3B /* RealmAmortization.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmAmortization.swift; sourceTree = "<group>"; };
 		444939A42030FAD9007CDF3B /* RealmLending.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmLending.swift; sourceTree = "<group>"; };
+		448B53F62044CE64006CBC59 /* UIViewControllerPartials.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewControllerPartials.swift; sourceTree = "<group>"; };
+		448B53F82044D2CD006CBC59 /* Array.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Array.swift; sourceTree = "<group>"; };
 		449D62D820254BA80031BA92 /* blacklist.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = blacklist.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		449D62DB20254BA80031BA92 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		449D62E020254BA80031BA92 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -198,6 +202,14 @@
 			path = Entities;
 			sourceTree = "<group>";
 		};
+		448B53F52044CE3C006CBC59 /* Pertials */ = {
+			isa = PBXGroup;
+			children = (
+				448B53F62044CE64006CBC59 /* UIViewControllerPartials.swift */,
+			);
+			path = Pertials;
+			sourceTree = "<group>";
+		};
 		449D62CF20254BA80031BA92 = {
 			isa = PBXGroup;
 			children = (
@@ -277,6 +289,7 @@
 				449D630D202558730031BA92 /* Extensions */,
 				449D630C2025584C0031BA92 /* Base */,
 				449D630E202558830031BA92 /* Utils */,
+				448B53F52044CE3C006CBC59 /* Pertials */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -366,6 +379,7 @@
 				96C1CB26202CB3C80070B173 /* UIView.swift */,
 				440442DF202FE6C40099D3D9 /* CGFloat.swift */,
 				4427823920448107005D3DF1 /* String.swift */,
+				448B53F82044D2CD006CBC59 /* Array.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -764,12 +778,14 @@
 				44EE24DB2026719300C2C586 /* FileManager.swift in Sources */,
 				440442E0202FE6C40099D3D9 /* CGFloat.swift in Sources */,
 				444939992030F1DE007CDF3B /* Period.swift in Sources */,
+				448B53F92044D2CD006CBC59 /* Array.swift in Sources */,
 				44EE25002027B2AA00C2C586 /* UIScrollView.swift in Sources */,
 				44D0B0E32025C42D00E7C5D5 /* StyleSheet.swift in Sources */,
 				449D631D20255FCE0031BA92 /* HomeViewController.swift in Sources */,
 				4449399F2030F4F3007CDF3B /* Lending.swift in Sources */,
 				440442E52030231F0099D3D9 /* RealmDebtor.swift in Sources */,
 				444939A12030F505007CDF3B /* Context.swift in Sources */,
+				448B53F72044CE64006CBC59 /* UIViewControllerPartials.swift in Sources */,
 				4449399D2030F4D9007CDF3B /* Amortization.swift in Sources */,
 				440442E2203021E80099D3D9 /* Debtor.swift in Sources */,
 				449D631620255F2E0031BA92 /* HomePresenter.swift in Sources */,

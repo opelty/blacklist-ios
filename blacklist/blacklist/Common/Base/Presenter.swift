@@ -10,6 +10,7 @@ import Foundation
 
 protocol View: class {
     func go(to: String, sender: Any?)
+    func show(error: AlertModel.Error)
 }
 
 protocol Presenter: class {

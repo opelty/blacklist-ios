@@ -30,7 +30,7 @@
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Z7R-zf-w44">
                         <rect key="frame" x="15" y="0.0" width="345" height="100"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KD1-ox-EzJ">
+                            <button opaque="NO" tag="200" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KD1-ox-EzJ">
                                 <rect key="frame" x="215" y="30" width="40" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="40" id="6bA-vI-YTC"/>
@@ -41,7 +41,7 @@
                                     <action selector="didPressAction:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="qDE-cX-Kji"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="REa-q5-z9T">
+                            <button opaque="NO" tag="100" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="REa-q5-z9T">
                                 <rect key="frame" x="155" y="30" width="40" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="40" id="3VR-9h-qCu"/>
@@ -52,7 +52,7 @@
                                     <action selector="didPressAction:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="uQt-AZ-zej"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="h4k-Go-5iB">
+                            <button opaque="NO" tag="300" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="h4k-Go-5iB">
                                 <rect key="frame" x="275" y="30" width="40" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="40" id="Pwk-W6-63o"/>
@@ -176,11 +176,9 @@
                 <outlet property="actionsView" destination="Z7R-zf-w44" id="IpH-Pd-jKX"/>
                 <outlet property="actionsViewTrailingConstraint" destination="dop-fz-P20" id="sqx-SX-Pwc"/>
                 <outlet property="amountLabel" destination="0Yk-jj-ttw" id="6Go-Sj-S1F"/>
-                <outlet property="checkButton" destination="KD1-ox-EzJ" id="sPc-H8-fmf"/>
                 <outlet property="containerView" destination="8zU-7S-V9K" id="SSc-JU-H6w"/>
                 <outlet property="deadlineLabel" destination="dUV-rN-Zpz" id="Gvu-OF-3Kq"/>
                 <outlet property="debtorNameLabel" destination="5uH-Vy-VOp" id="E5M-AS-yKS"/>
-                <outlet property="phoneButton" destination="REa-q5-z9T" id="vHj-A6-CGk"/>
             </connections>
             <point key="canvasLocation" x="-110.5" y="-79.5"/>
         </tableViewCell>

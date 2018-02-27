@@ -18,14 +18,13 @@ class HomeViewController: UIViewController, ViewControllerProtocol {
         }
     }
 
-    typealias P = HomePresenter
-    typealias R = HomeRouter
+    typealias Presenter = HomePresenter
+    typealias Router = HomeRouter
 
     var presenter: HomePresenter!
     var router: HomeRouter?
 
-    // TODO: Change this array type
-    var upcomings: [Any] = Array(repeating: 1, count: 5)
+    var upcomings: [Lending] = []
 
     fileprivate var tableViewTopConstraintConstant: CGFloat = 0.0
 
@@ -41,9 +40,9 @@ class HomeViewController: UIViewController, ViewControllerProtocol {
 
         // Let's configure the presenter
 
-        configure { (context) -> (presenter: P, router: R?) in
-            let presenter = P()
-            let router = R(viewController: context)
+        configure { (context) -> (presenter: Presenter, router: Router?) in
+            let presenter = Presenter()
+            let router = Router(viewController: context)
 
             return (presenter: presenter, router: router)
         }
@@ -62,6 +61,13 @@ class HomeViewController: UIViewController, ViewControllerProtocol {
                 }
             }
         }
+    }
+
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+
+        // Let's load the data
+        loadData()
     }
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -84,6 +90,19 @@ class HomeViewController: UIViewController, ViewControllerProtocol {
         configureTableView()
 
         self.automaticallyAdjustsScrollViewInsets = false
+    }
+
+    func loadData() {
+        presenter.loadUpcomingsPays { [unowned vc = self] (lendings) in
+            // Let's modify the UI, so call to the Main thread.
+
+            DispatchQueue.main.async {
+                vc.upcomings.removeAll()
+                vc.upcomings.append(contentsOf: lendings)
+
+                vc.tableView.reloadData()
+            }
+        }
     }
 }
 
@@ -154,6 +173,8 @@ extension HomeViewController: UITableViewDataSource, UITableViewDelegate {
     }
 
     func numberOfSections(in tableView: UITableView) -> Int {
+        tableView.backgroundView = nil
+
         if upcomings.count > 0 {
             return 1
         } else {
@@ -170,13 +191,18 @@ extension HomeViewController: UITableViewDataSource, UITableViewDelegate {
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(
-            withIdentifier: UpcomingTableViewCell.identifier,
-            for: indexPath
-        ) as! UpcomingTableViewCell
+                withIdentifier: UpcomingTableViewCell.identifier,
+                for: indexPath
+            ) as! UpcomingTableViewCell
 
-        cell.setContent(debtorName: "Mateo Olaya", amount: 3_000, deadline: Date(timeIntervalSinceNow: 1_000_000))
-        cell.registerHandler { [weak self] (cell, action) in
-            self?.didPerform(action: action, in: cell)
+        guard upcomings.has(index: indexPath.row) else { fatalError() }
+        let upcomming = upcomings[indexPath.row]
+
+        if let upcomingPeriod = upcomming.amortization.upcomingPeriod {
+            cell.setupCell(for: upcomming.debtor, period: upcomingPeriod)
+            cell.registerHandler { [weak self] (cell, action) in
+                self?.didPerform(action: action, in: cell)
+            }
         }
 
         return cell
@@ -212,14 +238,14 @@ extension HomeViewController: UITableViewDataSource, UITableViewDelegate {
 extension HomeViewController {
     func didPerform(action: UpcomingTableViewCell.UpcomingAction, in cell: UpcomingTableViewCell) {
         switch action {
-        case .phone:
-            // TODO: get the phone number from the model
+        case .call(let to):
+            presenter.call(to: to)
+        case .mark(let to):
+            presenter.mark(period: cell.period, asPaid: to == .paid ? true : false)
+        }
 
-            presenter.call(to: "+573206532663")
-            break
-        case .check:
-            router?.loanDetails(with: 2)
-            break
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+            cell.colapse()
         }
     }
 }
@@ -261,10 +287,6 @@ extension HomeViewController {
 // MARK: - View interface
 
 extension HomeViewController: HomeView {
-    func go(to: String, sender: Any?) {
-
-    }
-
     func doSomethingUI() {
         print("Hello World says presenter to the UI")
     }
