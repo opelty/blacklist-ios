@@ -44,6 +44,8 @@
 		44D0B0F020264C6F00E7C5D5 /* ServiceGatewayImplementation in Resources */ = {isa = PBXBuildFile; fileRef = 44D0B0EF20264C6F00E7C5D5 /* ServiceGatewayImplementation */; };
 		44D0B0F220264C7C00E7C5D5 /* RealmGatewayImplementation in Resources */ = {isa = PBXBuildFile; fileRef = 44D0B0F120264C7C00E7C5D5 /* RealmGatewayImplementation */; };
 		44D16964202B6EC200824633 /* Animation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44D16963202B6EC200824633 /* Animation.swift */; };
+		44D9B5552044E6D50054891C /* CGFloat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44D9B5542044E6D50054891C /* CGFloat.swift */; };
+		44D9B5572044EC1A0054891C /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44D9B5562044EC1A0054891C /* UIColor.swift */; };
 		44DD66A620293EF700934457 /* Application.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44DD66A520293EF700934457 /* Application.swift */; };
 		44EE24D620264EF800C2C586 /* RealmManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44EE24D520264EF800C2C586 /* RealmManager.swift */; };
 		44EE24D9202660AB00C2C586 /* RealmManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44EE24D8202660AB00C2C586 /* RealmManager.swift */; };
@@ -129,6 +131,8 @@
 		44D0B0EF20264C6F00E7C5D5 /* ServiceGatewayImplementation */ = {isa = PBXFileReference; lastKnownFileType = text; path = ServiceGatewayImplementation; sourceTree = "<group>"; };
 		44D0B0F120264C7C00E7C5D5 /* RealmGatewayImplementation */ = {isa = PBXFileReference; lastKnownFileType = text; path = RealmGatewayImplementation; sourceTree = "<group>"; };
 		44D16963202B6EC200824633 /* Animation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Animation.swift; sourceTree = "<group>"; };
+		44D9B5542044E6D50054891C /* CGFloat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CGFloat.swift; sourceTree = "<group>"; };
+		44D9B5562044EC1A0054891C /* UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
 		44DD66A520293EF700934457 /* Application.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Application.swift; sourceTree = "<group>"; };
 		44EE24D520264EF800C2C586 /* RealmManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmManager.swift; sourceTree = "<group>"; };
 		44EE24D8202660AB00C2C586 /* RealmManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmManager.swift; sourceTree = "<group>"; };
@@ -219,6 +223,8 @@
 			children = (
 				448B53FB2044E04F006CBC59 /* Array.swift */,
 				448B53FD2044E53B006CBC59 /* String.swift */,
+				44D9B5542044E6D50054891C /* CGFloat.swift */,
+				44D9B5562044EC1A0054891C /* UIColor.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -818,6 +824,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				44D9B5552044E6D50054891C /* CGFloat.swift in Sources */,
+				44D9B5572044EC1A0054891C /* UIColor.swift in Sources */,
 				448B53FC2044E04F006CBC59 /* Array.swift in Sources */,
 				44CF75D42043669B00F881F0 /* RealmEntityTestProtocol.swift in Sources */,
 				448B53FE2044E53B006CBC59 /* String.swift in Sources */,

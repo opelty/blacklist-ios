@@ -72,14 +72,15 @@ class HomePresenter: Presenter {
         guard let phone = phone else {
             // We can not call to this debtor, render an error.
             let error = AlertModel.Error(
-                title: "Uppps",
-                message: "This debtor doesn't have any phone number registered. :("
+                title: "PARTIAL_UIVIEWCONTROLLER_UPPPS".localized,
+                message: "UPCOMING_HOME_ERROR_PHONE_NO_REGISTERED".localized
             )
 
             view?.show(error: error)
             return
         }
 
+        // TODO: Move this logic to Utils.swift when the brach is merged.
         let prefix = "telprompt://" + phone
 
         if let url = URL(string: prefix) {
@@ -87,8 +88,8 @@ class HomePresenter: Presenter {
         } else {
             // We can not make calls from iPods, iPads and the simulator.
             let error = AlertModel.Error(
-                title: "Uppps",
-                message: "Your device doesn't have the ability to make calls. :("
+                title: "PARTIAL_UIVIEWCONTROLLER_UPPPS".localized,
+                message: "UPCOMING_HOME_ERROR_DEVICE_CANNOT_MAKE_CALLS".localized
             )
 
             view?.show(error: error)

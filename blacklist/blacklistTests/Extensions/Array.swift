@@ -6,8 +6,6 @@
 //  Copyright © 2018 Opelty's Open Source Projects. All rights reserved.
 //
 
-import Foundation
-
 import Quick
 import Nimble
 

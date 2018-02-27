@@ -12,9 +12,12 @@ class HomeViewController: UIViewController, ViewControllerProtocol {
     struct Constants {
         static let emptyViewHeaderSize: CGFloat = 24.0
         static let emptyViewSubHeaderSize: CGFloat = 14.0
+        static let secondsBeforeBounceEffect: TimeInterval = 1.0
 
         struct PrototypeCells {
             static let headerCell = "HeaderCell"
+            static let estimatedRowHeight: CGFloat = 115.0
+            static let upcomingsHeaderheight: CGFloat = 50.0
         }
     }
 
@@ -54,7 +57,7 @@ class HomeViewController: UIViewController, ViewControllerProtocol {
         super.viewDidAppear(animated)
 
         // Add a bounce effect to the first cell
-        DispatchQueue.main.asyncAfter(deadline: .now() + 1) { [weak self] in
+        DispatchQueue.main.asyncAfter(deadline: .now() + Constants.secondsBeforeBounceEffect) { [weak self] in
             if let tableView = self?.tableView, tableView.visibleCells.count > 0 {
                 if let cell = self?.tableView.visibleCells.first as? UpcomingTableViewCell {
                     cell.bounce()
@@ -115,7 +118,7 @@ extension HomeViewController: UITableViewDataSource, UITableViewDelegate {
 
         tableView.register(upcomingTableViewCellNib, forCellReuseIdentifier: UpcomingTableViewCell.identifier)
 
-        tableView.estimatedRowHeight = 115.0
+        tableView.estimatedRowHeight = Constants.PrototypeCells.estimatedRowHeight
         tableView.rowHeight = UITableViewAutomaticDimension
         tableView.layoutIfNeeded()
 
@@ -127,6 +130,7 @@ extension HomeViewController: UITableViewDataSource, UITableViewDelegate {
     }
 
     func addTableViewPlaceholderView() {
+        // TODO (santiago): Move this to an generic place holder for tables
         let header = "Noting so far" // TODO: Localize this string
         let subheader = "You are on day :)" // TODO: Localize this string
 
@@ -222,7 +226,7 @@ extension HomeViewController: UITableViewDataSource, UITableViewDelegate {
     }
 
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        return 50.0
+        return Constants.PrototypeCells.upcomingsHeaderheight
     }
 
     func tableView(_ tableView: UITableView, didEndDisplaying cell: UITableViewCell, forRowAt indexPath: IndexPath) {
