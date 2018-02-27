@@ -90,7 +90,7 @@
                         <outlet property="collectionView" destination="gYf-pC-iPu" id="gAq-Rc-cjL"/>
                         <outlet property="continueButton" destination="KJV-eu-fQg" id="6PX-CR-ZyY"/>
                         <outlet property="searchBar" destination="zok-Bt-56l" id="Yz1-gH-aOW"/>
-                        <segue destination="ams-3G-g6w" kind="show" identifier="EmptyScreen" id="0a0-fp-DlW"/>
+                        <segue destination="ams-3G-g6w" kind="show" identifier="emptyScreen" id="0a0-fp-DlW"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7nl-Sc-4xZ" userLabel="First Responder" sceneMemberID="firstResponder"/>

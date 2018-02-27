@@ -20,9 +20,9 @@ struct StyleSheet {
 
         // Colors used in the TabBar
         struct TabBar {
-            static let background = #colorLiteral(red: 0.2196078431, green: 0.2431372549, blue: 0.2784313725, alpha: 1)
-            static let plusButtonBackground = #colorLiteral(red: 0.1276926696, green: 0.157300055, blue: 0.1955993772, alpha: 1)
-            static let tintColor = #colorLiteral(red: 0.999904573, green: 1, blue: 0.9998722672, alpha: 1)
+            static let background = UIColor(hex: 0x383E47)
+            static let plusButtonBackground = UIColor(hex: 0x212832)
+            static let tintColor = UIColor(hex: 0xFFFFFF)
         }
 
         struct Home {
@@ -31,8 +31,8 @@ struct StyleSheet {
         }
 
         struct Debtors {
-            static let background = #colorLiteral(red: 0.864806354, green: 0.8960095048, blue: 0.8077570796, alpha: 1)
-            static let green = #colorLiteral(red: 0.1842306554, green: 0.7449585795, blue: 0.6130102873, alpha: 1)
+            static let background = UIColor(hex: 0xDDE4CE)
+            static let green = UIColor(hex: 0x2FBE9C)
         }
     }
 }

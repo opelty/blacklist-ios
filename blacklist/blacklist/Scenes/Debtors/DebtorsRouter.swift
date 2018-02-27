@@ -11,9 +11,7 @@ import UIKit
 class DebtorsRouter: Router {
     // Add transition methods here...
 
-    func goToContinueAction() { // TODO: Finish this
-        print("Going to continue screen...")
-
+    func goToContinueAction() {
         go(to: .emptyScreen, sender: nil)
     }
 

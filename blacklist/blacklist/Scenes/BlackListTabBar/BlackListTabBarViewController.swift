@@ -20,7 +20,7 @@ class BlackListTabBarViewController: UITabBarController, ViewControllerProtocol 
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        configure { (context) -> (presenter: Presenter, router: Router?) in
+        configure { (context) -> (presenter: Presenter, router: Router?) in            
             let presenter = Presenter()
             let router = Router(viewController: context)
 
