@@ -10,6 +10,7 @@ import UIKit
 
 protocol Viewable: class {
     func performSegue(withIdentifier identifier: String, sender: Any?)
+    func present(_ viewControllerToPresent: UIViewController, animated: Bool, completion: (() -> Void)?)
 }
 
 protocol ViewControllerProtocol: Viewable {
@@ -19,7 +20,7 @@ protocol ViewControllerProtocol: Viewable {
     var router: R? { get set }
 }
 
-extension UIViewController: Viewable { }
+extension UIViewController: Viewable {}
 
 extension ViewControllerProtocol {
     func configure(handler: ((Viewable) -> (presenter: P, router: R?))) {
@@ -29,5 +30,9 @@ extension ViewControllerProtocol {
         presenter.attach(view: self as? Self.P.V)
 
         router = context.router
+    }
+
+    func go(to: SegueIndentifier, sender: Any?) {
+        router?.go(to: to, sender: sender)
     }
 }

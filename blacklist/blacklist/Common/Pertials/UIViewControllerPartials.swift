@@ -8,15 +8,26 @@
 
 import UIKit
 
+protocol AlertModelProtocol {}
+
 struct AlertModel {
-    struct Error {
+    struct Error: AlertModelProtocol {
         var title: String?
         var message: String?
     }
 }
 
 extension UIViewController {
-    func show(error: AlertModel.Error) {
+    func show(alert: AlertModelProtocol) {
+        switch alert {
+        case is AlertModel.Error:
+            show(error: alert as! AlertModel.Error)
+        default:
+            break
+        }
+    }
+
+    private func show(error: AlertModel.Error) {
         let alert = UIAlertController(
             title: error.title,
             message: error.message,

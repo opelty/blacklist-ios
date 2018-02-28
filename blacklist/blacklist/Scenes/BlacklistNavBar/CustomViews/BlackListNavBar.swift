@@ -14,7 +14,7 @@ class BlackListNavBar: UINavigationController {
 
     let statusBarHeight = UIApplication.shared.statusBarFrame.height
     let screenWidth = UIScreen.main.bounds.width
-    let navBarTitleFont = StyleSheet.Font.lobsterRegular
+    let navBarTitleFont = StyleSheet.Font.lobsterRegular.rawValue
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -68,7 +68,11 @@ class BlackListNavBar: UINavigationController {
     }
 
     @objc func backButtonAction() {
-       popViewController(animated: true)
+        if topViewController?.navigationController?.viewControllers.count == 1 {
+            topViewController?.navigationController?.dismiss(animated: true, completion: nil)
+        } else {
+            popViewController(animated: true)
+        }
     }
 
     @objc func settingsButtonAction() {

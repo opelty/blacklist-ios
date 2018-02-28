@@ -149,7 +149,7 @@
                         <outlet property="lendingAmountLabel" destination="Qcn-Gh-DjP" id="cto-OW-g7r"/>
                         <outlet property="tableView" destination="j61-P4-0V9" id="p5o-Xg-Lem"/>
                         <outlet property="tableViewTopConstraint" destination="BCg-de-tFa" id="yp0-du-guy"/>
-                        <segue destination="o0S-Sg-mGh" kind="show" identifier="Test" id="Es0-oo-baF"/>
+                        <segue destination="o0S-Sg-mGh" kind="show" identifier="test" id="Es0-oo-baF"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Jok-jB-h9M" sceneMemberID="firstResponder"/>

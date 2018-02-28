@@ -1,20 +1,18 @@
 //
-//  HomeRouter.swift
+//  DebtorsRouter.swift
 //  blacklist
 //
-//  Created by Mateo Olaya Bernal on 2/2/18.
+//  Created by Santiago Carmona Gonzalez on 2/22/18.
 //  Copyright © 2018 Opelty's Open Source Projects. All rights reserved.
 //
 
 import UIKit
 
-class HomeRouter: Router {
+class DebtorsRouter: Router {
     // Add transition methods here...
 
-    func loanDetails(with loan: Any) { // TODO: Finish this
-        print("Going to loan details...")
-
-        go(to: .test, sender: nil)
+    func goToContinueAction() {
+        go(to: .emptyScreen, sender: nil)
     }
 
     // MARK: - Overrides

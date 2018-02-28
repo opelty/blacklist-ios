@@ -141,12 +141,12 @@ extension HomeViewController: UITableViewDataSource, UITableViewDelegate {
 
         headerLabel.text = header
         headerLabel.textAlignment = .center
-        headerLabel.font = UIFont(name: StyleSheet.Font.robotoRegular, size: Constants.emptyViewHeaderSize)
+        headerLabel.font = UIFont.get(withType: .robotoRegular, size: Constants.emptyViewHeaderSize)
         headerLabel.textColor = StyleSheet.Color.Home.emptyHeaderText
 
         subheaderLabel.text = subheader
         subheaderLabel.textAlignment = .center
-        subheaderLabel.font = UIFont(name: StyleSheet.Font.robotoLight, size: Constants.emptyViewSubHeaderSize)
+        subheaderLabel.font = UIFont.get(withType: .robotoLight, size: Constants.emptyViewSubHeaderSize)
         subheaderLabel.textColor = StyleSheet.Color.Home.emptySubHeaderText
 
         view.addSubview(headerLabel)
@@ -291,10 +291,6 @@ extension HomeViewController {
 // MARK: - View interface
 
 extension HomeViewController: HomeView {
-    func go(to: String, sender: Any?) {
-
-    }
-
     func doSomethingUI() {
         print("Hello World says presenter to the UI")
     }

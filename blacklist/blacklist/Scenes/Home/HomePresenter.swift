@@ -76,7 +76,7 @@ class HomePresenter: Presenter {
                 message: "UPCOMING_HOME_ERROR_PHONE_NO_REGISTERED".localized
             )
 
-            view?.show(error: error)
+            view?.show(alert: error)
             return
         }
 
@@ -92,7 +92,7 @@ class HomePresenter: Presenter {
                 message: "UPCOMING_HOME_ERROR_DEVICE_CANNOT_MAKE_CALLS".localized
             )
 
-            view?.show(error: error)
+            view?.show(alert: error)
         }
     }
 

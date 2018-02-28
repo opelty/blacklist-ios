@@ -9,8 +9,8 @@
 import Foundation
 
 protocol View: class {
-    func go(to: String, sender: Any?)
-    func show(error: AlertModel.Error)
+    func show(alert: AlertModelProtocol)
+    func go(to: SegueIndentifier, sender: Any?)
 }
 
 protocol Presenter: class {

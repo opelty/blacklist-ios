@@ -9,6 +9,7 @@
 import Foundation
 
 enum SegueIndentifier: String {
-    // Add your segues identifier here as enum, use .rawValue to use it
-    case SegueTest
+    // Add your segues identifier here as enum starting with a lowercased letter, use .rawValue to use it
+    case test
+    case emptyScreen
 }

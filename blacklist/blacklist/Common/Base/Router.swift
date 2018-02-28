@@ -15,8 +15,21 @@ class Router {
         self.viewController = viewController
     }
 
-    func go(to: String, sender: Any?) {
-        viewController?.performSegue(withIdentifier: to, sender: sender)
+    func go(to: SegueIndentifier, sender: Any?) {
+        viewController?.performSegue(withIdentifier: to.rawValue, sender: sender)
+    }
+
+    func presentViewController(withIdentifier identifier: String, fromStoryboard name: String, bundle: Bundle? = nil, animated: Bool = true, completion: (() -> Void)?) {
+        let viewControllerToPresent = UIStoryboard(name: name, bundle: bundle).instantiateViewController(withIdentifier: identifier)
+        viewController?.present(viewControllerToPresent, animated: animated, completion: completion)
+    }
+
+    func presentInitialViewController(fromStoryboard name: String, bundle: Bundle? = nil, animated: Bool = true, completion: (() -> Void)? = nil) {
+        guard let viewControllerToPresent = UIStoryboard(name: name, bundle: bundle).instantiateInitialViewController() else {
+            assertionFailure("Unexpected initial view controller from storyboard name:  \(name)")
+            return
+        }
+        viewController?.present(viewControllerToPresent, animated: animated, completion: completion)
     }
 
     func prepare(for segue: UIStoryboardSegue, sender: Any?) { }
