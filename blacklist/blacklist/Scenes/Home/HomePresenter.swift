@@ -23,8 +23,6 @@ class HomePresenter: Presenter {
         if let url = URL(string: prefix) {
             Application.open(url: url)
         }
-
-        view?.go(to: "R", sender: nil)
     }
 
 }

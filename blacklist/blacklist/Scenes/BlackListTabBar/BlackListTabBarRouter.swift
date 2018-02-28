@@ -1,20 +1,18 @@
 //
-//  HomeRouter.swift
+//  BlackListTabBarRouter.swift
 //  blacklist
 //
-//  Created by Mateo Olaya Bernal on 2/2/18.
+//  Created by Santiago Carmona Gonzalez on 2/22/18.
 //  Copyright © 2018 Opelty's Open Source Projects. All rights reserved.
 //
 
 import UIKit
 
-class HomeRouter: Router {
+class BlackListTabBarRouter: Router {
     // Add transition methods here...
 
-    func loanDetails(with loan: Any) { // TODO: Finish this
-        print("Going to loan details...")
-
-        go(to: .segueTest, sender: nil)
+    func debtorsList() {
+        presentInitialViewController(fromStoryboard: "Debtors")
     }
 
     // MARK: - Overrides
