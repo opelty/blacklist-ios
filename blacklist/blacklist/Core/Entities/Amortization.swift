@@ -29,3 +29,25 @@ struct AmortizationEntity: Amortization {
     internal var interest: Float?
     internal var periods: [Period]
 }
+
+// Useful extensions for the model
+
+extension Amortization {
+    var upcomingPeriod: Period? {
+        return periods.first(where: { (period) -> Bool in
+            return isPeriodReachableSinceNow(period: period, to: 604_800)
+        })
+    }
+
+    var hasUpcomingPeriods: Bool {
+        return periods.contains(where: { (period) -> Bool in
+            return isPeriodReachableSinceNow(period: period, to: 604_800)
+        })
+    }
+}
+
+private extension Amortization {
+    func isPeriodReachableSinceNow(period: Period, to: TimeInterval) -> Bool {
+        return period.date.timeIntervalSinceNow > 0 && period.date.timeIntervalSinceNow < to
+    }
+}

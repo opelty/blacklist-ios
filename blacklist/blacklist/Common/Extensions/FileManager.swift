@@ -9,6 +9,12 @@
 import Foundation
 
 extension FileManager {
+    /**
+     * Removes following paths from the current FileManager
+     *
+     * - parameters:
+     *   - paths: paths array that should be deleted.
+     */
     func remove(paths: String...) throws {
         for path in paths {
             if fileExists(atPath: path) {

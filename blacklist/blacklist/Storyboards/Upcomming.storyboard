@@ -13,9 +13,6 @@
         <array key="Roboto-Light.ttf">
             <string>Roboto-Light</string>
         </array>
-        <array key="Roboto-LightItalic.ttf">
-            <string>Roboto-LightItalic</string>
-        </array>
     </customFonts>
     <scenes>
         <!--Item-->
@@ -29,48 +26,63 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hPx-pZ-YeU">
                                 <rect key="frame" x="0.0" y="80" width="375" height="587"/>
                                 <subviews>
-                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="none" rowHeight="-1" estimatedRowHeight="67" sectionHeaderHeight="-1" sectionFooterHeight="-1" contentViewInsetsToSafeArea="NO" translatesAutoresizingMaskIntoConstraints="NO" id="j61-P4-0V9">
-                                        <rect key="frame" x="0.0" y="71" width="375" height="516"/>
-                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" contentViewInsetsToSafeArea="NO" translatesAutoresizingMaskIntoConstraints="NO" id="j61-P4-0V9">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="587"/>
+                                        <color key="backgroundColor" red="0.87058823529411766" green="0.89411764705882346" blue="0.81568627450980391" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <viewLayoutGuide key="safeArea" id="APN-cN-rpP"/>
                                         <color key="separatorColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        <prototypes>
+                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="HeaderCell" id="Dlb-bO-vGH" customClass="UpcomingTableViewHeader" customModule="blacklist" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                                <autoresizingMask key="autoresizingMask"/>
+                                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Dlb-bO-vGH" id="lGn-xn-WrW">
+                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <subviews>
+                                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kyF-YB-iXX">
+                                                            <rect key="frame" x="119.5" y="4" width="135.5" height="36.5"/>
+                                                            <subviews>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Upcoming pays..." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JeC-1T-ilI">
+                                                                    <rect key="frame" x="15" y="10" width="105.5" height="16.5"/>
+                                                                    <fontDescription key="fontDescription" name="Roboto-Light" family="Roboto" pointSize="14"/>
+                                                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                                                    <nil key="highlightedColor"/>
+                                                                </label>
+                                                            </subviews>
+                                                            <color key="backgroundColor" white="0.59999999999999998" alpha="0.94999999999999996" colorSpace="calibratedWhite"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="trailing" secondItem="JeC-1T-ilI" secondAttribute="trailing" constant="15" id="cUz-JJ-UBy"/>
+                                                                <constraint firstItem="JeC-1T-ilI" firstAttribute="top" secondItem="kyF-YB-iXX" secondAttribute="top" constant="10" id="h0k-uq-soa"/>
+                                                                <constraint firstItem="JeC-1T-ilI" firstAttribute="leading" secondItem="kyF-YB-iXX" secondAttribute="leading" constant="15" id="pyU-Qw-Ji5"/>
+                                                                <constraint firstAttribute="bottom" secondItem="JeC-1T-ilI" secondAttribute="bottom" constant="10" id="r6G-pp-MjV"/>
+                                                            </constraints>
+                                                        </view>
+                                                    </subviews>
+                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                    <constraints>
+                                                        <constraint firstItem="kyF-YB-iXX" firstAttribute="centerY" secondItem="lGn-xn-WrW" secondAttribute="centerY" id="DE4-Cb-Skm"/>
+                                                        <constraint firstItem="kyF-YB-iXX" firstAttribute="centerX" secondItem="lGn-xn-WrW" secondAttribute="centerX" id="GaM-4d-ike"/>
+                                                    </constraints>
+                                                </tableViewCellContentView>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                <connections>
+                                                    <outlet property="roundedView" destination="kyF-YB-iXX" id="rod-E2-SQC"/>
+                                                    <outlet property="titleLabel" destination="JeC-1T-ilI" id="pWU-yR-MEr"/>
+                                                </connections>
+                                            </tableViewCell>
+                                        </prototypes>
                                         <sections/>
                                         <connections>
                                             <outlet property="dataSource" destination="cj1-qH-qkF" id="sGp-gX-mb3"/>
                                             <outlet property="delegate" destination="cj1-qH-qkF" id="nSC-m9-uDr"/>
                                         </connections>
                                     </tableView>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="t1B-ii-8iU">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="71"/>
-                                        <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Upcoming pays..." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="s2j-7K-jJ9">
-                                                <rect key="frame" x="15" y="25.5" width="345" height="20"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="20" id="ym9-4X-AqS"/>
-                                                </constraints>
-                                                <fontDescription key="fontDescription" name="Roboto-LightItalic" family="Roboto" pointSize="14"/>
-                                                <nil key="textColor"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                        </subviews>
-                                        <color key="backgroundColor" red="0.88628995420000001" green="0.88628989459999996" blue="0.88628989459999996" alpha="0.94999999999999996" colorSpace="custom" customColorSpace="displayP3"/>
-                                        <constraints>
-                                            <constraint firstAttribute="trailing" secondItem="s2j-7K-jJ9" secondAttribute="trailing" constant="15" id="CpJ-Tb-35u"/>
-                                            <constraint firstAttribute="height" relation="greaterThanOrEqual" id="D9o-57-azY"/>
-                                            <constraint firstItem="s2j-7K-jJ9" firstAttribute="leading" secondItem="t1B-ii-8iU" secondAttribute="leading" constant="15" id="hD6-Sc-bnB"/>
-                                            <constraint firstItem="s2j-7K-jJ9" firstAttribute="centerY" secondItem="t1B-ii-8iU" secondAttribute="centerY" id="jsB-7I-in2"/>
-                                        </constraints>
-                                    </view>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="bottom" secondItem="j61-P4-0V9" secondAttribute="bottom" id="1rh-o2-pLk"/>
-                                    <constraint firstItem="j61-P4-0V9" firstAttribute="top" secondItem="hPx-pZ-YeU" secondAttribute="top" constant="71" id="BCg-de-tFa"/>
-                                    <constraint firstItem="t1B-ii-8iU" firstAttribute="top" secondItem="hPx-pZ-YeU" secondAttribute="top" id="Bml-12-Hqa"/>
+                                    <constraint firstItem="j61-P4-0V9" firstAttribute="top" secondItem="hPx-pZ-YeU" secondAttribute="top" id="BCg-de-tFa"/>
                                     <constraint firstAttribute="trailing" secondItem="j61-P4-0V9" secondAttribute="trailing" id="Stj-zq-NxA"/>
-                                    <constraint firstAttribute="trailing" secondItem="t1B-ii-8iU" secondAttribute="trailing" id="Wce-hb-tfL"/>
-                                    <constraint firstItem="t1B-ii-8iU" firstAttribute="leading" secondItem="hPx-pZ-YeU" secondAttribute="leading" id="bG5-Q6-Goo"/>
-                                    <constraint firstItem="t1B-ii-8iU" firstAttribute="bottom" secondItem="j61-P4-0V9" secondAttribute="top" priority="750" id="snh-yw-3fv"/>
                                     <constraint firstItem="j61-P4-0V9" firstAttribute="leading" secondItem="hPx-pZ-YeU" secondAttribute="leading" id="xOK-hm-sSd"/>
                                 </constraints>
                             </view>
@@ -103,7 +115,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
-                                <color key="backgroundColor" red="0.99846398830000005" green="0.3406249583" blue="0.13324560229999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <color key="backgroundColor" red="0.37254901960784315" green="0.73333333333333328" blue="0.61960784313725492" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <color key="tintColor" red="0.99846398830000005" green="0.3406249583" blue="0.13324560229999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
                                     <constraint firstItem="Qcn-Gh-DjP" firstAttribute="leading" secondItem="qrF-nB-9cf" secondAttribute="trailing" constant="15" id="FvT-Xo-Ebs"/>
@@ -118,7 +130,7 @@
                                 </constraints>
                             </view>
                         </subviews>
-                        <color key="backgroundColor" red="0.88628995420000001" green="0.88628989459999996" blue="0.88628989459999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <color key="backgroundColor" red="0.87058823529411766" green="0.89411764705882346" blue="0.81568627450980391" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
                             <constraint firstItem="hPx-pZ-YeU" firstAttribute="top" secondItem="5yN-Hr-nIW" secondAttribute="baseline" id="40O-eG-wbz"/>
                             <constraint firstItem="gNF-k4-h99" firstAttribute="trailing" secondItem="hPx-pZ-YeU" secondAttribute="trailing" id="6mb-aQ-YS6"/>
@@ -135,16 +147,14 @@
                     <connections>
                         <outlet property="gradientContainerView" destination="hPx-pZ-YeU" id="Sot-hD-azl"/>
                         <outlet property="lendingAmountLabel" destination="Qcn-Gh-DjP" id="cto-OW-g7r"/>
-                        <outlet property="maximumUpcomingHuggingConstraint" destination="D9o-57-azY" id="qBr-ha-7LY"/>
                         <outlet property="tableView" destination="j61-P4-0V9" id="p5o-Xg-Lem"/>
-                        <outlet property="tableViewHeaderView" destination="t1B-ii-8iU" id="jFt-yd-akI"/>
                         <outlet property="tableViewTopConstraint" destination="BCg-de-tFa" id="yp0-du-guy"/>
                         <segue destination="o0S-Sg-mGh" kind="show" identifier="test" id="Es0-oo-baF"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Jok-jB-h9M" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="870" y="-258"/>
+            <point key="canvasLocation" x="869.60000000000002" y="-258.62068965517244"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="GV2-3X-ByW">

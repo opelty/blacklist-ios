@@ -27,3 +27,11 @@ struct DebtorEntity: Debtor {
     internal var email: String?
     internal var nickname: String?
 }
+
+// Useful extensions for the model
+
+extension Debtor {
+    var fullName: String {
+        return firstName.capitalized + " " + (lastName?.capitalized ?? "")
+    }
+}

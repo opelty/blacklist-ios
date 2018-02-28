@@ -11,9 +11,8 @@ import UIKit
 typealias UpcomingActionCompletion = ((UpcomingTableViewCell, UpcomingTableViewCell.UpcomingAction) -> Void)
 
 class UpcomingTableViewCell: UITableViewCell {
-    public enum UpcomingAction {
-        case phone
-        case check
+    static public var identifier: String {
+        return String(describing: self)
     }
 
     fileprivate static let leadingPadding: CGFloat = 15.0
@@ -23,13 +22,13 @@ class UpcomingTableViewCell: UITableViewCell {
     @IBOutlet fileprivate weak var actionsViewTrailingConstraint: NSLayoutConstraint!
     @IBOutlet fileprivate weak var containerView: UIView!
     @IBOutlet fileprivate weak var actionsView: UIView!
-
-    @IBOutlet fileprivate weak var checkButton: UIButton!
-    @IBOutlet fileprivate weak var phoneButton: UIButton!
+    @IBOutlet fileprivate weak var debtorNameLabel: UILabel!
+    @IBOutlet fileprivate weak var amountLabel: UILabel!
+    @IBOutlet fileprivate weak var deadlineLabel: UILabel!
 
     private var callback: UpcomingActionCompletion?
-
-    static let identifier: String = "UpcomingTableViewCell"
+    public private(set) var debtor: Debtor!
+    public private(set) var period: Period!
 
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -110,12 +109,46 @@ class UpcomingTableViewCell: UITableViewCell {
         }
     }
 
+    public func setupCell(for debtor: Debtor, period: Period) {
+
+        // Let's add the context to the cell
+        self.period = period
+        self.debtor = debtor
+
+        let formatter = NumberFormatter()
+        formatter.locale = Locale.current
+        formatter.numberStyle = .currency
+
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateStyle = .full
+
+        debtorNameLabel.text = debtor.fullName
+        deadlineLabel.text = dateFormatter.string(from: period.date)
+
+        if let formattedAmount = formatter.string(from: period.payment as NSNumber) {
+            if let currencySymbol = Locale.current.currencySymbol {
+                amountLabel.text = formattedAmount.remove(substring: currencySymbol)
+            } else {
+                amountLabel.text = formattedAmount
+            }
+        } else {
+            amountLabel.text = "0.00"
+        }
+    }
+
     // MARK: - IBActions
     @IBAction fileprivate func didPressAction(_ sender: UIButton) {
-        if sender == checkButton {
-            callback?(self, .check)
-        } else if sender == phoneButton {
-            callback?(self, .phone)
+        guard let action = ActionTags.init(rawValue: sender.tag) else {
+            return
+        }
+
+        switch action {
+        case .phone:
+            callback?(self, .call(to: debtor.phone))
+        case .paid:
+            callback?(self, .mark(to: .paid))
+        case .unpaid:
+            callback?(self, .mark(to: .unpaid))
         }
     }
 
@@ -174,5 +207,23 @@ class UpcomingTableViewCell: UITableViewCell {
             finishMovement(for: sender.translation(in: self), velocity: sender.velocity(in: self))
             break
         }
+    }
+}
+
+extension UpcomingTableViewCell {
+    public enum UpcomingAction {
+        public enum Mark {
+            case paid
+            case unpaid
+        }
+
+        case call(to: String?)
+        case mark(to: Mark)
+    }
+
+    private enum ActionTags: Int {
+        case paid = 300
+        case phone = 100
+        case unpaid = 200
     }
 }

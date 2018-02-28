@@ -12,6 +12,13 @@ class HomeViewController: UIViewController, ViewControllerProtocol {
     struct Constants {
         static let emptyViewHeaderSize: CGFloat = 24.0
         static let emptyViewSubHeaderSize: CGFloat = 14.0
+        static let secondsBeforeBounceEffect: TimeInterval = 1.0
+
+        struct PrototypeCells {
+            static let headerCell = "HeaderCell"
+            static let estimatedRowHeight: CGFloat = 115.0
+            static let upcomingsHeaderheight: CGFloat = 50.0
+        }
     }
 
     typealias Presenter = HomePresenter
@@ -20,8 +27,7 @@ class HomeViewController: UIViewController, ViewControllerProtocol {
     var presenter: HomePresenter!
     var router: HomeRouter?
 
-    // TODO: Change this array type
-    var upcomings: [Any] = Array(repeating: 1, count: 5)
+    var upcomings: [Lending] = []
 
     fileprivate var tableViewTopConstraintConstant: CGFloat = 0.0
 
@@ -29,7 +35,6 @@ class HomeViewController: UIViewController, ViewControllerProtocol {
     @IBOutlet weak var lendingAmountLabel: UILabel!
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var gradientContainerView: UIView!
-    @IBOutlet weak var tableViewHeaderView: UIView!
     @IBOutlet weak var tableViewTopConstraint: NSLayoutConstraint!
     @IBOutlet weak var maximumUpcomingHuggingConstraint: NSLayoutConstraint!
 
@@ -52,13 +57,20 @@ class HomeViewController: UIViewController, ViewControllerProtocol {
         super.viewDidAppear(animated)
 
         // Add a bounce effect to the first cell
-        DispatchQueue.main.asyncAfter(deadline: .now() + 1) { [weak self] in
+        DispatchQueue.main.asyncAfter(deadline: .now() + Constants.secondsBeforeBounceEffect) { [weak self] in
             if let tableView = self?.tableView, tableView.visibleCells.count > 0 {
                 if let cell = self?.tableView.visibleCells.first as? UpcomingTableViewCell {
                     cell.bounce()
                 }
             }
         }
+    }
+
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+
+        // Let's load the data
+        loadData()
     }
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -70,7 +82,7 @@ class HomeViewController: UIViewController, ViewControllerProtocol {
         let gradient = CAGradientLayer()
         gradient.frame = gradientContainerView.bounds
         gradient.colors = [UIColor.black.cgColor, UIColor.clear.cgColor]
-        gradient.locations = [0.9, 1.0]
+        gradient.locations = [0.95, 1.0]
 
         gradientContainerView.layer.mask = gradient
 
@@ -82,6 +94,19 @@ class HomeViewController: UIViewController, ViewControllerProtocol {
 
         self.automaticallyAdjustsScrollViewInsets = false
     }
+
+    func loadData() {
+        presenter.loadUpcomingsPays { [unowned vc = self] (lendings) in
+            // Let's modify the UI, so call to the Main thread.
+
+            DispatchQueue.main.async {
+                vc.upcomings.removeAll()
+                vc.upcomings.append(contentsOf: lendings)
+
+                vc.tableView.reloadData()
+            }
+        }
+    }
 }
 
 // MARK: - TableView DataSource
@@ -90,10 +115,12 @@ extension HomeViewController: UITableViewDataSource, UITableViewDelegate {
     func configureTableView() {
         // Let's configure the tableView
         let upcomingTableViewCellNib = UINib(nibName: UpcomingTableViewCell.identifier, bundle: nil)
+
         tableView.register(upcomingTableViewCellNib, forCellReuseIdentifier: UpcomingTableViewCell.identifier)
 
-        tableView.estimatedRowHeight = 68.0
+        tableView.estimatedRowHeight = Constants.PrototypeCells.estimatedRowHeight
         tableView.rowHeight = UITableViewAutomaticDimension
+        tableView.layoutIfNeeded()
 
         tableViewTopConstraintConstant = tableViewTopConstraint.constant
 
@@ -103,6 +130,7 @@ extension HomeViewController: UITableViewDataSource, UITableViewDelegate {
     }
 
     func addTableViewPlaceholderView() {
+        // TODO (santiago): Move this to an generic place holder for tables
         let header = "Noting so far" // TODO: Localize this string
         let subheader = "You are on day :)" // TODO: Localize this string
 
@@ -149,6 +177,8 @@ extension HomeViewController: UITableViewDataSource, UITableViewDelegate {
     }
 
     func numberOfSections(in tableView: UITableView) -> Int {
+        tableView.backgroundView = nil
+
         if upcomings.count > 0 {
             return 1
         } else {
@@ -165,12 +195,18 @@ extension HomeViewController: UITableViewDataSource, UITableViewDelegate {
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(
-            withIdentifier: UpcomingTableViewCell.identifier,
-            for: indexPath
-        ) as! UpcomingTableViewCell
+                withIdentifier: UpcomingTableViewCell.identifier,
+                for: indexPath
+            ) as! UpcomingTableViewCell
 
-        cell.registerHandler { [weak self] (cell, action) in
-            self?.didPerform(action: action, in: cell)
+        guard upcomings.has(index: indexPath.row) else { fatalError() }
+        let upcomming = upcomings[indexPath.row]
+
+        if let upcomingPeriod = upcomming.amortization.upcomingPeriod {
+            cell.setupCell(for: upcomming.debtor, period: upcomingPeriod)
+            cell.registerHandler { [weak self] (cell, action) in
+                self?.didPerform(action: action, in: cell)
+            }
         }
 
         return cell
@@ -185,12 +221,12 @@ extension HomeViewController: UITableViewDataSource, UITableViewDelegate {
         }
     }
 
-    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        return 0.1
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        return tableView.dequeueReusableCell(withIdentifier: Constants.PrototypeCells.headerCell)
     }
 
-    func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
-        return 1.0
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return Constants.PrototypeCells.upcomingsHeaderheight
     }
 
     func tableView(_ tableView: UITableView, didEndDisplaying cell: UITableViewCell, forRowAt indexPath: IndexPath) {
@@ -206,14 +242,14 @@ extension HomeViewController: UITableViewDataSource, UITableViewDelegate {
 extension HomeViewController {
     func didPerform(action: UpcomingTableViewCell.UpcomingAction, in cell: UpcomingTableViewCell) {
         switch action {
-        case .phone:
-            // TODO: get the phone number from the model
+        case .call(let to):
+            presenter.call(to: to)
+        case .mark(let to):
+            presenter.mark(period: cell.period, asPaid: to == .paid ? true : false)
+        }
 
-            presenter.call(to: "+573206532663")
-            break
-        case .check:
-            router?.loanDetails(with: 2)
-            break
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+            cell.colapse()
         }
     }
 }
@@ -224,16 +260,13 @@ extension HomeViewController {
     fileprivate func performMovement(for scrollView: UIScrollView, restartLayout: Bool) {
         guard !restartLayout else {
             tableViewTopConstraint.constant = tableViewTopConstraintConstant
-            tableViewHeaderView.alpha = 1.0
 
             return
         }
 
         let y = tableViewTopConstraintConstant - scrollView.contentOffset.y
-        let alpha = y / tableViewTopConstraintConstant
 
         tableViewTopConstraint.constant = y > 0 ? y : 0
-        tableViewHeaderView.alpha = alpha.percentage
     }
 
     func scrollViewDidScroll(_ scrollView: UIScrollView) {

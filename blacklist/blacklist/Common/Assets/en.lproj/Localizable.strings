@@ -1,0 +1,24 @@
+/* 
+  Localizable.strings
+  blacklist
+
+  Created by Mateo Olaya Bernal on 2/26/18.
+  Copyright © 2018 Opelty's Open Source Projects. All rights reserved.
+
+  This file stores all localizable strings for the blacklist, this is
+  sorted by scenes and you must group the localizable in the scenes group.
+
+  The keys must be prepended by the scene name and be capitalized.
+*/
+
+// ~> Partials: UIViewController Alerts
+"PARTIAL_UIVIEWCONTROLLER_OK" = "Oka";
+"PARTIAL_UIVIEWCONTROLLER_UPPPS" = "Uppps";
+// <~end localizations
+
+// ~> Upcoming scenes localizations
+"UPCOMING_HOME_UPCOMING_PAYS" = "Upcoming pays...";
+"UPCOMING_HOME_ERROR_PHONE_NO_REGISTERED" = "This debtor doesn't have any phone number registered. :(";
+"UPCOMING_HOME_ERROR_DEVICE_CANNOT_MAKE_CALLS" = "Your device doesn't have the ability to make calls. :(";
+// <~end localizations
+

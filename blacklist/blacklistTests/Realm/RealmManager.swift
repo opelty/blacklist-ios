@@ -86,6 +86,9 @@ class RealmHandlerSpecs: QuickSpec, RealmEntityTestProtocol {
     func testRead() {
         describe("RealmManager") {
             beforeEach {
+                // Let's remove the dummy object from Realm
+                blacklist.RealmManager.shared.clear()
+
                 // Let's add an dummy object to Realm
                 let dummy = DummyTestObject()
                 dummy.r_name = "DUMMY_TEST_OBJECT"
