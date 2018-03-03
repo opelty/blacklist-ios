@@ -69,6 +69,9 @@
 		44EE24FE2027A0C500C2C586 /* UpcomingTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 44EE24FC2027A0C500C2C586 /* UpcomingTableViewCell.xib */; };
 		44EE25002027B2AA00C2C586 /* UIScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44EE24FF2027B2AA00C2C586 /* UIScrollView.swift */; };
 		489958E020311072009B6760 /* BlackListNavBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 489958DF20311072009B6760 /* BlackListNavBar.swift */; };
+		6E944A7B204B54B8008BCF5C /* MessageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E944A7A204B54B8008BCF5C /* MessageView.swift */; };
+		6E944A7D204B54C1008BCF5C /* MessageView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6E944A7C204B54C1008BCF5C /* MessageView.xib */; };
+		6E944A7F204B5861008BCF5C /* UITableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E944A7E204B5861008BCF5C /* UITableView.swift */; };
 		96615767202B906900D10333 /* BlackListTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96615766202B906900D10333 /* BlackListTabBar.swift */; };
 		96615774202BCE8900D10333 /* Upcomming.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 96615773202BCE8900D10333 /* Upcomming.storyboard */; };
 		96615776202BCF7400D10333 /* Lendings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 96615775202BCF7400D10333 /* Lendings.storyboard */; };
@@ -167,6 +170,9 @@
 		44EE24FF2027B2AA00C2C586 /* UIScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIScrollView.swift; sourceTree = "<group>"; };
 		489958DF20311072009B6760 /* BlackListNavBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlackListNavBar.swift; sourceTree = "<group>"; };
 		53208D8CF1CFAA4BD8163FEB /* Pods_blacklist.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_blacklist.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		6E944A7A204B54B8008BCF5C /* MessageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageView.swift; sourceTree = "<group>"; };
+		6E944A7C204B54C1008BCF5C /* MessageView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MessageView.xib; sourceTree = "<group>"; };
+		6E944A7E204B5861008BCF5C /* UITableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITableView.swift; sourceTree = "<group>"; };
 		72B14658C6E06E5C809D3FFB /* Pods-blacklist.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-blacklist.release.xcconfig"; path = "Pods/Target Support Files/Pods-blacklist/Pods-blacklist.release.xcconfig"; sourceTree = "<group>"; };
 		76CC509BEFC64FF91398CCB5 /* Pods_blacklistTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_blacklistTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		96615766202B906900D10333 /* BlackListTabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = BlackListTabBar.swift; path = "blacklist/Scenes/BlackListTabBar/Custom Views/BlackListTabBar.swift"; sourceTree = SOURCE_ROOT; };
@@ -304,9 +310,10 @@
 		449D6302202556F00031BA92 /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				6E944A79204B547C008BCF5C /* Message */,
 				96947E21203F0923009F5DA3 /* Debtors */,
-				489958DD20311024009B6760 /* BlackListNavBar */,
-				96615777202BD6C400D10333 /* BlackListTabBar */,
+				489958DD20311024009B6760 /* BlacklistNavBar */,
+				96615777202BD6C400D10333 /* BlacklistTabBar */,
 				449D6305202557560031BA92 /* Home */,
 			);
 			path = Scenes;
@@ -422,6 +429,7 @@
 				4427823920448107005D3DF1 /* String.swift */,
 				448B53F82044D2CD006CBC59 /* Array.swift */,
 				96947E382041D027009F5DA3 /* UIFont.swift */,
+				6E944A7E204B5861008BCF5C /* UITableView.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -532,6 +540,15 @@
 				76CC509BEFC64FF91398CCB5 /* Pods_blacklistTests.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		6E944A79204B547C008BCF5C /* Message */ = {
+			isa = PBXGroup;
+			children = (
+				6E944A7A204B54B8008BCF5C /* MessageView.swift */,
+				6E944A7C204B54C1008BCF5C /* MessageView.xib */,
+			);
+			path = Message;
 			sourceTree = "<group>";
 		};
 		96615777202BD6C400D10333 /* BlacklistTabBar */ = {
@@ -668,6 +685,7 @@
 				44D0B0EC20264C3500E7C5D5 /* UseCases in Resources */,
 				96615774202BCE8900D10333 /* Upcomming.storyboard in Resources */,
 				44EE24F92027961F00C2C586 /* Roboto-Bold.ttf in Resources */,
+				6E944A7D204B54C1008BCF5C /* MessageView.xib in Resources */,
 				44EE24F82027961F00C2C586 /* Roboto-Italic.ttf in Resources */,
 				96947E20203F08F8009F5DA3 /* Debtors.storyboard in Resources */,
 				44EE24EE2027961F00C2C586 /* Roboto-Light.ttf in Resources */,
@@ -858,9 +876,11 @@
 				96947E30203F2F7B009F5DA3 /* BlackListTabBarPresenter.swift in Sources */,
 				4449399F2030F4F3007CDF3B /* Lending.swift in Sources */,
 				440442E52030231F0099D3D9 /* RealmDebtor.swift in Sources */,
+				6E944A7B204B54B8008BCF5C /* MessageView.swift in Sources */,
 				444939A12030F505007CDF3B /* Context.swift in Sources */,
 				448B53F72044CE64006CBC59 /* UIViewControllerPartials.swift in Sources */,
 				4449399D2030F4D9007CDF3B /* Amortization.swift in Sources */,
+				6E944A7F204B5861008BCF5C /* UITableView.swift in Sources */,
 				440442E2203021E80099D3D9 /* Debtor.swift in Sources */,
 				449D631620255F2E0031BA92 /* HomePresenter.swift in Sources */,
 				44D0B0E620264A5B00E7C5D5 /* SegueIndentifier.swift in Sources */,

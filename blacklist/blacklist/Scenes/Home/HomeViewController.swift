@@ -129,53 +129,6 @@ extension HomeViewController: UITableViewDataSource, UITableViewDelegate {
         }
     }
 
-    func addTableViewPlaceholderView() {
-        // TODO (santiago): Move this to an generic place holder for tables
-        let header = "Noting so far" // TODO: Localize this string
-        let subheader = "You are on day :)" // TODO: Localize this string
-
-        let view = UIView(frame: .zero)
-
-        let headerLabel = UILabel(frame: .zero)
-        let subheaderLabel = UILabel(frame: .zero)
-
-        headerLabel.text = header
-        headerLabel.textAlignment = .center
-        headerLabel.font = UIFont.get(withType: .robotoRegular, size: Constants.emptyViewHeaderSize)
-        headerLabel.textColor = StyleSheet.Color.Home.emptyHeaderText
-
-        subheaderLabel.text = subheader
-        subheaderLabel.textAlignment = .center
-        subheaderLabel.font = UIFont.get(withType: .robotoLight, size: Constants.emptyViewSubHeaderSize)
-        subheaderLabel.textColor = StyleSheet.Color.Home.emptySubHeaderText
-
-        view.addSubview(headerLabel)
-        view.addSubview(subheaderLabel)
-        tableView.backgroundView = view
-
-        view.leadingAnchor.constraint(equalTo: tableView.leadingAnchor, constant: 0).isActive = true
-        view.trailingAnchor.constraint(equalTo: tableView.trailingAnchor, constant: 0).isActive = true
-        view.topAnchor.constraint(equalTo: tableView.topAnchor, constant: 0).isActive = true
-        view.bottomAnchor.constraint(equalTo: tableView.bottomAnchor, constant: 0).isActive = true
-
-        view.translatesAutoresizingMaskIntoConstraints = false
-
-        headerLabel.centerXAnchor.constraint(equalTo: tableView.centerXAnchor).isActive = true
-        headerLabel.centerYAnchor.constraint(
-            equalTo: tableView.centerYAnchor,
-            constant: -tableViewTopConstraintConstant
-        ).isActive = true
-
-        subheaderLabel.centerXAnchor.constraint(equalTo: tableView.centerXAnchor).isActive = true
-        subheaderLabel.centerYAnchor.constraint(
-            equalTo: tableView.centerYAnchor,
-            constant: -tableViewTopConstraintConstant + Constants.emptyViewHeaderSize
-            ).isActive = true
-
-        headerLabel.translatesAutoresizingMaskIntoConstraints = false
-        subheaderLabel.translatesAutoresizingMaskIntoConstraints = false
-    }
-
     func numberOfSections(in tableView: UITableView) -> Int {
         tableView.backgroundView = nil
 
@@ -183,8 +136,7 @@ extension HomeViewController: UITableViewDataSource, UITableViewDelegate {
             return 1
         } else {
             // Let's add the empty view placeholder
-            addTableViewPlaceholderView()
-
+            tableView.addPlaceholderView(withHeader: "Nothing so far", subheader: "You are on day :)")
             return 0
         }
     }

@@ -129,7 +129,10 @@ extension DebtorsViewController: DebtorsView {
 
 extension DebtorsViewController: UICollectionViewDataSource {
     func numberOfSections(in collectionView: UICollectionView) -> Int {
-        return 1
+        if debtors.count > 0 {
+            return 1
+        }
+        return 0
     }
 
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
