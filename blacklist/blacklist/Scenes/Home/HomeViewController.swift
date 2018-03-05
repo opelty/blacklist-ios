@@ -136,7 +136,7 @@ extension HomeViewController: UITableViewDataSource, UITableViewDelegate {
             return 1
         } else {
             // Let's add the empty view placeholder
-            tableView.addPlaceholderView(withHeader: "Nothing so far", subheader: "You are on day :)")
+            tableView.backgroundView = PlaceholderView(frame: tableView.frame, headerText: "Nothing so far", subheaderText: "You are on day :)")
             return 0
         }
     }

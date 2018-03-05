@@ -132,6 +132,7 @@ extension DebtorsViewController: UICollectionViewDataSource {
         if debtors.count > 0 {
             return 1
         }
+        collectionView.backgroundView = PlaceholderView(frame: collectionView.frame, headerText: "No debtors found", subheaderText: ":)")
         return 0
     }
 

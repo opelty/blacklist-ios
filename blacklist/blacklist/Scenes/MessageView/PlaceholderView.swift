@@ -1,5 +1,5 @@
 //
-//  MessageView.swift
+//  PlaceholderView.swift
 //  blacklist
 //
 //  Created by Santiago Carmona gonzalez on 3/3/18.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class MessageView: UIView {
+class PlaceholderView: UIView {
 
     // MARK: - IBOutlets
 
@@ -47,7 +47,7 @@ class MessageView: UIView {
     // MARK: - Methods
 
     private func commonInit() {
-        let view = Bundle.main.loadNibNamed("MessageView", owner: self, options: nil)?.first as! UIView
+        let view = Bundle.main.loadNibNamed("PlaceholderView", owner: self, options: nil)?.first as! UIView
         view.frame = self.bounds
         self.addSubview(view)
     }
