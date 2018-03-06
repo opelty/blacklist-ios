@@ -71,6 +71,12 @@
 		489958E020311072009B6760 /* BlackListNavBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 489958DF20311072009B6760 /* BlackListNavBar.swift */; };
 		6E944A7B204B54B8008BCF5C /* PlaceholderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E944A7A204B54B8008BCF5C /* PlaceholderView.swift */; };
 		6E944A7D204B54C1008BCF5C /* PlaceholderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6E944A7C204B54C1008BCF5C /* PlaceholderView.xib */; };
+		96386059204DFF2C0049A9B8 /* LockViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96386058204DFF2C0049A9B8 /* LockViewController.swift */; };
+		9638605C204E022F0049A9B8 /* Lock.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9638605B204E022F0049A9B8 /* Lock.storyboard */; };
+		96386060204EF3B30049A9B8 /* LockLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9638605F204EF3B30049A9B8 /* LockLayout.swift */; };
+		96386065204F191A0049A9B8 /* LockCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96386063204F191A0049A9B8 /* LockCollectionViewCell.swift */; };
+		96386066204F191A0049A9B8 /* LockCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 96386064204F191A0049A9B8 /* LockCollectionViewCell.xib */; };
+		96386068204F21CB0049A9B8 /* CircleLockLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96386067204F21CB0049A9B8 /* CircleLockLayout.swift */; };
 		96615767202B906900D10333 /* BlackListTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96615766202B906900D10333 /* BlackListTabBar.swift */; };
 		96615774202BCE8900D10333 /* Upcomming.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 96615773202BCE8900D10333 /* Upcomming.storyboard */; };
 		96615776202BCF7400D10333 /* Lendings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 96615775202BCF7400D10333 /* Lendings.storyboard */; };
@@ -173,6 +179,12 @@
 		6E944A7C204B54C1008BCF5C /* PlaceholderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PlaceholderView.xib; sourceTree = "<group>"; };
 		72B14658C6E06E5C809D3FFB /* Pods-blacklist.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-blacklist.release.xcconfig"; path = "Pods/Target Support Files/Pods-blacklist/Pods-blacklist.release.xcconfig"; sourceTree = "<group>"; };
 		76CC509BEFC64FF91398CCB5 /* Pods_blacklistTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_blacklistTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		96386058204DFF2C0049A9B8 /* LockViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LockViewController.swift; sourceTree = "<group>"; };
+		9638605B204E022F0049A9B8 /* Lock.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Lock.storyboard; sourceTree = "<group>"; };
+		9638605F204EF3B30049A9B8 /* LockLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LockLayout.swift; sourceTree = "<group>"; };
+		96386063204F191A0049A9B8 /* LockCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LockCollectionViewCell.swift; sourceTree = "<group>"; };
+		96386064204F191A0049A9B8 /* LockCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LockCollectionViewCell.xib; sourceTree = "<group>"; };
+		96386067204F21CB0049A9B8 /* CircleLockLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleLockLayout.swift; sourceTree = "<group>"; };
 		96615766202B906900D10333 /* BlackListTabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = BlackListTabBar.swift; path = "blacklist/Scenes/BlackListTabBar/Custom Views/BlackListTabBar.swift"; sourceTree = SOURCE_ROOT; };
 		96615773202BCE8900D10333 /* Upcomming.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Upcomming.storyboard; sourceTree = "<group>"; };
 		96615775202BCF7400D10333 /* Lendings.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Lendings.storyboard; sourceTree = "<group>"; };
@@ -308,6 +320,7 @@
 		449D6302202556F00031BA92 /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				96386057204DFEE90049A9B8 /* Lock */,
 				6E944A79204B547C008BCF5C /* MessageView */,
 				96947E21203F0923009F5DA3 /* Debtors */,
 				489958DD20311024009B6760 /* BlacklistNavBar */,
@@ -463,6 +476,7 @@
 				96615773202BCE8900D10333 /* Upcomming.storyboard */,
 				96615775202BCF7400D10333 /* Lendings.storyboard */,
 				96947E1F203F08F8009F5DA3 /* Debtors.storyboard */,
+				9638605B204E022F0049A9B8 /* Lock.storyboard */,
 			);
 			path = Storyboards;
 			sourceTree = "<group>";
@@ -546,6 +560,26 @@
 				6E944A7C204B54C1008BCF5C /* PlaceholderView.xib */,
 			);
 			path = MessageView;
+			sourceTree = "<group>";
+		};
+		96386057204DFEE90049A9B8 /* Lock */ = {
+			isa = PBXGroup;
+			children = (
+				9638605A204DFFFF0049A9B8 /* CustomViews */,
+				96386058204DFF2C0049A9B8 /* LockViewController.swift */,
+				9638605F204EF3B30049A9B8 /* LockLayout.swift */,
+				96386067204F21CB0049A9B8 /* CircleLockLayout.swift */,
+			);
+			path = Lock;
+			sourceTree = "<group>";
+		};
+		9638605A204DFFFF0049A9B8 /* CustomViews */ = {
+			isa = PBXGroup;
+			children = (
+				96386063204F191A0049A9B8 /* LockCollectionViewCell.swift */,
+				96386064204F191A0049A9B8 /* LockCollectionViewCell.xib */,
+			);
+			path = CustomViews;
 			sourceTree = "<group>";
 		};
 		96615777202BD6C400D10333 /* BlacklistTabBar */ = {
@@ -678,6 +712,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				44EE24E02027961200C2C586 /* Lobster-Licence.txt in Resources */,
+				96386066204F191A0049A9B8 /* LockCollectionViewCell.xib in Resources */,
 				44EE24F42027961F00C2C586 /* Roboto-BlackItalic.ttf in Resources */,
 				44D0B0EC20264C3500E7C5D5 /* UseCases in Resources */,
 				96615774202BCE8900D10333 /* Upcomming.storyboard in Resources */,
@@ -696,6 +731,7 @@
 				44EE24FA2027961F00C2C586 /* Roboto-LightItalic.ttf in Resources */,
 				44EE24F62027961F00C2C586 /* Roboto-Medium.ttf in Resources */,
 				44D0B0F020264C6F00E7C5D5 /* ServiceGatewayImplementation in Resources */,
+				9638605C204E022F0049A9B8 /* Lock.storyboard in Resources */,
 				96947E28203F11C1009F5DA3 /* DebtorCollectionViewCell.xib in Resources */,
 				449D62E120254BA80031BA92 /* Main.storyboard in Resources */,
 				44EE24F12027961F00C2C586 /* Roboto-ThinItalic.ttf in Resources */,
@@ -845,15 +881,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				96386065204F191A0049A9B8 /* LockCollectionViewCell.swift in Sources */,
 				96C1CB27202CB3C80070B173 /* UIView.swift in Sources */,
 				44DD66A620293EF700934457 /* Application.swift in Sources */,
 				4449399B2030F392007CDF3B /* RealmPeriod.swift in Sources */,
 				441EADBE20284E6A007E1D9A /* ViewController.swift in Sources */,
 				96947E2C203F18E1009F5DA3 /* DebtorsRouter.swift in Sources */,
 				489958E020311072009B6760 /* BlackListNavBar.swift in Sources */,
+				96386059204DFF2C0049A9B8 /* LockViewController.swift in Sources */,
 				44EE24FD2027A0C500C2C586 /* UpcomingTableViewCell.swift in Sources */,
 				44CF75E02043A69C00F881F0 /* UpcomingTableViewHeader.swift in Sources */,
 				444939A52030FAD9007CDF3B /* RealmLending.swift in Sources */,
+				96386060204EF3B30049A9B8 /* LockLayout.swift in Sources */,
 				44D16964202B6EC200824633 /* Animation.swift in Sources */,
 				96947E23203F0937009F5DA3 /* DebtorsViewController.swift in Sources */,
 				449D631220255AED0031BA92 /* Router.swift in Sources */,
@@ -868,6 +907,7 @@
 				96947E322040629C009F5DA3 /* Utils.swift in Sources */,
 				96947E27203F11C1009F5DA3 /* DebtorCollectionViewCell.swift in Sources */,
 				44EE25002027B2AA00C2C586 /* UIScrollView.swift in Sources */,
+				96386068204F21CB0049A9B8 /* CircleLockLayout.swift in Sources */,
 				44D0B0E32025C42D00E7C5D5 /* StyleSheet.swift in Sources */,
 				449D631D20255FCE0031BA92 /* HomeViewController.swift in Sources */,
 				96947E30203F2F7B009F5DA3 /* BlackListTabBarPresenter.swift in Sources */,

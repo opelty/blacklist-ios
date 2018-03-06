@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="LockCollectionViewCell" customModule="blacklist" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <visualEffectView hidden="YES" opaque="NO" alpha="0.5" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="K7d-Es-c97">
+                        <rect key="frame" x="10" y="10" width="30" height="30"/>
+                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="4dT-ZC-2KI">
+                            <rect key="frame" x="0.0" y="0.0" width="30" height="30"/>
+                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                            <subviews>
+                                <visualEffectView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Bkh-6c-aXZ">
+                                    <rect key="frame" x="0.0" y="0.0" width="30" height="30"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                    <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" ambiguous="YES" insetsLayoutMarginsFromSafeArea="NO" id="QmB-LK-imt">
+                                        <rect key="frame" x="0.0" y="0.0" width="30" height="30"/>
+                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                    </view>
+                                    <vibrancyEffect>
+                                        <blurEffect style="light"/>
+                                    </vibrancyEffect>
+                                </visualEffectView>
+                            </subviews>
+                        </view>
+                        <blurEffect style="light"/>
+                    </visualEffectView>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Kgo-yJ-N95">
+                        <rect key="frame" x="10" y="10" width="30" height="30"/>
+                        <subviews>
+                            <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="coin" translatesAutoresizingMaskIntoConstraints="NO" id="IqJ-rh-oXg">
+                                <rect key="frame" x="0.0" y="0.0" width="30" height="30"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="IqJ-rh-oXg" firstAttribute="top" secondItem="Kgo-yJ-N95" secondAttribute="top" id="27s-FQ-ZQD"/>
+                            <constraint firstAttribute="trailing" secondItem="IqJ-rh-oXg" secondAttribute="trailing" id="3za-tx-t2c"/>
+                            <constraint firstItem="IqJ-rh-oXg" firstAttribute="leading" secondItem="Kgo-yJ-N95" secondAttribute="leading" id="aUc-7e-GWq"/>
+                            <constraint firstAttribute="width" secondItem="Kgo-yJ-N95" secondAttribute="height" multiplier="1:1" id="in5-BG-OAP"/>
+                            <constraint firstAttribute="bottom" secondItem="IqJ-rh-oXg" secondAttribute="bottom" id="wfW-Bd-CRd"/>
+                        </constraints>
+                    </view>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tRR-Gm-nqM">
+                        <rect key="frame" x="18" y="9" width="13" height="31.5"/>
+                        <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="26"/>
+                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+            </view>
+            <constraints>
+                <constraint firstItem="tRR-Gm-nqM" firstAttribute="centerY" secondItem="Kgo-yJ-N95" secondAttribute="centerY" id="JTN-fa-X0f"/>
+                <constraint firstItem="K7d-Es-c97" firstAttribute="width" secondItem="Kgo-yJ-N95" secondAttribute="width" id="QDF-Vr-sMk"/>
+                <constraint firstItem="Kgo-yJ-N95" firstAttribute="centerY" secondItem="gTV-IL-0wX" secondAttribute="centerY" id="U4V-yZ-4pj"/>
+                <constraint firstItem="tRR-Gm-nqM" firstAttribute="centerX" secondItem="Kgo-yJ-N95" secondAttribute="centerX" id="bDn-K0-xnG"/>
+                <constraint firstItem="Kgo-yJ-N95" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="10" id="blp-Zi-reK"/>
+                <constraint firstItem="K7d-Es-c97" firstAttribute="height" secondItem="Kgo-yJ-N95" secondAttribute="height" id="j92-Hi-Qqf"/>
+                <constraint firstItem="K7d-Es-c97" firstAttribute="centerY" secondItem="Kgo-yJ-N95" secondAttribute="centerY" id="nQ4-wJ-ivj"/>
+                <constraint firstItem="K7d-Es-c97" firstAttribute="centerX" secondItem="Kgo-yJ-N95" secondAttribute="centerX" id="vb5-Zn-lKe"/>
+                <constraint firstAttribute="trailing" secondItem="Kgo-yJ-N95" secondAttribute="trailing" constant="10" id="wIE-02-dfc"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+            <connections>
+                <outlet property="backImageView" destination="IqJ-rh-oXg" id="3jI-0I-ufP"/>
+                <outlet property="blurVieew" destination="K7d-Es-c97" id="BDk-Rb-zhw"/>
+                <outlet property="containerView" destination="Kgo-yJ-N95" id="c1B-4c-yxw"/>
+                <outlet property="textLabel" destination="tRR-Gm-nqM" id="cqJ-Mq-8dw"/>
+            </connections>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <image name="coin" width="64" height="64"/>
+    </resources>
+</document>
