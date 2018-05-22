@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="PlaceholderView" customModule="blacklist" customModuleProvider="target">
+            <connections>
+                <outlet property="headerLabel" destination="dB6-J0-Lia" id="O1b-W2-hrs"/>
+                <outlet property="subheaderLabel" destination="NvO-Ci-bTZ" id="EBy-VO-X8K"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dB6-J0-Lia">
+                    <rect key="frame" x="50" y="323" width="275" height="21"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NvO-Ci-bTZ">
+                    <rect key="frame" x="50" y="352" width="275" height="21"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="NvO-Ci-bTZ" firstAttribute="trailing" secondItem="dB6-J0-Lia" secondAttribute="trailing" id="L2d-EJ-Rpr"/>
+                <constraint firstItem="dB6-J0-Lia" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="50" id="XJo-mC-Mgn"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="dB6-J0-Lia" secondAttribute="trailing" constant="50" id="eKv-cI-nTs"/>
+                <constraint firstItem="NvO-Ci-bTZ" firstAttribute="leading" secondItem="dB6-J0-Lia" secondAttribute="leading" id="jPQ-AM-sNz"/>
+                <constraint firstItem="dB6-J0-Lia" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="njv-ea-M3K"/>
+                <constraint firstItem="NvO-Ci-bTZ" firstAttribute="top" secondItem="dB6-J0-Lia" secondAttribute="bottom" constant="8" id="nuh-91-2r9"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+        </view>
+    </objects>
+</document>

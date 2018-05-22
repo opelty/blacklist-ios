@@ -22,3 +22,11 @@
 "UPCOMING_HOME_ERROR_DEVICE_CANNOT_MAKE_CALLS" = "Your device doesn't have the ability to make calls. :(";
 // <~end localizations
 
+// ~> Home localizations
+"HOME_EMPTY_HEADER" = "Nothing so far";
+"HOME_EMPTY_SUBHEADER" = "You are on day :)";
+// <~end localizations
+
+// ~> Debtors localizations
+"DEBTORS_EMPTY_HEADER" = "No debtors found";
+"DEBTORS_EMPTY_SUBHEADER" = ":)";

@@ -63,7 +63,7 @@ class HomePresenter: Presenter {
             nickname: nil
         )
 
-        let test = Array(repeating: LendingEntity(amortization: amortization, debtor: debtor), count: 1000)
+        let test = Array(repeating: LendingEntity(amortization: amortization, debtor: debtor), count: 0)
 
         completion(test)
     }
